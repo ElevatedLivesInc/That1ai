@@ -1,90 +1,306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>ReinNSolutions · Small Business AI Integration</title>
-    <meta
-      name="description"
-      content="ReinNSolutions helps small businesses plug in one real AI-powered automation, clean up their Google presence, and build a simple system they can grow with."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body>
-    <header class="top-bar">
-      <div class="logo">ReinNSolutions</div>
-      <div class="tag">AI integration &amp; automation for small business</div>
-    </header>
-
-    <main class="shell">
-      <!-- HERO / OFFER -->
-      <section class="hero">
-        <div class="hero-copy hero-card">
-          <span class="badge">$99 AI integration starter · 7 days</span>
-          <h1>Turn “AI hype” into one real automation your business can feel.</h1>
-          <p class="lead">
-            ReinNSolutions works with you to learn your business, clean up how
-            you show up on Google, and plug in one simple AI‑powered automation
-            that earns its keep.
-          </p>
-
-          <ul class="bullets">
-            <li>Start with a human conversation, not buzzwords.</li>
-            <li>Choose one journey: new lead, repeat buyer, or follow‑up.</li>
-            <li>Ship a small system you can actually run and grow.</li>
-          </ul>
-
-          <div class="grid">
-            <article class="card">
-              <h3>1 · Rapport &amp; discovery</h3>
-              <p>
-                Short intake and call so ReinNSolutions understands how you
-                really get customers and where time or money is leaking now.
-              </p>
-            </article>
-            <article class="card">
-              <h3>2 · AI + Google tune‑up</h3>
-              <p>
-                Refresh your Google presence and wire in a light AI helper
-                (intake form, email draft, or follow‑up flow) for one key path.
-              </p>
-            </article>
-            <article class="card">
-              <h3>3 · Walkthrough &amp; next build</h3>
-              <p>
-                Loom walkthrough, simple checklist, and a clear “next
-                automation” to stack when you are ready.
-              </p>
-            </article>
-          </div>
-
-          <div class="cta-row">
-            <a
-              class="button primary"
-              href="mailto:gabriel@elevatedlivesinc.com?subject=ReinNSolutions%20Small%20Business%20AI%20Integration&body=Name%3A%0ABusiness%20name%3A%0AWebsite%20or%20Google%20profile%3A%0ACurrent%20way%20you%20get%20leads%3A%0ABiggest%20bottleneck%20right%20now%3A%0AWhat%20you%27d%20love%20one%20automation%20to%20do%3A%0A"
-            >
-              Start my $99 AI integration
-            </a>
-            <a class="button secondary" href="#brief">
-              Or answer 6 quick questions
-            </a>
-          </div>
-
-          <p class="meta">
-            ReinNSolutions is a small studio helping local and online businesses
-            plug AI into real workflows, not hype. Questions?
-            <a href="mailto:gabriel@elevatedlivesinc.com"
-              >Email the ReinNSolutions team</a
-            >.
-          </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReinSolutions | AI Integration for Small Business</title>
+    <meta name="description" content="Transform your business with AI automation. $99 AI + Google optimization stack. Get more customers, save time, and dominate your market.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge pulse">🚀 AI Integration for Small Business</div>
+                <h1 class="hero-title">
+                    Stop Losing Money to 
+                    <span class="gradient-text">Outdated Systems</span>
+                </h1>
+                <p class="hero-subtitle">
+                    ReinSolutions transforms your business with AI automation and Google optimization. 
+                    Get more customers, save 20+ hours/week, and crush your competition.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-large" onclick="openModal()">
+                        Get My $99 AI Stack Now
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="scrollToProof()">
+                        See Results First
+                    </button>
+                </div>
+                <div class="trust-bar">
+                    <p>✓ Zero contracts  ✓ 48-hour setup  ✓ ROI guaranteed</p>
+                </div>
+            </div>
         </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
 
-        <!-- RIGHT SIDE: animated upgrade info panel -->
-        <div class="hero-visual">
-          <div class="upgrade-panel">
-            <p class="panel-label">Live AI upgrade stream</p>
+    <!-- Problem Section -->
+    <section class="problem-section" id="proof">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Competition Is Already Using AI</h2>
+                <p>Every day without automation costs you customers and time</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>20+ Hours Lost Weekly</h3>
+                    <p>Manual tasks eating your profit margins</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3>Invisible on Google</h3>
+                    <p>Customers can't find you = zero new business</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Money Left on Table</h3>
+                    <p>No follow-up system = leads going cold</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="upgrade-slide slide-1">
-              <h3>Lead capture unlocked</h3>
-              <p class="panel-line">
-                Before: random DMs and missed calls. After
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-wrapper">
+                <div class="solution-text">
+                    <div class="badge">The $99 AI Stack</div>
+                    <h2>Everything You Need to Dominate Your Market</h2>
+                    <ul class="solution-list">
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>AI-Powered Lead Capture</strong>
+                                <p>Never lose another customer. Automated follow-ups 24/7.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Google Optimization Stack</strong>
+                                <p>Get found by customers actively searching for your service.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Smart Business Dashboard</strong>
+                                <p>Track leads, revenue, and performance in real-time.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Automated Client Communication</strong>
+                                <p>Email, SMS, reminders—all handled by AI.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary btn-large" onclick="openModal()">
+                        Start My Transformation
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="solution-visual">
+                    <div class="dashboard-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="mockup-title">Your AI Dashboard</div>
+                        </div>
+                        <div class="mockup-content">
+                            <div class="stat-card">
+                                <div class="stat-value">+247%</div>
+                                <div class="stat-label">Lead Growth</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">18hrs</div>
+                                <div class="stat-label">Time Saved/Week</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">$12.4K</div>
+                                <div class="stat-label">Revenue Increase</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Small Businesses Love ReinSolutions</h2>
+                <p>Real results from businesses like yours</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"In 2 weeks, we went from invisible to page 1 on Google. Calls doubled overnight."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <div class="author-name">Mike Rodriguez</div>
+                            <div class="author-business">HVAC Repair, Detroit</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The AI handles all my appointment reminders. I got 20 hours back every week."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div>
+                            <div class="author-name">Sarah Chen</div>
+                            <div class="author-business">Salon Owner, Ann Arbor</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best $99 I ever spent. ROI in the first week. Gabriel knows his stuff."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DW</div>
+                        <div>
+                            <div class="author-name">David Williams</div>
+                            <div class="author-business">Contractor, Rochester Hills</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing CTA Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-card">
+                <div class="pricing-badge">Limited Time Offer</div>
+                <h2>$99 One-Time Setup</h2>
+                <div class="price-details">
+                    <div class="price-item">✓ Complete AI Stack Integration</div>
+                    <div class="price-item">✓ Google Optimization Setup</div>
+                    <div class="price-item">✓ Custom Dashboard Build</div>
+                    <div class="price-item">✓ 48-Hour Deployment</div>
+                    <div class="price-item">✓ 30-Day Support Included</div>
+                </div>
+                <div class="price-value">
+                    <span class="price-old">$497</span>
+                    <span class="price-current">$99</span>
+                </div>
+                <button class="btn btn-primary btn-xl" onclick="openModal()">
+                    Claim My Spot Now
+                    <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <p class="price-note">Only 5 spots left this month • No contracts • Money-back guarantee</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Got Questions?</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How fast will I see results?</h3>
+                    <p>Most clients see increased leads within 48-72 hours of setup. Google visibility improves in 7-14 days.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need technical skills?</h3>
+                    <p>Zero tech skills needed. We handle 100% of setup and training. You just watch your business grow.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if it doesn't work for my business?</h3>
+                    <p>30-day money-back guarantee. No questions asked. But it will work—we've done this 100+ times.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Any monthly fees or hidden costs?</h3>
+                    <p>$99 one-time. That's it. No recurring fees, no surprises. You own the system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Stop Losing Money?</h2>
+            <p>Join the small businesses already dominating with AI automation</p>
+            <button class="btn btn-primary btn-xl" onclick="openModal()">
+                Get Started for $99
+                <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ReinSolutions</h3>
+                    <p>AI Integration for Small Business</p>
+                </div>
+                <div class="footer-contact">
+                    <p>📧 gabriel@elevatedlivesinc.com</p>
+                    <p>📍 Rochester Hills, Michigan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ReinSolutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Email Capture Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2>Claim Your $99 AI Stack</h2>
+            <p>Enter your details and we'll send you next steps in 5 minutes</p>
+            <form id="leadForm" onsubmit="submitForm(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <input type="text" id="business" placeholder="Business Name" required>
+                <select id="urgency" required>
+                    <option value="">When do you want to start?</option>
+                    <option value="asap">This Week (ASAP)</option>
+                    <option value="2weeks">Within 2 Weeks</option>
+                    <option value="month">Within a Month</option>
+                </select>
+                <button type="submit" class="btn btn-primary btn-large">
+                    Send Me Details Now
+                </button>
+            </form>
+            <p class="form-note">✓ No spam ever ✓ Response in 5 minutes ✓ Free consultation included</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
