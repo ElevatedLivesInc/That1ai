@@ -165,6 +165,62 @@
             font-weight: bold;
             flex-shrink: 0;
         }
+
+        .vip-box {
+            background: var(--secondary);
+            border: 3px solid var(--accent);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .vip-box h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .vip-box p {
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+
+        .vip-box .checklist {
+            background: rgba(255,255,255,0.1);
+            border: none;
+        }
+
+        .vip-box .checklist-item {
+            color: var(--white);
+        }
+
+        .premium-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 3px solid #fbbf24;
+            color: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .premium-box h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .premium-box p {
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+
+        .premium-box .checklist {
+            background: rgba(255,255,255,0.1);
+            border: none;
+        }
+
+        .premium-box .checklist-item {
+            color: var(--white);
+        }
     </style>
 </head>
 <body>
@@ -183,9 +239,9 @@
                         <h3>Check Your Email (Next 5 Minutes)</h3>
                         <p>You'll get a confirmation email from <strong>gabriel@elevatedlivesinc.com</strong> with:</p>
                         <div class="checklist">
-                            <div class="checklist-item">Calendar link to book your 15-min strategy call</div>
+                            <div class="checklist-item">Calendar link to book your strategy call</div>
                             <div class="checklist-item">Quick questionnaire (takes 2 minutes)</div>
-                            <div class="checklist-item">My direct phone number</div>
+                            <div class="checklist-item">My direct contact info</div>
                         </div>
                     </div>
                 </div>
@@ -194,9 +250,9 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Book Your Strategy Call (Within 24 Hours)</h3>
-                        <p>We'll hop on a quick 15-minute call where you'll:</p>
+                        <p>We'll hop on a quick call where you'll:</p>
                         <div class="checklist">
-                            <div class="checklist-item">Pick your first automation (lead capture, reminders, follow-ups, reviews, or social posting)</div>
+                            <div class="checklist-item">Pick your automation (or discuss your full stack plan)</div>
                             <div class="checklist-item">Tell me about your business flow</div>
                             <div class="checklist-item">Get a custom build plan</div>
                         </div>
@@ -214,8 +270,8 @@
                 <div class="step-item">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>You Go Live (Day 3)</h3>
-                        <p>Quick 10-minute training call, hand you the keys, and you're running. Then we monitor for 30 days to make sure everything is smooth.</p>
+                        <h3>You Go Live</h3>
+                        <p>Quick training call, hand you the keys, and you're running. Then we monitor for 30 days to make sure everything is smooth.</p>
                     </div>
                 </div>
             </div>
@@ -227,6 +283,48 @@
                 <p><strong>Subject Line:</strong> "Just Purchased - [Your Business Name]"</p>
                 <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
                     Pro tip: Check your spam folder. Sometimes our emails hide there. Mark us as "Not Spam" so you get all updates.
+                </p>
+            </div>
+
+            <!-- Monthly Support Specific -->
+            <div class="vip-box" style="display: none;" id="monthly-support-box">
+                <h3>💎 Monthly Support Subscriber</h3>
+                <p style="font-size: 18px; margin-bottom: 20px;">
+                    You're now on priority support! Here's what you get every month:
+                </p>
+                <div class="checklist">
+                    <div class="checklist-item">Unlimited tweaks & adjustments (just email me)</div>
+                    <div class="checklist-item">Monthly 15-min performance review call</div>
+                    <div class="checklist-item">Priority response time (under 4 hours)</div>
+                    <div class="checklist-item">Early access to new automation features</div>
+                </div>
+                <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+                    <strong>First Action:</strong> Email me at gabriel@elevatedlivesinc.com with "Monthly Support - [Your Business Name]" and I'll send you my direct line + priority access.
+                </p>
+            </div>
+
+            <!-- Full Stack Specific -->
+            <div class="premium-box" style="display: none;" id="fullstack-box">
+                <h3>🚀 Full Stack Bundle - You're All In!</h3>
+                <p style="font-size: 18px; margin-bottom: 20px;">
+                    You just unlocked EVERYTHING. All 5 automations + 3 months priority support. Here's what you get:
+                </p>
+                <div class="checklist">
+                    <div class="checklist-item">✓ AI Lead Capture System</div>
+                    <div class="checklist-item">✓ Appointment Reminder Automation</div>
+                    <div class="checklist-item">✓ Smart Email Follow-Up Sequences</div>
+                    <div class="checklist-item">✓ Review Request System</div>
+                    <div class="checklist-item">✓ Social Media Auto-Posting</div>
+                    <div class="checklist-item">✓ Complete Google Optimization</div>
+                    <div class="checklist-item">✓ Advanced Tracking Dashboard</div>
+                    <div class="checklist-item">✓ Custom Integrations</div>
+                    <div class="checklist-item">✓ 3 Months Priority Support ($87 value)</div>
+                </div>
+                <p style="margin-top: 20px; font-size: 16px; font-weight: 600;">
+                    📅 NEXT STEP: I'll email you within 1 hour with a 30-minute strategy call link. We'll map out your entire automation stack and prioritize which ones to build first.
+                </p>
+                <p style="font-size: 14px; opacity: 0.9; margin-top: 12px;">
+                    Build timeline: We'll roll these out over 2-3 weeks so you can learn each system properly. You'll be fully automated by end of week 3.
                 </p>
             </div>
             
@@ -262,5 +360,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Show appropriate box based on URL parameter (you can manually test this)
+        // Or just show all sections for now since Stripe doesn't pass product info by default
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        
+        if (product === 'support') {
+            document.getElementById('monthly-support-box').style.display = 'block';
+        } else if (product === 'fullstack') {
+            document.getElementById('fullstack-box').style.display = 'block';
+        }
+        // Otherwise show default confirmation
+    </script>
 </body>
 </html>
