@@ -35,10 +35,11 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     z-index: 100;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .nav-content {
@@ -55,18 +56,21 @@ body {
 }
 
 .nav-cta {
-    padding: 10px 24px;
+    padding: 12px 28px;
     background: var(--primary);
     color: var(--white);
-    border-radius: 8px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 16px;
     transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
 .nav-cta:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
 }
 
 /* Hero Section */
@@ -106,13 +110,13 @@ body {
 .badge {
     display: inline-block;
     padding: 8px 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 50px;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .badge.pulse {
@@ -180,17 +184,18 @@ body {
 }
 
 .btn {
-    padding: 16px 32px;
+    padding: 18px 36px;
     border: none;
     border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary {
@@ -199,19 +204,22 @@ body {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: #fefefe;
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--white);
-    border: 2px solid var(--white);
+    border: 3px solid var(--white);
 }
 
 .btn-secondary:hover {
     background: var(--white);
     color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 .btn-large {
@@ -220,8 +228,9 @@ body {
 }
 
 .btn-xl {
-    padding: 20px 48px;
-    font-size: 20px;
+    padding: 22px 48px;
+    font-size: 22px;
+    font-weight: 900;
 }
 
 .btn-full {
@@ -274,6 +283,7 @@ body {
 
 .starter-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .card-icon {
@@ -481,6 +491,38 @@ body {
     color: var(--accent);
 }
 
+/* FIXED BUTTON STYLES FOR PRICING CARDS */
+.menu-card .btn {
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 16px 28px;
+    font-weight: 700;
+}
+
+.menu-card .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.menu-card .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.menu-card.premium .btn-primary {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.menu-card.premium .btn-primary:hover {
+    background: #fefefe;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
 /* Win/Win/Win Section */
 .winwin-section {
     padding: 100px 20px;
@@ -549,6 +591,7 @@ body {
 
 .testimonial-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .stars {
@@ -641,6 +684,20 @@ body {
     border-color: var(--white);
 }
 
+.newsletter-form .btn-primary {
+    background: var(--white);
+    color: var(--primary);
+    font-size: 16px;
+    padding: 16px 32px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-form .btn-primary:hover {
+    background: #fefefe;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
 /* FAQ Section */
 .faq-section {
     padding: 100px 20px;
@@ -682,10 +739,16 @@ body {
     margin-bottom: 40px;
 }
 
-.final-note {
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.8;
+.final-cta .btn-xl {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.final-cta .btn-xl:hover {
+    background: #fefefe;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
 }
 
 /* Footer */
@@ -697,7 +760,7 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
 }
@@ -833,6 +896,16 @@ body {
     border-color: var(--primary);
 }
 
+#leadForm .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+#leadForm .btn-primary:hover {
+    background: var(--primary-dark);
+}
+
 .form-note {
     margin-top: 16px;
     font-size: 14px;
@@ -864,5 +937,9 @@ body {
         width: 48px;
         height: 48px;
         font-size: 24px;
+    }
+
+    .newsletter-form .btn-primary {
+        width: 100%;
     }
 }
