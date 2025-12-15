@@ -1,3 +1,12 @@
+function scrollTo(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
 // Google Sheets Integration
 const GOOGLE_SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; // You'll add this after I show you setup
 
