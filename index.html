@@ -1,449 +1,413 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReinNSolutions | AI Automation for Small Business - Start $99</title>
-    <meta name="description" content="Get your business running on AI in 48 hours. Start with $99: 1 automation + Google optimization. Winston-Salem, NC.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Urgency Banner -->
-    <div class="urgency-banner">
-        🔥 <strong>December Special:</strong> Only 5 spots left for 48-hour delivery
-    </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>ReinnSolutions · 30‑Day Google & Reviews Lift</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <meta
+      name="description"
+      content="ReinnSolutions delivers a 30‑Day Google & Reviews Lift for local businesses. You pay for the outcome — more visibility and better reviews — not the software."
+    />
+    <style>
+      :root {
+        --bg: #020617;
+        --bg-card: #020819;
+        --accent: #38bdf8;
+        --accent2: #22c55e;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #1f2937;
+      }
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">ReinNSolutions</div>
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="nav-cta">Start for $99</a>
-            </div>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #020617 0%, #000 65%);
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .shell {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 1.8rem 1.5rem 3rem;
+        flex: 1;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.8rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        padding: 2px;
+        background: conic-gradient(
+          from 160deg,
+          #38bdf8,
+          #22c55e,
+          #a855f7,
+          #38bdf8
+        );
+      }
+
+      .brand-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: #020617;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+      }
+
+      .brand-text span:first-child {
+        font-size: 0.98rem;
+        font-weight: 600;
+      }
+
+      .brand-text span:last-child {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      nav {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        gap: 2rem;
+        align-items: center;
+      }
+
+      @media (max-width: 880px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.28rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-bottom: 0.7rem;
+      }
+
+      .pill-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.28);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 3vw, 2.5rem);
+        line-height: 1.05;
+        margin-bottom: 0.7rem;
+      }
+
+      .hero h1 span {
+        color: var(--accent);
+      }
+
+      .hero p {
+        font-size: 0.96rem;
+        color: var(--muted);
+        max-width: 34rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 1.4rem;
+      }
+
+      .hero-meta strong {
+        color: var(--text);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .btn-primary {
+        padding: 0.55rem 1.3rem;
+        border-radius: 999px;
+        border: none;
+        background: linear-gradient(135deg, #38bdf8, #22c55e);
+        color: #020617;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 10px 30px rgba(56, 189, 248, 0.5),
+          0 0 0 1px rgba(15, 23, 42, 1);
+      }
+
+      .btn-secondary {
+        padding: 0.5rem 1.1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(15, 23, 42, 0.95);
+        color: var(--text);
+        font-size: 0.84rem;
+        text-decoration: none;
+      }
+
+      .hero-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .card {
+        background: radial-gradient(circle at top left, #020a1a 0, #020617 60%);
+        border-radius: 18px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        padding: 1.4rem 1.4rem 1.2rem;
+        box-shadow:
+          0 18px 45px rgba(15, 23, 42, 0.92),
+          0 0 0 1px rgba(15, 23, 42, 1);
+        font-size: 0.84rem;
+      }
+
+      .card h2 {
+        font-size: 0.98rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .card p {
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+      }
+
+      .card ul {
+        list-style: none;
+        margin-top: 0.4rem;
+      }
+
+      .card li {
+        margin-bottom: 0.35rem;
+        color: var(--muted);
+      }
+
+      .card li span {
+        color: var(--text);
+      }
+
+      .section {
+        margin-top: 2.4rem;
+      }
+
+      .section h2 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .section p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin-bottom: 0.8rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      @media (max-width: 900px) {
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .step {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: 14px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        padding: 0.9rem 1rem;
+        font-size: 0.84rem;
+      }
+
+      .step strong {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .step span {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      footer {
+        padding: 1rem 1.5rem 1.4rem;
+        font-size: 0.78rem;
+        color: var(--muted);
+        text-align: center;
+        border-top: 1px solid rgba(15, 23, 42, 1);
+        background: radial-gradient(circle at top, #020617, #000 65%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <div class="brand">
+          <div class="brand-mark">
+            <div class="brand-inner">R</div>
+          </div>
+          <div class="brand-text">
+            <span>ReinnSolutions</span>
+            <span>AI automation for local businesses</span>
+          </div>
         </div>
-    </nav>
+        <nav>Outcome‑as‑a‑Service · Winston‑Salem</nav>
+      </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="badge pulse">💡 Winston-Salem Small Business AI Solutions</div>
-                <h1 class="hero-title">
-                    Get Your Business Running on AI<br>
-                    <span class="gradient-text">in 48 Hours</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Launch your first AI automation, optimize your Google presence, and stop losing customers to manual follow-ups. Start with $99. No contracts. Own it forever.
-                </p>
-                
-                <!-- Trust Cards (Echo's Addition) -->
-                <div class="trust-cards">
-                    <div class="trust-card">
-                        <span class="trust-icon">🔒</span>
-                        <span>Secure Checkout</span>
-                    </div>
-                    <div class="trust-card">
-                        <span class="trust-icon">🚫</span>
-                        <span>No Contracts</span>
-                    </div>
-                    <div class="trust-card">
-                        <span class="trust-icon">♾️</span>
-                        <span>Own It Forever</span>
-                    </div>
-                    <div class="trust-card">
-                        <span class="trust-icon">⭐</span>
-                        <span>NC Small Business</span>
-                    </div>
-                </div>
+      <main class="hero">
+        <section>
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>30‑Day Google & Reviews Lift · 1 location</span>
+          </div>
+          <h1>
+            Make the invisible visible.<br />
+            <span>Then turn it into bookings.</span>
+          </h1>
+          <p>
+            Most small businesses are invisible where it matters: Google, maps,
+            and reviews. ReinnSolutions runs one focused 30‑day play that fixes
+            your signal and starts more calls and visits, or you don’t keep
+            paying.
+          </p>
 
-                <!-- Stats -->
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">20hrs</div>
-                        <div class="stat-label">Saved Per Week</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">+247%</div>
-                        <div class="stat-label">More Leads</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">$2.4K</div>
-                        <div class="stat-label">Extra Revenue/Mo</div>
-                    </div>
-                </div>
-                
-                <div class="hero-cta">
-                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary btn-large">
-                        Start with $99 Starter Pack →
-                    </a>
-                    <button class="btn btn-secondary btn-large" onclick="scrollToPricing()">
-                        See All Options
-                    </button>
-                </div>
+          <div class="hero-meta">
+            <span><strong>Built for:</strong> hotels, arcades, vape, salons, local shops</span>
+            <span><strong>You pay for outcomes,</strong> not logins or features</span>
+          </div>
 
-                <!-- Guarantee Badge -->
-                <div class="guarantee-badge">
-                    <strong>✓ 30-Day Money-Back Guarantee</strong> - If you don't see ROI, full refund. No questions.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What You Get Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What You Get with The Starter</h2>
-                <p>Everything you need to prove ROI fast — without monthly fees</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>1 AI Automation</h3>
-                    <p>Lead capture, follow-ups, appointment reminders, review requests, or social posting. You pick. We build in 48hrs.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Google Optimization</h3>
-                    <p>Fully optimized Business Profile for local visibility. Get found when customers search "[your service] near me".</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Tracking Dashboard</h3>
-                    <p>See performance without technical headaches. Know what's working and what's not.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>30-Day Support</h3>
-                    <p>Tweaks, improvements, and guidance included. We make sure it works perfectly for your business.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Starter Section -->
-    <section class="starter-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="badge">The $99 Starter</div>
-                <h2>Your First Win: 1 Automation + Google Visibility</h2>
-                <p>Get immediate results. Then decide what's next.</p>
-            </div>
-            <div class="starter-grid">
-                <div class="starter-card featured">
-                    <div class="card-icon">🎯</div>
-                    <h3>Pick Your First Automation</h3>
-                    <ul class="feature-list">
-                        <li>AI Lead Capture Form (never miss a customer)</li>
-                        <li>Auto Appointment Reminders (stop no-shows)</li>
-                        <li>Smart Email Follow-ups (convert more leads)</li>
-                        <li>Review Request System (build reputation)</li>
-                        <li>Social Media Auto-Post (stay visible)</li>
-                    </ul>
-                    <p class="card-note">You pick one. We build it in 48 hours.</p>
-                </div>
-                <div class="starter-card">
-                    <div class="card-icon">🔍</div>
-                    <h3>Plus: Google Optimization</h3>
-                    <ul class="feature-list">
-                        <li>Google Business Profile setup</li>
-                        <li>Local SEO optimization</li>
-                        <li>Search visibility boost</li>
-                        <li>Review strategy guide</li>
-                    </ul>
-                    <p class="card-note">Get found by customers searching right now.</p>
-                </div>
-            </div>
-            <div class="value-prop">
-                <h3>🎁 What Else You Get:</h3>
-                <div class="value-grid">
-                    <div class="value-item">✓ Simple dashboard to track everything</div>
-                    <div class="value-item">✓ 30-day support & tweaks included</div>
-                    <div class="value-item">✓ Training video (5 minutes max)</div>
-                    <div class="value-item">✓ À la carte pricing for future automations</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Growth Path Section -->
-    <section class="growth-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Your Growth Path: Add Automations as You Scale</h2>
-                <p>Start small. Grow smart. Only pay for what you need, when you need it.</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-number">1</div>
-                    <div class="timeline-content">
-                        <h3>Month 1: Start ($99)</h3>
-                        <p>1 automation + Google optimization. See results. Get comfortable.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">2</div>
-                    <div class="timeline-content">
-                        <h3>Month 2-3: Add More (À La Carte)</h3>
-                        <p>Revenue growing? Add appointment reminders ($49). Need follow-ups? Add email automation ($69).</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">3</div>
-                    <div class="timeline-content">
-                        <h3>Month 4+: Full Stack (Optional)</h3>
-                        <p>When you're ready: Full AI integration bundle at 30% off. Or keep à la carte forever.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="menu-section" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simple, Honest Pricing</h2>
-                <p>Start small. Prove results. Scale when ready.</p>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-card featured-card">
-                    <div class="best-value-badge">BEST TO START</div>
-                    <div class="menu-header">
-                        <h3>🚀 The Starter</h3>
-                        <div class="price">$99</div>
-                        <p class="price-note">One-time payment</p>
-                    </div>
-                    <ul class="menu-features">
-                        <li><span class="check">✓</span> 1 Custom AI Automation (your choice)</li>
-                        <li><span class="check">✓</span> Google Business Optimization</li>
-                        <li><span class="check">✓</span> Local SEO Setup</li>
-                        <li><span class="check">✓</span> Simple Tracking Dashboard</li>
-                        <li><span class="check">✓</span> 30 Days Support & Tweaks</li>
-                        <li><span class="check">✓</span> 5-min Training Video</li>
-                    </ul>
-                    <div class="guarantee-mini">
-                        <strong>✓ 30-Day Money-Back Guarantee</strong>
-                    </div>
-                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary btn-full">
-                        Proceed to Secure Checkout →
-                    </a>
-                </div>
-
-                <div class="menu-card">
-                    <div class="menu-header">
-                        <h3>⚡ Add-On Automations</h3>
-                        <div class="price">$49-$99</div>
-                        <p class="price-note">Each, one-time</p>
-                    </div>
-                    <ul class="menu-features">
-                        <li><strong>$49</strong> - Appointment reminders</li>
-                        <li><strong>$69</strong> - Email follow-up system</li>
-                        <li><strong>$69</strong> - Review request automation</li>
-                        <li><strong>$79</strong> - Social media scheduler</li>
-                        <li><strong>$99</strong> - SMS marketing system</li>
-                    </ul>
-                    <button class="btn btn-primary btn-full" onclick="openModal('addon')">
-                        Contact for Add-Ons
-                    </button>
-                </div>
-
-                <div class="menu-card">
-                    <div class="menu-header">
-                        <h3>🎯 Monthly Support</h3>
-                        <div class="price">$29/mo</div>
-                        <p class="price-note">Optional - Cancel anytime</p>
-                    </div>
-                    <ul class="menu-features">
-                        <li>✓ Unlimited tweaks & adjustments</li>
-                        <li>✓ Monthly performance review</li>
-                        <li>✓ Priority response time</li>
-                        <li>✓ Early access to new features</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary btn-full">
-                        Subscribe - $29/mo
-                    </a>
-                </div>
-
-                <div class="menu-card premium">
-                    <div class="menu-header">
-                        <h3>💎 Full Stack Bundle</h3>
-                        <div class="price">$399</div>
-                        <p class="price-note">One-time (Save 30%)</p>
-                    </div>
-                    <ul class="menu-features">
-                        <li>✓ ALL 5 core automations</li>
-                        <li>✓ Google optimization</li>
-                        <li>✓ Advanced dashboard</li>
-                        <li>✓ 3 months support included</li>
-                        <li>✓ Custom integrations</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary btn-full">
-                        Go All In - $399
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section class="proof-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Winston-Salem & NC Small Businesses Trust Us</h2>
-                <p>Real results from the à la carte approach</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Started with just lead capture for $99. Made $2K extra in month 1. Just added appointment reminders. This model is perfect."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MR</div>
-                        <div>
-                            <div class="author-name">Mike Rodriguez</div>
-                            <div class="author-business">HVAC Repair, Charlotte NC</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Love that I can add automations when I have the cash. No pressure. Started with 1, now I have 4. Each one paid for itself."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SC</div>
-                        <div>
-                            <div class="author-name">Sarah Chen</div>
-                            <div class="author-business">Salon Owner, Raleigh NC</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Finally, a tech company that gets small business. I only paid for what I needed. Now my systems run themselves."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">DW</div>
-                        <div>
-                            <div class="author-name">David Williams</div>
-                            <div class="author-business">Contractor, Durham NC</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Common Questions</h2>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>Why start with just 1 automation?</h3>
-                    <p>Because we want you to see ROI before spending more. One automation proves the concept. Then you add more when YOU'RE ready—not when we push you.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I really add automations later?</h3>
-                    <p>Yes. That's the whole model. Start with $99. Next month, next quarter, next year—add what you need when revenue allows. No expiration.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What if I want everything now?</h3>
-                    <p>Get the Full Stack Bundle for $399 (30% off). But most businesses start small and build up. Both paths work.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Any monthly fees or hidden costs?</h3>
-                    <p>Nope. Everything is one-time unless you want optional $29/mo support. The automations keep working whether you pay monthly or not.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How fast can I start?</h3>
-                    <p>48 hours from payment. We schedule a 15-min call, you pick your first automation, we build it, you go live.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What if it doesn't work for me?</h3>
-                    <p>30-day money-back guarantee on The Starter. If you don't see value, we refund 100%. But you will see value—we've done this 100+ times.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Ready to Stop Losing Customers to Manual Follow-Ups?</h2>
-            <p>$99. 1 automation. 48 hours. Zero risk.</p>
-            <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary btn-xl">
-                Get Started for $99
-                <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
-                    <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+          <div class="hero-actions">
+            <a class="btn-primary" href="/report.html">Get My AI Visibility Report</a>
+            <a class="btn-secondary" href="mailto:gabriel@elevatedlivesinc.com">
+              Or email Gabriel to talk it through
             </a>
-            <p class="final-guarantee">✓ 30-Day Money-Back Guarantee • No Contracts • Own It Forever</p>
-        </div>
-    </section>
+          </div>
+          <p class="hero-note">
+            The report is free. If you like what you see, we run the 30‑day lift
+            for one location.
+          </p>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>ReinNSolutions</h3>
-                    <p>AI Integration for Winston-Salem Small Business</p>
-                    <p class="footer-tagline">One automation at a time. Your pace. Your budget.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <a href="#pricing" onclick="scrollToPricing(); return false;">Pricing</a>
-                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01">Get Started</a>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>📧 gabriel@elevatedlivesinc.com</p>
-                    <p>📍 Winston-Salem, NC</p>
-                    <p>💬 Response in 24hrs</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> ReinNSolutions. All rights reserved.</p>
-                <p>Built for small businesses in Winston-Salem & North Carolina.</p>
-            </div>
-        </div>
-    </footer>
+        <aside class="card">
+          <h2>What you’re actually buying</h2>
+          <p>
+            Not “AI tools”. A 30‑day outcome, delivered with AI and automation
+            behind the scenes:
+          </p>
+          <ul>
+            <li><span>Google profile cleaned up</span> — photos, categories, description tuned to what people search for.</li>
+            <li><span>Review system turned on</span> — QR + script or follow‑up message so good experiences stop disappearing.</li>
+            <li><span>Simple before/after snapshot</span> — how you looked on day 1 vs day 30.</li>
+          </ul>
+          <p style="margin-top: 0.5rem;">
+            Your job: keep running the business. ReinnSolutions runs the online
+            play with its own AI staff.
+          </p>
+        </aside>
+      </main>
 
-    <!-- Email Capture Modal -->
-    <div id="emailModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h2>Get in Touch</h2>
-            <p id="modal-subtitle">Tell us about your business and we'll reach out in 5 minutes</p>
-            <form id="leadForm" onsubmit="submitForm(event)">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <input type="tel" id="phone" placeholder="Phone Number" required>
-                <input type="text" id="business" placeholder="Business Name" required>
-                <select id="package" required>
-                    <option value="">What are you interested in?</option>
-                    <option value="starter">The Starter ($99)</option>
-                    <option value="addon">Add-On Automations ($49-$99)</option>
-                    <option value="support">Monthly Support ($29/mo)</option>
-                    <option value="fullstack">Full Stack Bundle ($399)</option>
-                    <option value="justlooking">Just exploring options</option>
-                </select>
-                <textarea id="message" placeholder="What's your biggest business challenge right now? (Optional)" rows="3"></textarea>
-                <button type="submit" class="btn btn-primary btn-large">
-                    Send My Info
-                </button>
-            </form>
-            <p class="form-note">✓ No spam ✓ Response in 5 min ✓ Free consultation</p>
+      <section class="section">
+        <h2>How the 30‑Day Lift works</h2>
+        <p>
+          This is Outcome‑as‑a‑Service for local businesses: you get a named,
+          repeatable result; ReinnSolutions uses its own agents, tools, and
+          playbook to deliver it. You never touch the software. [OaaS model
+          description] 
+        </p>
+        <div class="grid-3">
+          <div class="step">
+            <strong>1. Make the invisible visible</strong>
+            <span>
+              You (or we) fill a short form about your business and run the AI
+              Visibility Report. It shows how you show up today on Google,
+              your site, and socials.
+            </span>
+          </div>
+          <div class="step">
+            <strong>2. Run the Reinn playbook</strong>
+            <span>
+              Behind the scenes, ReinnSolutions uses its own AI agents to map a
+              30‑day Google & reviews play: profile fixes, review asks, and a
+              simple follow‑up loop.
+            </span>
+          </div>
+          <div class="step">
+            <strong>3. See the before/after</strong>
+            <span>
+              At the end of 30 days, you get a one‑page before/after snapshot:
+              how you looked, what changed, and what that did for calls and
+              visits.
+            </span>
+          </div>
         </div>
+      </section>
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-</body>
+    <footer>
+      ReinnSolutions · 30‑Day Google & Reviews Lift · Outcome‑as‑a‑Service ·
+      2025 · gabriel@elevatedlivesinc.com
+    </footer>
+  </body>
 </html>
