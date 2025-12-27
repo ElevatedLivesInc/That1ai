@@ -1,413 +1,454 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950">
   <head>
-    <meta charset="utf-8" />
-    <title>ReinnSolutions · 30‑Day Google & Reviews Lift</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta charset="UTF-8" />
+    <title>Rein N' Solutions – Systems That Actually Make You Money</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ReinnSolutions delivers a 30‑Day Google & Reviews Lift for local businesses. You pay for the outcome — more visibility and better reviews — not the software."
+      content="Rein N' Solutions builds done-for-you systems, automation, and Stripe-powered flows so leads stop slipping and money actually lands."
     />
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      :root {
-        --bg: #020617;
-        --bg-card: #020819;
-        --accent: #38bdf8;
-        --accent2: #22c55e;
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --border: #1f2937;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
       body {
-        min-height: 100vh;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top, #020617 0%, #000 65%);
-        color: var(--text);
-        display: flex;
-        flex-direction: column;
-      }
-
-      .shell {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 1.8rem 1.5rem 3rem;
-        flex: 1;
-      }
-
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1.8rem;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-
-      .brand-mark {
-        width: 32px;
-        height: 32px;
-        border-radius: 999px;
-        padding: 2px;
-        background: conic-gradient(
-          from 160deg,
-          #38bdf8,
-          #22c55e,
-          #a855f7,
-          #38bdf8
-        );
-      }
-
-      .brand-inner {
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        background: #020617;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--accent);
-        letter-spacing: 0.06em;
-      }
-
-      .brand-text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
-      }
-
-      .brand-text span:first-child {
-        font-size: 0.98rem;
-        font-weight: 600;
-      }
-
-      .brand-text span:last-child {
-        font-size: 0.78rem;
-        color: var(--muted);
-      }
-
-      nav {
-        font-size: 0.8rem;
-        color: var(--muted);
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-        gap: 2rem;
-        align-items: center;
-      }
-
-      @media (max-width: 880px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0.28rem 0.7rem;
-        border-radius: 999px;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        font-size: 0.75rem;
-        color: var(--muted);
-        margin-bottom: 0.7rem;
-      }
-
-      .pill-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 999px;
-        background: #22c55e;
-        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.28);
-      }
-
-      .hero h1 {
-        font-size: clamp(2.1rem, 3vw, 2.5rem);
-        line-height: 1.05;
-        margin-bottom: 0.7rem;
-      }
-
-      .hero h1 span {
-        color: var(--accent);
-      }
-
-      .hero p {
-        font-size: 0.96rem;
-        color: var(--muted);
-        max-width: 34rem;
-        margin-bottom: 1.2rem;
-      }
-
-      .hero-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        font-size: 0.8rem;
-        color: var(--muted);
-        margin-bottom: 1.4rem;
-      }
-
-      .hero-meta strong {
-        color: var(--text);
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        align-items: center;
-      }
-
-      .btn-primary {
-        padding: 0.55rem 1.3rem;
-        border-radius: 999px;
-        border: none;
-        background: linear-gradient(135deg, #38bdf8, #22c55e);
-        color: #020617;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow:
-          0 10px 30px rgba(56, 189, 248, 0.5),
-          0 0 0 1px rgba(15, 23, 42, 1);
-      }
-
-      .btn-secondary {
-        padding: 0.5rem 1.1rem;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        background: rgba(15, 23, 42, 0.95);
-        color: var(--text);
-        font-size: 0.84rem;
-        text-decoration: none;
-      }
-
-      .hero-note {
-        font-size: 0.78rem;
-        color: var(--muted);
-      }
-
-      .card {
-        background: radial-gradient(circle at top left, #020a1a 0, #020617 60%);
-        border-radius: 18px;
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        padding: 1.4rem 1.4rem 1.2rem;
-        box-shadow:
-          0 18px 45px rgba(15, 23, 42, 0.92),
-          0 0 0 1px rgba(15, 23, 42, 1);
-        font-size: 0.84rem;
-      }
-
-      .card h2 {
-        font-size: 0.98rem;
-        margin-bottom: 0.4rem;
-      }
-
-      .card p {
-        color: var(--muted);
-        margin-bottom: 0.6rem;
-      }
-
-      .card ul {
-        list-style: none;
-        margin-top: 0.4rem;
-      }
-
-      .card li {
-        margin-bottom: 0.35rem;
-        color: var(--muted);
-      }
-
-      .card li span {
-        color: var(--text);
-      }
-
-      .section {
-        margin-top: 2.4rem;
-      }
-
-      .section h2 {
-        font-size: 1rem;
-        margin-bottom: 0.6rem;
-      }
-
-      .section p {
-        font-size: 0.88rem;
-        color: var(--muted);
-        margin-bottom: 0.8rem;
-      }
-
-      .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      @media (max-width: 900px) {
-        .grid-3 {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .step {
-        background: rgba(15, 23, 42, 0.96);
-        border-radius: 14px;
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        padding: 0.9rem 1rem;
-        font-size: 0.84rem;
-      }
-
-      .step strong {
-        display: block;
-        margin-bottom: 0.25rem;
-      }
-
-      .step span {
-        font-size: 0.78rem;
-        color: var(--muted);
-      }
-
-      footer {
-        padding: 1rem 1.5rem 1.4rem;
-        font-size: 0.78rem;
-        color: var(--muted);
-        text-align: center;
-        border-top: 1px solid rgba(15, 23, 42, 1);
-        background: radial-gradient(circle at top, #020617, #000 65%);
+        font-feature-settings: "liga" 1, "kern" 1;
       }
     </style>
   </head>
-  <body>
-    <div class="shell">
-      <header>
-        <div class="brand">
-          <div class="brand-mark">
-            <div class="brand-inner">R</div>
+  <body class="h-full bg-slate-950 text-slate-50">
+    <main class="min-h-screen bg-slate-950 text-slate-50">
+      <!-- NAV -->
+      <header class="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur">
+        <div
+          class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="h-7 w-7 rounded-lg bg-indigo-500/90 shadow-lg shadow-indigo-500/40"
+            ></div>
+            <div>
+              <p class="text-sm font-semibold tracking-tight">
+                Rein N' Solutions
+              </p>
+              <p class="text-[11px] text-slate-400">
+                Systems • Automation • Proof
+              </p>
+            </div>
           </div>
-          <div class="brand-text">
-            <span>ReinnSolutions</span>
-            <span>AI automation for local businesses</span>
-          </div>
+
+          <nav class="hidden items-center gap-6 text-xs text-slate-300 sm:flex">
+            <a href="#who" class="hover:text-white">Who we are</a>
+            <a href="#fix" class="hover:text-white">What we fix</a>
+            <a href="#process" class="hover:text-white">How it works</a>
+            <a href="#plans" class="hover:text-white">Packages</a>
+          </nav>
+
+          <a
+            href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hidden rounded-md bg-indigo-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm shadow-indigo-500/40 hover:bg-indigo-400 sm:inline-flex"
+          >
+            Lock in my build
+          </a>
         </div>
-        <nav>Outcome‑as‑a‑Service · Winston‑Salem</nav>
       </header>
 
-      <main class="hero">
-        <section>
-          <div class="pill">
-            <span class="pill-dot"></span>
-            <span>30‑Day Google & Reviews Lift · 1 location</span>
-          </div>
-          <h1>
-            Make the invisible visible.<br />
-            <span>Then turn it into bookings.</span>
-          </h1>
-          <p>
-            Most small businesses are invisible where it matters: Google, maps,
-            and reviews. ReinnSolutions runs one focused 30‑day play that fixes
-            your signal and starts more calls and visits, or you don’t keep
-            paying.
+      <!-- HERO -->
+      <section
+        class="mx-auto flex max-w-6xl flex-col items-start gap-10 px-4 py-14 lg:flex-row lg:items-center"
+      >
+        <div class="flex-1 space-y-6">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-400"
+          >
+            You already sell. We build the system.
           </p>
 
-          <div class="hero-meta">
-            <span><strong>Built for:</strong> hotels, arcades, vape, salons, local shops</span>
-            <span><strong>You pay for outcomes,</strong> not logins or features</span>
+          <h1 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            We turn messy leads, lost calls, and half-finished automations into a
+            clean, revenue-ready system.
+          </h1>
+
+          <p class="max-w-xl text-sm text-slate-300 sm:text-base">
+            Rein N' Solutions is the part of the story where the automation kicks in,
+            your listings are cleaned up, and customers actually find you instead of
+            slipping through the cracks. We wire your stack so people can discover
+            you, book, and pay without you hand-holding every step.
+          </p>
+
+          <div
+            class="grid gap-3 text-xs text-slate-200 sm:grid-cols-3"
+          >
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-900/70 p-3"
+            >
+              <p class="font-semibold text-slate-50">Fix what&apos;s broken</p>
+              <p class="mt-1 text-slate-400">
+                Inconsistent info, dead links, ghost inboxes. We map the leaks and patch
+                them so you stop losing money in the dark.
+              </p>
+            </div>
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-900/70 p-3"
+            >
+              <p class="font-semibold text-slate-50">Automate the boring</p>
+              <p class="mt-1 text-slate-400">
+                Follow-ups, reminders, intake, basic FAQs – handled by automations and
+                agents so your team stays on the work that matters.
+              </p>
+            </div>
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-900/70 p-3"
+            >
+              <p class="font-semibold text-slate-50">Make revenue obvious</p>
+              <p class="mt-1 text-slate-400">
+                Simple journeys that end in a Stripe checkout you control. No mystery,
+                just a clear path from interest to paid.
+              </p>
+            </div>
           </div>
 
-          <div class="hero-actions">
-            <a class="btn-primary" href="/report.html">Get My AI Visibility Report</a>
-            <a class="btn-secondary" href="mailto:gabriel@elevatedlivesinc.com">
-              Or email Gabriel to talk it through
+          <div class="flex flex-col gap-3 pt-4 sm:flex-row sm:items-center">
+            <a
+              href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
+              Start my system build
+            </a>
+            <a
+              href="#plans"
+              class="text-sm font-medium text-slate-300 underline-offset-4 hover:text-white hover:underline"
+            >
+              See all packages
             </a>
           </div>
-          <p class="hero-note">
-            The report is free. If you like what you see, we run the 30‑day lift
-            for one location.
-          </p>
-        </section>
 
-        <aside class="card">
-          <h2>What you’re actually buying</h2>
-          <p>
-            Not “AI tools”. A 30‑day outcome, delivered with AI and automation
-            behind the scenes:
+          <p class="text-[11px] text-slate-500">
+            No retainers. You pay once, we ship the system, you own the stack and the playbook.
           </p>
-          <ul>
-            <li><span>Google profile cleaned up</span> — photos, categories, description tuned to what people search for.</li>
-            <li><span>Review system turned on</span> — QR + script or follow‑up message so good experiences stop disappearing.</li>
-            <li><span>Simple before/after snapshot</span> — how you looked on day 1 vs day 30.</li>
-          </ul>
-          <p style="margin-top: 0.5rem;">
-            Your job: keep running the business. ReinnSolutions runs the online
-            play with its own AI staff.
+        </div>
+
+        <!-- SIDE PANEL -->
+        <aside
+          class="w-full flex-1 rounded-2xl border border-slate-800 bg-slate-900/80 p-5 shadow-xl shadow-black/40"
+        >
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400"
+          >
+            What happens when we plug in
           </p>
+          <div class="mt-4 space-y-3 text-sm text-slate-200">
+            <p>• Your Google/business listings actually match your real hours and offers.</p>
+            <p>• Leads don&apos;t die in a DM, voicemail, or inbox no one checks.</p>
+            <p>• People can book, confirm, and pay from a single, simple flow.</p>
+            <p>• You walk into meetings able to show an actual working system, not a deck.</p>
+          </div>
         </aside>
-      </main>
+      </section>
 
-      <section class="section">
-        <h2>How the 30‑Day Lift works</h2>
-        <p>
-          This is Outcome‑as‑a‑Service for local businesses: you get a named,
-          repeatable result; ReinnSolutions uses its own agents, tools, and
-          playbook to deliver it. You never touch the software. [OaaS model
-          description] 
-        </p>
-        <div class="grid-3">
-          <div class="step">
-            <strong>1. Make the invisible visible</strong>
-            <span>
-              You (or we) fill a short form about your business and run the AI
-              Visibility Report. It shows how you show up today on Google,
-              your site, and socials.
-            </span>
+      <!-- WHO WE ARE -->
+      <section
+        id="who"
+        class="border-t border-slate-800 bg-slate-950/90"
+      >
+        <div
+          class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-[1.6fr,1.1fr]"
+        >
+          <div class="space-y-4 text-sm text-slate-300">
+            <h2 class="text-xl font-semibold text-slate-50">
+              Who we are
+            </h2>
+            <p>
+              Rein N&apos; Solutions combines SaaS, AI agents, and battle-tested playbooks to
+              build repeatable, outcome-focused delivery machines for operators who are
+              tired of chasing their own tail.
+            </p>
+            <p>
+              We&apos;re not here to drown you in tools. We&apos;re here to take what you&apos;re
+              already doing to get customers and turn that into a single, coherent system
+              that keeps working when you&apos;re off the clock.
+            </p>
           </div>
-          <div class="step">
-            <strong>2. Run the Reinn playbook</strong>
-            <span>
-              Behind the scenes, ReinnSolutions uses its own AI agents to map a
-              30‑day Google & reviews play: profile fixes, review asks, and a
-              simple follow‑up loop.
-            </span>
-          </div>
-          <div class="step">
-            <strong>3. See the before/after</strong>
-            <span>
-              At the end of 30 days, you get a one‑page before/after snapshot:
-              how you looked, what changed, and what that did for calls and
-              visits.
-            </span>
+
+          <div
+            class="rounded-xl border border-slate-800 bg-slate-900/80 p-4 text-xs text-slate-200"
+          >
+            <p class="font-semibold text-slate-50">
+              Built for operators, not tourists.
+            </p>
+            <p class="mt-2 text-slate-400">
+              If you&apos;re the person who actually feels it when a lead slips, a shift
+              falls apart, or a customer can&apos;t find you online, this is built for you.
+            </p>
           </div>
         </div>
       </section>
-    </div>
 
-    <footer>
-      ReinnSolutions · 30‑Day Google & Reviews Lift · Outcome‑as‑a‑Service ·
-      2025 · gabriel@elevatedlivesinc.com
-    </footer>
+      <!-- WHAT WE FIX -->
+      <section
+        id="fix"
+        class="border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-950"
+      >
+        <div class="mx-auto max-w-6xl px-4 py-12">
+          <div class="mb-6 space-y-2">
+            <h2 class="text-xl font-semibold text-slate-50">
+              What we fix first
+            </h2>
+            <p class="max-w-2xl text-sm text-slate-300">
+              Every engagement starts with finding the money you&apos;re already earning but
+              currently losing. Then we turn that into a simple, trackable flow.
+            </p>
+          </div>
+
+          <div
+            class="grid gap-4 text-xs text-slate-200 md:grid-cols-3"
+          >
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-900/80 p-4"
+            >
+              <p class="font-semibold">Visibility & trust</p>
+              <p class="mt-1 text-slate-400">
+                Broken listings, old photos, wrong hours, missing reviews – we tighten your
+                public face so people trust clicking through.
+              </p>
+            </div>
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-900/80 p-4"
+            >
+              <p class="font-semibold">Lead capture & follow-up</p>
+              <p class="mt-1 text-slate-400">
+                Instead of “call us” and pray, we add forms, flows, and automations so every
+                interested person lands somewhere you can track.
+              </p>
+            </div>
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-900/80 p-4"
+            >
+              <p class="font-semibold">Payment & handoff</p>
+              <p class="mt-1 text-slate-400">
+                We embed clean Stripe checkouts so people can actually pay you online and
+                your team knows exactly what was sold.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section
+        id="process"
+        class="border-t border-slate-800 bg-slate-950/95"
+      >
+        <div class="mx-auto max-w-6xl px-4 py-12">
+          <div class="mb-6 space-y-2">
+            <h2 class="text-xl font-semibold text-slate-50">
+              How it works with us
+            </h2>
+            <p class="max-w-2xl text-sm text-slate-300">
+              No 6‑month “discovery”. We move fast, in clear passes, so you can show
+              something real to partners and customers – not just talk about it.
+            </p>
+          </div>
+
+          <ol
+            class="grid gap-4 text-xs text-slate-200 md:grid-cols-4"
+          >
+            <li
+              class="rounded-xl border border-slate-800 bg-slate-900/80 p-4"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400"
+              >
+                Pass 1
+              </p>
+              <p class="mt-1 font-semibold">Map the leaks</p>
+              <p class="mt-1 text-slate-400">
+                We trace your current path from first touch to paid and mark every place
+                leads die or money stalls.
+              </p>
+            </li>
+            <li
+              class="rounded-xl border border-slate-800 bg-slate-900/80 p-4"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400"
+              >
+                Pass 2
+              </p>
+              <p class="mt-1 font-semibold">Design the system</p>
+              <p class="mt-1 text-slate-400">
+                We sketch the leanest possible journey: how they find you, how they book,
+                and how they pay.
+              </p>
+            </li>
+            <li
+              class="rounded-xl border border-slate-800 bg-slate-900/80 p-4"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400"
+              >
+                Pass 3
+              </p>
+              <p class="mt-1 font-semibold">Wire & automate</p>
+              <p class="mt-1 text-slate-400">
+                We plug in the pages, tools, and automations – including Stripe – and test
+                it end‑to‑end with you.
+              </p>
+            </li>
+            <li
+              class="rounded-xl border border-slate-800 bg-slate-900/80 p-4"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400"
+              >
+                Pass 4
+              </p>
+              <p class="mt-1 font-semibold">Hand you the keys</p>
+              <p class="mt-1 text-slate-400">
+                You get the stack, the playbook, and simple tracking so you can run and
+                iterate without us.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PACKAGES / STRIPE LINKS -->
+      <section
+        id="plans"
+        class="border-t border-slate-800 bg-slate-950"
+      >
+        <div class="mx-auto max-w-6xl px-4 py-14">
+          <div class="mb-8 space-y-2 text-left">
+            <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Choose how deep we go on this build.
+            </h2>
+            <p class="max-w-2xl text-sm text-slate-300">
+              Every option ends with a working system and a Stripe page ready to take
+              payments. Pick what matches where you are today.
+            </p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- Plan 1 -->
+            <div
+              class="flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-sm"
+            >
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold text-slate-50">
+                  Launch Blueprint
+                </h3>
+                <p class="text-sm text-slate-300">
+                  One tight system around a single core offer: page layout, copy
+                  framework, and Stripe checkout wired.
+                </p>
+                <ul class="space-y-1 text-xs text-slate-400">
+                  <li>• One core offer / journey mapped and built.</li>
+                  <li>• Simple landing + clear CTA to Stripe.</li>
+                  <li>• Basic follow-up sequence wired.</li>
+                </ul>
+              </div>
+              <a
+                href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center justify-center rounded-md bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-900 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              >
+                Choose Launch Blueprint
+              </a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div
+              class="flex flex-col justify-between rounded-xl border border-indigo-500/70 bg-slate-900 p-5 shadow-md shadow-indigo-500/30"
+            >
+              <div class="space-y-3">
+                <p
+                  class="inline-flex rounded-full bg-indigo-500/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-indigo-300"
+                >
+                  Most Popular
+                </p>
+                <h3 class="text-lg font-semibold text-slate-50">
+                  Done‑With‑You Build
+                </h3>
+                <p class="text-sm text-slate-300">
+                  We co‑design and implement a deeper system: multiple offers, nurture,
+                  and more advanced automations where they matter.
+                </p>
+                <ul class="space-y-1 text-xs text-slate-300">
+                  <li>• Funnel map + multi-step implementation.</li>
+                  <li>• Email / DM follow‑up flows wired.</li>
+                  <li>• Multiple Stripe links embedded and tested.</li>
+                </ul>
+              </div>
+              <a
+                href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center justify-center rounded-md bg-indigo-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              >
+                Choose Done‑With‑You Build
+              </a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div
+              class="flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-sm"
+            >
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold text-slate-50">
+                  Operator Mode
+                </h3>
+                <p class="text-sm text-slate-300">
+                  For operators who want the whole machine built and documented so your
+                  team can run it without you babysitting.
+                </p>
+                <ul class="space-y-1 text-xs text-slate-400">
+                  <li>• System built end‑to‑end across offers.</li>
+                  <li>• SOPs, Looms, and handoff docs.</li>
+                  <li>• Stripe, tracking, and dashboards wired.</li>
+                </ul>
+              </div>
+              <a
+                href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center justify-center rounded-md bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-900 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              >
+                Choose Operator Mode
+              </a>
+            </div>
+          </div>
+
+          <p class="mt-6 text-center text-[11px] text-slate-500">
+            Need this tailored to a specific deal you&apos;re walking into right now? Start
+            with any plan and we&apos;ll scope the exact path on the first call.
+          </p>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="border-t border-slate-800 bg-slate-950/95">
+        <div
+          class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-5 text-[11px] text-slate-500 sm:flex-row"
+        >
+          <p>
+            ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Rein N' Solutions. All systems shipped with receipts.
+          </p>
+          <p class="text-slate-600">
+            Built for operators who are done losing money to chaos.
+          </p>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>
