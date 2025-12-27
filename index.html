@@ -1,103 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-slate-950">
   <head>
     <meta charset="UTF-8" />
     <title>Rein N' Solutions – Systems That Actually Make You Money</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Rein N' Solutions builds done-for-you systems, automations, and Stripe-powered flows so leads stop slipping and money actually lands."
+      content="Rein N' Solutions builds done-for-you systems, automation, and Stripe-powered flows so leads stop slipping and money actually lands."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { font-feature-settings: "liga" 1, "kern" 1; }
+    </style>
   </head>
-  <body>
-    <main class="page">
+  <body class="h-full bg-slate-950 text-slate-50">
+    <main class="min-h-screen bg-slate-950 text-slate-50">
       <!-- NAV -->
-      <header class="nav">
-        <div class="nav-inner">
-          <div class="nav-logo">
-            <div class="nav-logo-mark"></div>
+      <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+          <div class="flex items-center gap-2">
+            <div class="h-7 w-7 rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/40"></div>
             <div>
-              <div class="nav-logo-title">Rein N' Solutions</div>
-              <div class="nav-logo-sub">Systems • Automation • Proof</div>
+              <p class="text-sm font-semibold tracking-tight">Rein N' Solutions</p>
+              <p class="text-[11px] text-slate-400">Systems • Automation • Proof</p>
             </div>
           </div>
-          <nav class="nav-links">
-            <a href="#who">Who we are</a>
-            <a href="#fix">What we fix</a>
-            <a href="#process">How it works</a>
-            <a href="#plans">Packages</a>
+          <nav class="hidden items-center gap-6 text-xs text-slate-300 sm:flex">
+            <a href="#who" class="hover:text-white">Who we are</a>
+            <a href="#fix" class="hover:text-white">What we fix</a>
+            <a href="#process" class="hover:text-white">How it works</a>
+            <a href="#plans" class="hover:text-white">Packages</a>
           </nav>
           <a
             href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-primary btn-small nav-cta"
+            class="hidden rounded-md bg-indigo-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm shadow-indigo-500/40 hover:bg-indigo-400 sm:inline-flex"
           >
             Lock in my build
           </a>
         </div>
       </header>
 
-      <!-- HERO (blue bar like your screenshot) -->
-      <section class="hero">
-        <div class="hero-main">
-          <p class="eyebrow">You already sell. We build the system.</p>
-          <h1>
-            We turn messy leads, lost calls, and half-finished automations into a clean,
-            revenue-ready system.
+      <!-- HERO BAR (like your original look) -->
+      <section class="mx-auto flex max-w-6xl flex-col items-start gap-8 bg-indigo-800 px-4 py-10 text-slate-50 lg:flex-row lg:items-start">
+        <div class="flex-1 space-y-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-100">
+            You already sell. We build the system.
+          </p>
+          <h1 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            We turn messy leads, lost calls, and half-finished automations into a
+            clean, revenue‑ready system.
           </h1>
-          <p class="hero-body">
+          <p class="max-w-xl text-sm text-indigo-100/90 sm:text-base">
             Rein N' Solutions is the part of the story where the automation kicks in,
             your listings are cleaned up, and customers actually find you instead of
             slipping through the cracks. We wire your stack so people can discover you,
-            book, and pay without you hand-holding every step.
+            book, and pay without you hand‑holding every step.
           </p>
 
-          <div class="hero-grid">
-            <div class="card card-soft">
-              <h3>Fix what's broken</h3>
-              <p>
-                Inconsistent info, dead links, ghost inboxes. We map the leaks and patch
-                them so you stop losing money in the dark.
+          <div class="grid gap-3 text-xs text-indigo-50 sm:grid-cols-3">
+            <div class="rounded-xl bg-indigo-900/80 p-3 ring-1 ring-indigo-400/40">
+              <p class="font-semibold">Fix what's broken</p>
+              <p class="mt-1 text-indigo-100/80">
+                Inconsistent info, dead links, ghost inboxes. We map the leaks and
+                patch them so you stop losing money in the dark.
               </p>
             </div>
-            <div class="card card-soft">
-              <h3>Automate the boring</h3>
-              <p>
-                Follow-ups, reminders, intake, basic FAQs – handled by automations and
+            <div class="rounded-xl bg-indigo-900/80 p-3 ring-1 ring-indigo-400/40">
+              <p class="font-semibold">Automate the boring</p>
+              <p class="mt-1 text-indigo-100/80">
+                Follow‑ups, reminders, intake, basic FAQs – handled by automations and
                 agents so your team stays on the work that matters.
               </p>
             </div>
-            <div class="card card-soft">
-              <h3>Make revenue obvious</h3>
-              <p>
+            <div class="rounded-xl bg-indigo-900/80 p-3 ring-1 ring-indigo-400/40">
+              <p class="font-semibold">Make revenue obvious</p>
+              <p class="mt-1 text-indigo-100/80">
                 Simple journeys that end in a Stripe checkout you control. No mystery,
                 just a clear path from interest to paid.
               </p>
             </div>
           </div>
 
-          <div class="hero-ctas">
+          <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
             <a
               href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-primary"
+              class="inline-flex items-center justify-center rounded-md bg-slate-50 px-6 py-2.5 text-sm font-semibold text-slate-900 shadow-lg shadow-slate-900/30 transition hover:bg-white"
             >
               Start my system build
             </a>
-            <a href="#plans" class="link-muted">See all packages</a>
+            <a
+              href="#plans"
+              class="text-sm font-medium text-indigo-100 underline-offset-4 hover:text-white hover:underline"
+            >
+              See all packages
+            </a>
           </div>
-          <p class="fine-print">
-            No retainers. You pay once, we ship the system, you own the stack and the
-            playbook.
+          <p class="text-[11px] text-indigo-100/80">
+            No retainers. You pay once, we ship the system, you own the stack and the playbook.
           </p>
         </div>
 
-        <aside class="hero-side card">
-          <p class="eyebrow-small">What happens when we plug in</p>
-          <ul class="bullets">
+        <aside class="w-full flex-1 rounded-2xl bg-indigo-900/90 p-5 text-sm shadow-xl shadow-black/40">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.25em] text-indigo-200">
+            What happens when we plug in
+          </p>
+          <ul class="mt-3 space-y-2 text-xs text-indigo-50">
             <li>Your listings actually match your real hours and offers.</li>
             <li>Leads stop dying in DMs, voicemails, and ignored inboxes.</li>
             <li>People can book, confirm, and pay from a single, simple flow.</li>
@@ -107,13 +118,13 @@
       </section>
 
       <!-- WHO WE ARE -->
-      <section id="who" class="section">
-        <div class="section-inner two-col">
-          <div>
-            <h2>Who we are</h2>
+      <section id="who" class="border-t border-slate-800 bg-slate-950">
+        <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-[1.6fr,1.1fr]">
+          <div class="space-y-4 text-sm text-slate-300">
+            <h2 class="text-xl font-semibold text-slate-50">Who we are</h2>
             <p>
-              Rein N' Solutions combines SaaS, AI agents, and battle-tested playbooks to
-              build repeatable, outcome-focused delivery machines for operators who are
+              Rein N' Solutions combines SaaS, AI agents, and battle‑tested playbooks to
+              build repeatable, outcome‑focused delivery machines for operators who are
               tired of chasing their own tail.
             </p>
             <p>
@@ -122,45 +133,45 @@
               system that keeps working when you’re off the clock.
             </p>
           </div>
-          <div class="card">
-            <h3>Built for operators, not tourists.</h3>
-            <p>
-              If you’re the one who feels it when a lead slips, a shift falls apart, or a
-              customer can’t find you online, this is built for you – not for people who
-              just want a fancy dashboard.
+          <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-4 text-xs text-slate-200">
+            <p class="font-semibold text-slate-50">Built for operators, not tourists.</p>
+            <p class="mt-2 text-slate-400">
+              If you’re the one who feels it when a lead slips, a shift falls apart, or
+              a customer can’t find you online, this is built for you – not for people
+              who just want a fancy dashboard.
             </p>
           </div>
         </div>
       </section>
 
       <!-- WHAT WE FIX -->
-      <section id="fix" class="section section-alt">
-        <div class="section-inner">
-          <header class="section-header">
-            <h2>What we fix first</h2>
-            <p>
+      <section id="fix" class="border-t border-slate-800 bg-slate-950">
+        <div class="mx-auto max-w-6xl px-4 py-12">
+          <div class="mb-6 space-y-2">
+            <h2 class="text-xl font-semibold text-slate-50">What we fix first</h2>
+            <p class="max-w-2xl text-sm text-slate-300">
               We start by finding the money you’re already earning but currently losing,
               then turn that into a simple, trackable flow.
             </p>
-          </header>
-          <div class="three-grid">
-            <div class="card card-soft">
-              <h3>Visibility & trust</h3>
-              <p>
+          </div>
+          <div class="grid gap-4 text-xs text-slate-200 md:grid-cols-3">
+            <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+              <p class="font-semibold">Visibility & trust</p>
+              <p class="mt-1 text-slate-400">
                 Broken listings, old photos, wrong hours, missing reviews – we tighten
                 your public face so people trust clicking through.
               </p>
             </div>
-            <div class="card card-soft">
-              <h3>Lead capture & follow-up</h3>
-              <p>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+              <p class="font-semibold">Lead capture & follow‑up</p>
+              <p class="mt-1 text-slate-400">
                 Instead of “call us and hope”, we add forms, flows, and automations so
                 every interested person lands somewhere you can track.
               </p>
             </div>
-            <div class="card card-soft">
-              <h3>Payment & handoff</h3>
-              <p>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+              <p class="font-semibold">Payment & handoff</p>
+              <p class="mt-1 text-slate-400">
                 We embed clean Stripe checkouts so people can actually pay you online and
                 your team knows exactly what was sold.
               </p>
@@ -170,38 +181,170 @@
       </section>
 
       <!-- PROCESS -->
-      <section id="process" class="section">
-        <div class="section-inner">
-          <header class="section-header">
-            <h2>How it works with us</h2>
-            <p>
+      <section id="process" class="border-t border-slate-800 bg-slate-950">
+        <div class="mx-auto max-w-6xl px-4 py-12">
+          <div class="mb-6 space-y-2">
+            <h2 class="text-xl font-semibold text-slate-50">How it works with us</h2>
+            <p class="max-w-2xl text-sm text-slate-300">
               No 6‑month “discovery”. We move in clear passes so you can show something
               real to partners and customers – not just talk about it.
             </p>
-          </header>
-          <ol class="process-grid">
-            <li class="card card-soft">
-              <p class="step-label">Pass 1</p>
-              <h3>Map the leaks</h3>
-              <p>
+          </div>
+          <ol class="grid gap-4 text-xs text-slate-200 md:grid-cols-4">
+            <li class="rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+              <p class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">Pass 1</p>
+              <p class="mt-1 font-semibold">Map the leaks</p>
+              <p class="mt-1 text-slate-400">
                 We trace your current path from first touch to paid and mark every place
                 leads die or money stalls.
               </p>
             </li>
-            <li class="card card-soft">
-              <p class="step-label">Pass 2</p>
-              <h3>Design the system</h3>
-              <p>
+            <li class="rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+              <p class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">Pass 2</p>
+              <p class="mt-1 font-semibold">Design the system</p>
+              <p class="mt-1 text-slate-400">
                 We sketch the leanest possible journey: how they find you, how they book,
                 and how they pay.
               </p>
             </li>
-            <li class="card card-soft">
-              <p class="step-label">Pass 3</p>
-              <h3>Wire & automate</h3>
-              <p>
+            <li class="rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+              <p class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">Pass 3</p>
+              <p class="mt-1 font-semibold">Wire & automate</p>
+              <p class="mt-1 text-slate-400">
                 We plug in the pages, tools, and automations – including Stripe – and test
                 it end‑to‑end with you.
               </p>
             </li>
-            <li class="card
+            <li class="rounded-xl border border-slate-800 bg-slate-900/80 p-4">
+              <p class="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">Pass 4</p>
+              <p class="mt-1 font-semibold">Hand you the keys</p>
+              <p class="mt-1 text-slate-400">
+                You get the stack, the playbook, and simple tracking so you can run and
+                iterate without us.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PRICING WITH 99 / 399 / 29 -->
+      <section id="plans" class="border-t border-slate-800 bg-slate-950">
+        <div class="mx-auto max-w-6xl px-4 py-14">
+          <div class="mb-8 space-y-2 text-left">
+            <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Choose how deep we go on this build.
+            </h2>
+            <p class="max-w-2xl text-sm text-slate-300">
+              Every option ends with a working system and a Stripe page ready to take
+              payments. Pick what matches where you are today.
+            </p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- Plan 1 -->
+            <div class="flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-sm">
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold text-slate-50">Launch Blueprint</h3>
+                <p class="text-2xl font-bold text-slate-50">$99</p>
+                <p class="text-sm text-slate-300">
+                  One tight system around a single core offer so you have one clean
+                  journey from click to paid.
+                </p>
+                <ul class="space-y-1 text-xs text-slate-400">
+                  <li>• One core offer / journey mapped and built.</li>
+                  <li>• Simple landing + clear CTA to Stripe.</li>
+                  <li>• Basic follow‑up sequence wired.</li>
+                </ul>
+              </div>
+              <a
+                href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center justify-center rounded-md bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-900 transition hover:bg-white"
+              >
+                Choose Launch Blueprint
+              </a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="flex flex-col justify-between rounded-xl border border-indigo-500/70 bg-slate-900 p-5 shadow-md shadow-indigo-500/30">
+              <div class="space-y-3">
+                <p class="inline-flex rounded-full bg-indigo-500/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-indigo-300">
+                  Most popular
+                </p>
+                <h3 class="text-lg font-semibold text-slate-50">Done‑With‑You Build</h3>
+                <p class="text-2xl font-bold text-slate-50">$399</p>
+                <p class="text-sm text-slate-300">
+                  We co‑design the full flow: multiple offers, nurture, and automations
+                  tuned to how you already sell.
+                </p>
+                <ul class="space-y-1 text-xs text-slate-300">
+                  <li>• Funnel map + multi‑step implementation.</li>
+                  <li>• Email / DM follow‑up flows wired.</li>
+                  <li>• Multiple Stripe links embedded and tested.</li>
+                </ul>
+              </div>
+              <a
+                href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center justify-center rounded-md bg-indigo-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-indigo-400"
+              >
+                Choose Done‑With‑You Build
+              </a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-sm">
+              <div class="space-y-3">
+                <h3 class="text-lg font-semibold text-slate-50">Operator Mode</h3>
+                <p class="text-2xl font-bold text-slate-50">$29</p>
+                <p class="text-sm text-slate-300">
+                  For operators who want the whole machine documented so your team can
+                  run the play without you in every conversation.
+                </p>
+                <ul class="space-y-1 text-xs text-slate-400">
+                  <li>• System built across offers and channels.</li>
+                  <li>• SOPs, Looms, and handoff docs.</li>
+                  <li>• Stripe, tracking, and dashboards wired.</li>
+                </ul>
+              </div>
+              <a
+                href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center justify-center rounded-md bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-900 transition hover:bg-white"
+              >
+                Choose Operator Mode
+              </a>
+            </div>
+          </div>
+
+          <p class="mt-6 text-center text-[11px] text-slate-500">
+            Need this tailored to a specific deal you’re walking into right now? Start
+            with any plan and we’ll scope the exact path on the first call.
+          </p>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="border-t border-slate-800 bg-slate-950/95">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-5 text-[11px] text-slate-500 sm:flex-row">
+          <p>
+            © <span id="year"></span> Rein N' Solutions. All systems shipped with receipts.
+          </p>
+          <p class="text-slate-600">
+            Built for operators who are done losing money to chaos.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const el = document.getElementById("year");
+        if (el) el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
