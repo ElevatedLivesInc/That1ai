@@ -1,20 +1,19 @@
-/* Unified style for all Stripe buttons */
-.stripe-button,
-a[href*="buy.stripe.com"],
-button[data-stripe="checkout"] {
-  background-color: #4f46e5;  /* main button color */
-  color: #ffffff;             /* text color */
+/* Plans buttons – dress right dress */
+.plan-button {
+  background-color: #4f46e5;   /* main purple */
+  color: #ffffff;
   border: none;
-  border-radius: 999px;       /* pill shape */
-  padding: 0.75rem 1.5rem;
+  border-radius: 999px;        /* pill */
+  padding: 0.9rem 1.8rem;
   font-weight: 600;
-  cursor: pointer;
+  text-align: center;
   text-decoration: none;
   display: inline-block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
 }
 
-.stripe-button:hover,
-a[href*="buy.stripe.com"]:hover,
-button[data-stripe="checkout"]:hover {
-  background-color: #3730a3;  /* hover color */
+.plan-button:hover {
+  background-color: #3730a3;   /* darker hover */
 }
