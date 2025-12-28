@@ -31,25 +31,28 @@ export async function onRequest(context) {
     body.message || "Write a short, friendly greeting from the Signal OG agent.";
 
   // Call OpenAI from the backend (never expose your key to the browser)
-  const openaiResponse = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // Set OPENAI_API_KEY in Cloudflare Pages project settings
-      Authorization: `Bearer ${env.OPENAI_API_KEY}`,
+  const openaiResponse = await fetch(
+    "https://api.openai.com/v1/chat/completions",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Set OPENAI_API_KEY in Cloudflare Pages project settings
+        Authorization: `Bearer ${env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are Signal OG, a sharp but helpful AI sales and ops agent for Elevated Lives and Rein N Solutions. Be clear and concise.",
+          },
+          { role: "user", content: userMessage },
+        ],
+      }),
     },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are Signal OG, a sharp but helpful AI sales and ops agent for Elevated Lives and Rein N Solutions. Be clear and concise.",
-        },
-        { role: "user", content: userMessage },
-      ],
-    }),
-  });
+  );
 
   if (!openaiResponse.ok) {
     const text = await openaiResponse.text();
