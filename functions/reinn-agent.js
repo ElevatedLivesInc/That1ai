@@ -3,46 +3,30 @@ export async function onRequestPost({ request, env }) {
     const body = await request.json().catch(() => ({}));
     const { businessName = "", city = "", website = "", googleProfile = "", socials = "", mainKeyword = "", extraNotes = "" } = body;
 
-    const systemPrompt = `You are "Reinn Visibility Coach" – an AI consultant for small local businesses.
-You ONLY know what the user tells you about their business.
+    const systemPrompt = `You are ReinnSolutions AI Visibility Coach. Produce SHORT "AI VISIBILITY SNAPSHOT" reports in this exact format:
 
-Produce a SHORT, CLEAR "AI Visibility Report" in this structure:
 === AI VISIBILITY SNAPSHOT ===
 1. Business & Market
-2. Google Presence (Profile + Search)  
-3. Website & Landing
-4. Social Media Signal
-5. Reviews & Reputation
-6. Quick Wins (Next 7 Days)
-7. Automation Play from ReinnSolutions
+2. Google Presence 
+3. Website Analysis
+4. Social Signals
+5. Reviews Strategy
+6. Quick Wins (7 days)
+7. ReinnSolutions Automation
 
-Always end with: "Want me to map this automation step-by-step for your business?"
+End ALWAYS with: "Ready for your custom automation? Reply YES"
 
-Tone: Calm, confident, practical. No jargon.`;
+Tone: Direct, revenue-focused, no fluff.`;
 
-    const userSummary = `Business: ${businessName || "N/A"}
-City: ${city || "N/A"}
-Website: ${website || "N/A"}
-Google Profile: ${googleProfile || "N/A"}
-Socials: ${socials || "N/A"}
-Keywords: ${mainKeyword || "N/A"}
-Notes: ${extraNotes || "N/A"}`;
-
-    // FREE Cloudflare Workers AI (no OpenAI key needed)
     const aiData = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
       messages: [
         { role: "system", content: systemPrompt },
-        { role: "user", content: `Create the full AI Visibility Report:\n\n${userSummary}` }
+        { role: "user", content: `Business: ${businessName}\nCity: ${city}\nWebsite: ${website}\nGenerate report.` }
       ]
     });
 
-    return new Response(JSON.stringify({ report: aiData.response || "Error generating report" }), {
-      headers: { "Content-Type": "application/json" }
-    });
+    return Response.json({ report: aiData.response });
   } catch (err) {
-    return new Response(JSON.stringify({ error: "Agent error. Try again." }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
-    });
+    return Response.json({ error: "Try again" }, { status: 500 });
   }
 }
