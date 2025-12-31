@@ -3,364 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reinn N' Solutions | Automate. Elevate. Dominate.</title>
-    <script src="https://js.stripe.com/v3/"></script>
-    <style>
-        :root {
-            --charcoal: #1a1f24;
-            --copper: #D4A574;
-            --copper-dark: #B8860B;
-            --cream: #F5F5F0;
-            --white: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--charcoal) 0%, #2d3748 50%, #4a5568 100%);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .logo {
-            width: 120px;
-            height: 120px;
-            background-image: url('High-Resolution-Color-Logo.jpeg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: 0 auto 2rem;
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: clamp(4rem, 10vw, 6rem);
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--white) 0%, var(--copper) 70%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
-        }
-
-        .hero .tagline {
-            font-size: clamp(1.3rem, 4vw, 2.2rem);
-            font-weight: 500;
-            color: var(--cream);
-            max-width: 800px;
-            margin: 0 auto 4rem;
-            opacity: 0.95;
-        }
-
-        .cta-card {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(212,165,116,0.25);
-            border-radius: 24px;
-            padding: 4rem 3rem;
-            max-width: 650px;
-            margin: 0 auto;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-
-        .cta-card h2 {
-            font-size: 2.5rem;
-            color: var(--copper);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .cta-card p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2.5rem;
-        }
-
-        /* VALID STRIPE CHECKOUT BUTTONS */
-        .pricing-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .stripe-btn {
-            background: linear-gradient(135deg, var(--copper), var(--copper-dark));
-            color: var(--charcoal) !important;
-            border: none;
-            padding: 1.3rem 2rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            box-shadow: 0 16px 32px rgba(212,165,116,0.4);
-            transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-            position: relative;
-            overflow: hidden;
-            font-family: inherit;
-        }
-
-        .stripe-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 48px rgba(212,165,116,0.5);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 8rem auto;
-            padding: 0 2rem;
-        }
-
-        .feature {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(212,165,116,0.15);
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-            border-color: var(--copper);
-            box-shadow: 0 30px 60px rgba(212,165,116,0.2);
-        }
-
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .feature h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: var(--copper);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 8rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .stat {
-            padding: 2.5rem;
-        }
-
-        .stat-number {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--copper), var(--cream));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .final-cta {
-            text-align: center;
-            padding: 8rem 2rem;
-            background: rgba(26,31,36,0.8);
-            margin: 6rem 0;
-        }
-
-        .final-cta h2 {
-            font-size: clamp(2.5rem, 7vw, 4rem);
-            background: linear-gradient(135deg, var(--copper), var(--cream));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 2rem 2rem;
-            border-top: 1px solid rgba(212,165,116,0.2);
-        }
-
-        .trust-badge {
-            background: rgba(212,165,116,0.15);
-            color: var(--copper);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 1rem;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .logo { animation: float 4s ease-in-out infinite; }
-
-        @media (max-width: 768px) {
-            .pricing-buttons { grid-template-columns: 1fr; }
-            .cta-card { padding: 2.5rem 2rem; margin: 0 1rem; }
-            .features { grid-template-columns: 1fr; }
-        }
-    </style>
+    <title>Rein N' Solutions | AI Integration for Small Business</title>
+    <meta name="description" content="Transform your business with AI automation. $99 AI + Google optimization stack. Get more customers, save time, and dominate your market.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero -->
-    <section class="hero">
-        <div class="logo"></div>
-        <h1>Automate. Elevate. Dominate.</h1>
-        <p class="tagline">We build intelligent automations that turn small business chaos into effortless revenue growth</p>
-        
-        <div class="cta-card">
-            <h2>Ready to stop losing money?</h2>
-            <p>Setup takes 20 minutes. ROI shows up week one.</p>
-            
-            <!-- ✅ VALID STRIPE CHECKOUT BUTTONS - Replace price IDs with yours -->
-            <div class="pricing-buttons">
-                <button class="stripe-btn" id="starter-btn">
-                    Starter $99/mo → 
-                </button>
-                <button class="stripe-btn" id="pro-btn">
-                    Pro $199/mo → 
-                </button>
-                <button class="stripe-btn" id="elite-btn">
-                    Elite $399/mo → 
-                </button>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">Rein N' Solutions</div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#proof">Results</a>
+                    <a href="#cta" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Stop Losing Customers to <span class="gradient-text">Outdated Systems</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Rein N' Solutions transforms your business with AI automation and Google optimization. 
+                    Get more customers, save 20+ hours/week, and crush your competition.
+                </p>
+                <div class="hero-cta">
+                    <a href="#cta" class="btn btn-primary">Start $99/mo</a>
+                    <a href="#features" class="btn btn-secondary">See How It Works</a>
+                </div>
             </div>
-            
-            <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 2rem;">
-                No credit card required. Cancel anytime. White-glove setup included.
-            </p>
-            <div class="trust-badge">47+ Winston-Salem businesses automated</div>
         </div>
-    </section>
+    </header>
 
     <!-- Features -->
-    <section class="features">
-        <div class="feature">
-            <span class="feature-icon">🚀</span>
-            <h3>Instant Lead Capture</h3>
-            <p>Every inquiry, form submission, and missed call gets captured and followed up automatically—24/7.</p>
-        </div>
-        <div class="feature">
-            <span class="feature-icon">📱</span>
-            <h3>Smart Reminders</h3>
-            <p>Text + email reminders slash no-shows by 40%+. Clients show up, revenue flows.</p>
-        </div>
-        <div class="feature">
-            <span class="feature-icon">💰</span>
-            <h3>Frictionless Payments</h3>
-            <p>Stripe deposits, automated invoicing, and payment links that convert browsers to buyers.</p>
-        </div>
-        <div class="feature">
-            <span class="feature-icon">⚡</span>
-            <h3>20-Min Setup</h3>
-            <p>Connects to your existing tools. No coding. No migration headaches. Live in one call.</p>
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need to Dominate Your Market</h2>
+                <p>AI + Google stack built for small businesses</p>
+            </div>
+            <!-- Feature cards here -->
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="stats-grid">
-        <div class="stat">
-            <span class="stat-number">40%</span>
-            <p>No-shows eliminated</p>
-        </div>
-        <div class="stat">
-            <span class="stat-number">30%</span>
-            <p>More repeat revenue</p>
-        </div>
-        <div class="stat">
-            <span class="stat-number">10h</span>
-            <p>Hours saved weekly</p>
-        </div>
-        <div class="stat">
-            <span class="stat-number">Week 1</span>
-            <p>ROI timeline</p>
+    <!-- Proof Section -->
+    <section id="proof" class="proof-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Small Businesses Love Rein N' Solutions</h2>
+                <p>Real results from businesses like yours</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Doubled Google reviews in 30 days. Foot traffic up 40%."</p>
+                    <div class="author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <div class="author-name">Mike Rodriguez</div>
+                            <div class="author-business">HVAC Repair, Charlotte NC</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"AI handles my scheduling now. Saved 15 hours/week."</p>
+                    <div class="author">
+                        <div class="author-avatar">SC</div>
+                        <div>
+                            <div class="author-name">Sarah Chen</div>
+                            <div class="author-business">Salon Owner, Raleigh NC</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"From page 3 to Map Pack #1. Customers found us."</p>
+                    <div class="author">
+                        <div class="author-avatar">DW</div>
+                        <div>
+                            <div class="author-name">David Williams</div>
+                            <div class="author-business">Contractor, Durham NC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <h2>Ready to dominate?</h2>
-        <p style="font-size: 1.4rem; opacity: 0.9; max-width: 700px; margin: 0 auto 3rem;">
-            Join the 47 businesses already automating their growth with Reinn N' Solutions.
-        </p>
-        <div class="pricing-buttons" style="max-width: 900px; margin: 0 auto;">
-            <button class="stripe-btn" id="starter-btn-mobile">Starter $99/mo →</button>
-            <button class="stripe-btn" id="pro-btn-mobile">Pro $199/mo →</button>
-            <button class="stripe-btn" id="elite-btn-mobile">Elite $399/mo →</button>
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>Ready to Stop Losing Money?</h2>
+            <p>Get your AI + Google stack live in 7 days</p>
+            <a href="mailto:gabriel@elevatedlivesinc.com?subject=Rein N' Solutions Demo" class="btn btn-primary btn-large">Book Demo Call</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="logo" style="width: 80px; height: 80px;"></div>
-        <p>© 2025 Reinn N' Solutions. All rights reserved.</p>
-        <p style="opacity: 0.7; font-size: 0.95rem;">Built for entrepreneurs, by entrepreneurs. Winston-Salem, NC.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Rein N' Solutions</h3>
+                    <p>AI Integration for Small Business</p>
+                </div>
+                <div class="footer-contact">
+                    <p>📧 gabriel@elevatedlivesinc.com</p>
+                    <p>📍 North Carolina</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rein N' Solutions. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-
-    <script>
-        // ✅ VALID STRIPE CHECKOUT INTEGRATION
-        const stripe = Stripe('pk_test_51R3zqX2KX0zqX2KX0zqX2KX0zqX2KX0zqX2KX'); // REPLACE WITH YOUR PK
-
-        // Replace these PRICE IDs from your Stripe Dashboard > Products
-        const prices = {
-            starter: 'price_1234567890abcdef',  // Your Starter $99/mo price ID
-            pro: 'price_abcdef1234567890',      // Your Pro $199/mo price ID  
-            elite: 'price_7890abcdef123456'     // Your Elite $399/mo price ID
-        };
-
-        async function createCheckoutSession(priceId) {
-            const response = await fetch('/create-checkout-session', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ priceId })
-            });
-            const session = await response.json();
-            return stripe.redirectToCheckout({ sessionId: session.id });
-        }
-
-        // Button event listeners
-        document.querySelectorAll('#starter-btn, #starter-btn-mobile').forEach(btn => {
-            btn.addEventListener('click', () => createCheckoutSession(prices.starter));
-        });
-        document.querySelectorAll('#pro-btn, #pro-btn-mobile').forEach(btn => {
-            btn.addEventListener('click', () => createCheckoutSession(prices.pro));
-        });
-        document.querySelectorAll('#elite-btn, #elite-btn-mobile').forEach(btn => {
-            btn.addEventListener('click', () => createCheckoutSession(prices.elite));
-        });
-    </script>
 </body>
 </html>
