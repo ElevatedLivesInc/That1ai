@@ -1,424 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>ReinnSolutions · AI Visibility Report</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <meta
-      name="description"
-      content="Reinn Agent turns your basic business info into a short AI Visibility Report for Google, your site, socials, and reviews."
-    />
-    <style>
-      :root {
-        --bg: #020617;
-        --bg-card: #020819;
-        --accent: #38bdf8;
-        --accent2: #22c55e;
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --border: #1f2937;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Visibility Report - ReinnSolutions</title>
+  <style> /* Same styles as index.html */ </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Visibility Report</h1>
+    <form id="businessForm">
+      <input type="text" id="businessName" placeholder="Business name" required>
+      <input type="text" id="city" placeholder="City/Region" required>
+      <input type="url" id="website" placeholder="Website (optional)">
+      <input type="url" id="googleProfile" placeholder="Google Profile (optional)">
+      <input type="text" id="mainKeyword" placeholder="Main keyword">
+      <textarea id="extraNotes" placeholder="Current struggles..."></textarea>
+      <button type="submit" class="btn btn-primary">Generate Report</button>
+    </form>
+    <div id="report" style="margin-top: 2rem; white-space: pre-wrap;"></div>
+  </div>
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        min-height: 100vh;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top, #020617 0%, #000 65%);
-        color: var(--text);
-        display: flex;
-        flex-direction: column;
-      }
-
-      .shell {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 2rem 1.5rem 3rem;
-        flex: 1;
-      }
-
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1.6rem;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-
-      .brand-mark {
-        width: 30px;
-        height: 30px;
-        border-radius: 999px;
-        padding: 2px;
-        background: conic-gradient(
-          from 160deg,
-          #38bdf8,
-          #22c55e,
-          #a855f7,
-          #38bdf8
-        );
-      }
-
-      .brand-inner {
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        background: #020617;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.7rem;
-        font-weight: 600;
-        color: var(--accent);
-        letter-spacing: 0.06em;
-      }
-
-      .brand-text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
-      }
-
-      .brand-text span:first-child {
-        font-size: 0.95rem;
-        font-weight: 600;
-      }
-
-      .brand-text span:last-child {
-        font-size: 0.78rem;
-        color: var(--muted);
-      }
-
-      a.back-link {
-        font-size: 0.78rem;
-        color: var(--muted);
-        text-decoration: none;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0.26rem 0.7rem;
-        border-radius: 999px;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        font-size: 0.75rem;
-        color: var(--muted);
-        margin-bottom: 0.7rem;
-      }
-
-      .pill-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 999px;
-        background: #22c55e;
-        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.28);
-      }
-
-      .layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
-        gap: 1.8rem;
-        align-items: flex-start;
-      }
-
-      @media (max-width: 880px) {
-        .layout {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .left h1 {
-        font-size: 1.6rem;
-        margin-bottom: 0.6rem;
-      }
-
-      .left p {
-        font-size: 0.9rem;
-        color: var(--muted);
-        margin-bottom: 1rem;
-      }
-
-      .card {
-        background: radial-gradient(circle at top left, #020a1a 0, #020617 60%);
-        border-radius: 18px;
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        padding: 1.2rem 1.2rem 1.3rem;
-        box-shadow:
-          0 18px 45px rgba(15, 23, 42, 0.92),
-          0 0 0 1px rgba(15, 23, 42, 1);
-        font-size: 0.82rem;
-      }
-
-      label {
-        display: block;
-        font-size: 0.78rem;
-        color: var(--muted);
-        margin-bottom: 0.25rem;
-      }
-
-      .field {
-        width: 100%;
-        border-radius: 10px;
-        border: 1px solid rgba(51, 65, 85, 1);
-        background: rgba(15, 23, 42, 0.96);
-        color: var(--text);
-        padding: 0.45rem 0.7rem;
-        font-size: 0.84rem;
-        outline: none;
-        margin-bottom: 0.7rem;
-      }
-
-      .field::placeholder {
-        color: #4b5563;
-      }
-
-      textarea.field {
-        min-height: 70px;
-        resize: vertical;
-      }
-
-      .btn-primary {
-        padding: 0.48rem 1.15rem;
-        border-radius: 999px;
-        border: none;
-        background: linear-gradient(135deg, #38bdf8, #22c55e);
-        color: #020617;
-        font-size: 0.86rem;
-        font-weight: 600;
-        cursor: pointer;
-        white-space: nowrap;
-        box-shadow:
-          0 10px 30px rgba(56, 189, 248, 0.5),
-          0 0 0 1px rgba(15, 23, 42, 1);
-      }
-
-      .btn-primary:disabled {
-        opacity: 0.6;
-        cursor: default;
-        box-shadow:
-          0 6px 18px rgba(15, 23, 42, 0.9),
-          0 0 0 1px rgba(15, 23, 42, 1);
-      }
-
-      .hint {
-        font-size: 0.78rem;
-        color: var(--muted);
-        margin-left: 0.7rem;
-      }
-
-      .report-card {
-        white-space: pre-wrap;
-        font-size: 0.82rem;
-        line-height: 1.5;
-      }
-
-      .report-placeholder {
-        font-size: 0.84rem;
-        color: var(--muted);
-      }
-
-      footer {
-        padding: 1rem 1.5rem 1.4rem;
-        font-size: 0.78rem;
-        color: var(--muted);
-        text-align: center;
-        border-top: 1px solid rgba(15, 23, 42, 1);
-        background: radial-gradient(circle at top, #020617, #000 65%);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="shell">
-      <header>
-        <div class="brand">
-          <div class="brand-mark">
-            <div class="brand-inner">R</div>
-          </div>
-          <div class="brand-text">
-            <span>ReinnSolutions</span>
-            <span>AI Visibility & Automation</span>
-          </div>
-        </div>
-        <a class="back-link" href="/">← Back to main site</a>
-      </header>
-
-      <div class="pill">
-        <span class="pill-dot"></span>
-        <span>Reinn Agent · AI Visibility Report</span>
-      </div>
-
-      <div class="layout">
-        <section class="left">
-          <h1>Your business, made visible.</h1>
-          <p>
-            Fill in what you can. Reinn Agent will turn this into a short
-            visibility snapshot across Google, your site, socials, and reviews,
-            plus one automation play you could run this month.
-          </p>
-
-          <div class="card">
-            <label for="businessName">Business name</label>
-            <input
-              id="businessName"
-              class="field"
-              type="text"
-              placeholder="Ocean Arcade, Quality Inn, GoodFellas..."
-            />
-
-            <label for="city">City / region</label>
-            <input
-              id="city"
-              class="field"
-              type="text"
-              placeholder="Winston‑Salem, NC"
-            />
-
-            <label for="website">Website</label>
-            <input
-              id="website"
-              class="field"
-              type="text"
-              placeholder="https://your‑site.com"
-            />
-
-            <label for="googleProfile">Google Business Profile link</label>
-            <input
-              id="googleProfile"
-              class="field"
-              type="text"
-              placeholder="Paste your Google Maps / Search listing link, if you have it"
-            />
-
-            <label for="socials">Key social links</label>
-            <input
-              id="socials"
-              class="field"
-              type="text"
-              placeholder="Instagram, TikTok, Facebook, etc."
-            />
-
-            <label for="keyword">Main keyword you want to rank for</label>
-            <input
-              id="keyword"
-              class="field"
-              type="text"
-              placeholder="“arcade near me”, “hotel near university”, “vape shop Winston‑Salem”"
-            />
-
-            <label for="notes">Extra notes (optional)</label>
-            <textarea
-              id="notes"
-              class="field"
-              placeholder="What feels like your biggest leak right now? Empty nights, no reviews, dead socials, etc."
-            ></textarea>
-
-            <div style="margin-top: 0.5rem;">
-              <button id="runButton" class="btn-primary" type="button">
-                Get my AI visibility report
-              </button>
-              <span class="hint">
-                Takes ~5–10 seconds. No scraping — just AI + Reinn’s playbook.
-              </span>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="card">
-            <h2>AI Visibility Report</h2>
-            <p class="hint">
-              Your report appears here. You can copy/paste it into email, a
-              pitch deck, or your own notes.
-            </p>
-            <div id="reportBox" class="report-card" style="margin-top: 0.8rem;">
-              <div class="report-placeholder">
-                Fill in your details on the left and click “Get my AI visibility
-                report”.
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <footer>
-      ReinnSolutions · 30‑Day Google & Reviews Lift ·
-      gabriel@elevatedlivesinc.com
-    </footer>
-
-    <script>
-      const runButton = document.getElementById("runButton");
-      const reportBox = document.getElementById("reportBox");
-
-      async function runReport() {
-        const businessName = document.getElementById("businessName").value.trim();
-        const city = document.getElementById("city").value.trim();
-        const website = document.getElementById("website").value.trim();
-        const googleProfile =
-          document.getElementById("googleProfile").value.trim();
-        const socials = document.getElementById("socials").value.trim();
-        const mainKeyword = document.getElementById("keyword").value.trim();
-        const extraNotes = document.getElementById("notes").value.trim();
-
-        if (!businessName || !city) {
-          reportBox.textContent =
-            "Please at least fill in your business name and city so Reinn Agent has a starting point.";
-          return;
-        }
-
-        runButton.disabled = true;
-        runButton.textContent = "Generating...";
-        reportBox.textContent = "Reinn Agent is mapping your visibility...";
-
-        try {
-          const res = await fetch("/reinn-agent", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              businessName,
-              city,
-              website,
-              googleProfile,
-              socials,
-              mainKeyword,
-              extraNotes,
-            }),
-          });
-
-          if (!res.ok) throw new Error("HTTP error");
-
-          const data = await res.json();
-          const text =
-            data.report ||
-            "Something broke on the agent side. Try again in a minute.";
-
-          reportBox.textContent = text;
-        } catch (err) {
-          console.error(err);
-          reportBox.textContent =
-            "Connection glitch. Refresh the page and try again.";
-        } finally {
-          runButton.disabled = false;
-          runButton.textContent = "Get my AI visibility report";
-        }
-      }
-
-      runButton.addEventListener("click", runReport);
-    </script>
-  </body>
+  <script>
+    document.getElementById('businessForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = {
+        businessName: document.getElementById('businessName').value,
+        city: document.getElementById('city').value,
+        website: document.getElementById('website').value,
+        googleProfile: document.getElementById('googleProfile').value,
+        mainKeyword: document.getElementById('mainKeyword').value,
+        extraNotes: document.getElementById('extraNotes').value,
+      };
+      
+      const response = await fetch('/reinn-agent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const data = await response.json();
+      document.getElementById('report').textContent = data.report || data.error;
+    });
+  </script>
+</body>
 </html>
