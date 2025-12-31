@@ -1,19 +1,114 @@
-/* Plans buttons – dress right dress */
-.plan-button {
-  background-color: #4f46e5;   /* main purple */
-  color: #ffffff;
-  border: none;
-  border-radius: 999px;        /* pill */
-  padding: 0.9rem 1.8rem;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-  max-width: 260px;
-  margin: 0 auto;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --blur: blur(20px);
+  --glow: 0 0 30px rgba(0, 212, 255, 0.5);
+  --shadow-neum: 8px 8px 16px rgba(0,0,0,0.1), -8px -8px 16px rgba(255,255,255,0.1);
 }
 
-.plan-button:hover {
-  background-color: #3730a3;   /* darker hover */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0c0c1a 0%, #1a0d2e 50%, #0f0f23 100%);
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glow), var(--shadow-neum);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255,119,198,0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(120,219,255,0.3) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+.container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 2; }
+
+.h1-gradient {
+  background: linear-gradient(135deg, #00d4ff 0%, #ff6b9d 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 20px rgba(0,212,255,0.5)); }
+  to { filter: drop-shadow(0 0 30px rgba(255,107,157,0.5)); }
+}
+
+.btn-neum {
+  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 1.2rem 2.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-neum);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-neum::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s;
+}
+
+.btn-neum:hover::before { left: 100%; }
+.btn-neum:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,212,255,0.3), var(--shadow-neum);
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+
+.card-glass {
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+}
+
+.card-glass:hover {
+  transform: translateY(-12px) rotateX(5deg);
+  box-shadow: 0 30px 60px rgba(0,212,255,0.2);
 }
