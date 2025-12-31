@@ -1,147 +1,48 @@
-// functions/reinn-agent.js
-// Cloudflare Pages Function that talks to OpenAI
+export async function onRequestPost({ request, env }) {
+  try {
+    const body = await request.json().catch(() => ({}));
+    const { businessName = "", city = "", website = "", googleProfile = "", socials = "", mainKeyword = "", extraNotes = "" } = body;
 
-export async function onRequest(context) {
-  const { request, env } = context;
+    const systemPrompt = `You are "Reinn Visibility Coach" – an AI consultant for small local businesses.
+You ONLY know what the user tells you about their business.
 
-  // If someone just opens /reinn-agent in a browser, show a simple status
-  if (request.method !== "POST") {
-    const info = {
-      ok: true,
-      agent: "Signal OG",
-      message: "Send a POST with { message: \"...\" } to talk to OpenAI.",
-      timestamp: new Date().toISOString(),
-    };
+Produce a SHORT, CLEAR "AI Visibility Report" in this structure:
+=== AI VISIBILITY SNAPSHOT ===
+1. Business & Market
+2. Google Presence (Profile + Search)  
+3. Website & Landing
+4. Social Media Signal
+5. Reviews & Reputation
+6. Quick Wins (Next 7 Days)
+7. Automation Play from ReinnSolutions
 
-    return new Response(JSON.stringify(info, null, 2), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
+Always end with: "Want me to map this automation step-by-step for your business?"
+
+Tone: Calm, confident, practical. No jargon.`;
+
+    const userSummary = `Business: ${businessName || "N/A"}
+City: ${city || "N/A"}
+Website: ${website || "N/A"}
+Google Profile: ${googleProfile || "N/A"}
+Socials: ${socials || "N/A"}
+Keywords: ${mainKeyword || "N/A"}
+Notes: ${extraNotes || "N/A"}`;
+
+    // FREE Cloudflare Workers AI (no OpenAI key needed)
+    const aiData = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: `Create the full AI Visibility Report:\n\n${userSummary}` }
+      ]
+    });
+
+    return new Response(JSON.stringify({ report: aiData.response || "Error generating report" }), {
+      headers: { "Content-Type": "application/json" }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: "Agent error. Try again." }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
     });
   }
-
-  // Try to read JSON body from the request
-  let body = {};
-  try {
-    body = await request.json();
-  } catch (e) {
-    // ignore, will fall back to default prompt
-  }
-
-  const userMessage =
-    body.message || "Write a short, friendly greeting from the Signal OG agent.";
-
-  // Call OpenAI from the backend (never expose your key to the browser)
-  const openaiResponse = await fetch(
-    "https://api.openai.com/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // Set OPENAI_API_KEY in Cloudflare Pages project settings
-        Authorization: `Bearer ${env.OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          {
-            role: "system",
-            content:
-              "You are Signal OG, a sharp but helpful AI sales and ops agent for Elevated Lives and Rein N Solutions. Be clear and concise.",
-          },
-          { role: "user", content: userMessage },
-        ],
-      }),
-    },
-  );
-
-  if (!openaiResponse.ok) {
-    const text = await openaiResponse.text();
-    return new Response(
-      JSON.stringify(
-        {
-          ok: false,
-          error: "OpenAI API error",
-          status: openaiResponse.status,
-          body: text,
-        },
-        null,
-        2,
-      ),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      },
-    );
-  }
-
-  const data = await openaiResponse.json();
-  const reply = data.choices?.[0]?.message?.content || "";
-
-  return new Response(
-    JSON.stringify(
-      {
-        ok: true,
-        agent: "Signal OG",
-        reply,
-      },
-      null,
-      2,
-    ),
-    {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    },
-  );
 }
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: radial-gradient(circle at center, #ff00ff, #000000);
-      transition: background 0.1s linear;
-      overflow: hidden;
-      font-family: sans-serif;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
-</head>
-<body>
-  <div>listening to you…</div>
-  <script>
-    async function start() {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      const source = audioCtx.createMediaStreamSource(stream);
-      const analyser = audioCtx.createAnalyser();
-      analyser.fftSize = 256;
-      source.connect(analyser);
-
-      const data = new Uint8Array(analyser.frequencyBinCount);
-
-      function tick() {
-        analyser.getByteFrequencyData(data);
-        const level = data.reduce((a, v) => a + v, 0) / data.length;
-        const intensity = Math.min(level / 255, 1);
-        const hue = 200 + intensity * 160; // blue → magenta
-        const glow = 10 + intensity * 40;
-
-        document.body.style.background =
-          `radial-gradient(circle at center,
-             hsl(${hue}, 90%, ${40 + intensity * 20}%),
-             #000000 ${glow}%)`;
-
-        requestAnimationFrame(tick);
-      }
-      tick();
-    }
-    start();
-  </script>
-</body>
-</html>
