@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rein N' Solutions | AI Automation for Small Business</title>
-    <meta name="description" content="$99 = One automation that earns your money back. Then we grow you. NC small business automation.">
+    <title>Rein N' Solutions | AI + Google Automation</title>
+    <meta name="description" content="$99 Google automation that pays for itself. Map Pack #1 + revenue systems for NC small business.">
     <style>
         :root {
             --primary: #d4a574;
+            --google-blue: #4285F4;
             --dark-bg: #0f172a;
             --darker-bg: #020617;
             --card-bg: #1e293b;
@@ -32,11 +33,8 @@
         }
         .nav-logo { height: 42px; width: auto; filter: drop-shadow(0 0 10px rgba(212,165,116,0.5)); }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { 
-            color: var(--text-secondary); text-decoration: none; 
-            font-size: 0.95rem; transition: color 0.3s; 
-        }
-        .nav-links a:hover, .nav-links .btn-primary { color: var(--dark-bg); }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
         .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
         .hamburger span { width: 25px; height: 3px; background: var(--primary); border-radius: 2px; }
         .hero {
@@ -48,6 +46,10 @@
             background: linear-gradient(135deg, var(--primary) 0%, #e8c9a0 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .google-highlight {
+            background: linear-gradient(135deg, var(--google-blue) 0%, #34a853 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
         .hero-subtitle { font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
         .hero-cta { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
         .btn {
@@ -57,6 +59,8 @@
         }
         .btn-primary { background: var(--primary); color: var(--dark-bg); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(212,165,116,0.4); }
+        .btn-google { background: var(--google-blue); color: white; }
+        .btn-google:hover { background: #3367d6; transform: translateY(-3px); box-shadow: 0 20px 40px rgba(66,133,244,0.4); }
         .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
         .btn-secondary:hover { background: var(--primary); color: var(--dark-bg); }
         .features-section, .testimonial-section { padding: 7rem 0; }
@@ -69,6 +73,10 @@
             border-left: 5px solid var(--primary); transition: all 0.4s;
             animation: float 6s ease-in-out infinite;
         }
+        .feature-card.google-card {
+            border-left: 5px solid var(--google-blue);
+            background: linear-gradient(135deg, rgba(66,133,244,0.1) 0%, var(--card-bg) 50%);
+        }
         .feature-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 25px 50px rgba(212,165,116,0.25);
@@ -76,6 +84,11 @@
         @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
         .feature-icon { font-size: 3rem; margin-bottom: 1.25rem; }
         .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary); }
+        .google-badge {
+            display: inline-block; background: var(--google-blue); color: white;
+            padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+            font-weight: 700; margin-bottom: 1rem;
+        }
         .pricing-section {
             padding: 8rem 0; background: linear-gradient(135deg, rgba(212,165,116,0.08) 0%, transparent 100%);
         }
@@ -127,6 +140,14 @@
             background: var(--card-bg); border-radius: 1.5rem; border-left: 5px solid var(--primary);
             padding: 2.5rem; margin-top: 3rem; text-align: center; max-width: 500px; margin-left: auto; margin-right: auto;
         }
+        .google-stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem; margin: 3rem 0; background: var(--card-bg);
+            padding: 2rem; border-radius: 1rem; border-left: 5px solid var(--google-blue);
+        }
+        .stat { text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--google-blue); }
+        .stat-label { color: var(--text-secondary); font-size: 0.95rem; }
         footer {
             background: var(--darker-bg); padding: 4rem 0 2rem;
             border-top: 1px solid rgba(212,165,116,0.2);
@@ -143,6 +164,7 @@
             .hero-cta { flex-direction: column; }
             .btn { width: 100%; }
             .pricing-card.featured { transform: scale(1); }
+            .google-stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -163,41 +185,59 @@
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero - GOOGLE EMPHASIZED -->
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">
-                <span class="gradient-text">$99 = One Automation</span><br>
-                Earn Your Money Back First Month
+                <span class="gradient-text">$99 Google Automation</span><br>
+                Map Pack #1 + Revenue Guaranteed
             </h1>
             <p class="hero-subtitle">
-                We start where you are → make you visible → grow from there. 
-                <strong>$99 builds your first revenue automation (one-time). Scale after it proves ROI.</strong>
+                Invisible on Google? We fix it → <span class="google-highlight">Page 1 Maps + 50+ reviews/mo</span> → 
+                customers find you. <strong>$99 = Your first revenue system (one-time).</strong>
             </p>
             <div class="hero-cta">
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 First Automation → Live in 48hr</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary" target="_blank">Book Strategy Call</a>
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 Google Automation →</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" target="_blank">Google Audit Call</a>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
+    <!-- Google Stats Row -->
+    <section class="google-stats" style="margin-top: -4rem;">
+        <div class="stat">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Local customers use Google Maps</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">73%</div>
+            <div class="stat-label">Choose Map Pack #1-3</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">Page 1</div>
+            <div class="stat-label">Guaranteed or money back</div>
+        </div>
+    </section>
+
+    <!-- Features - GOOGLE FEATURE #1 -->
     <section id="features" class="features-section">
         <div class="container">
             <div class="section-header">
-                <h2>Complete Revenue System</h2>
-                <p>Invisible → Visible → Profitable. We build every piece.</p>
+                <h2>Google-First Revenue Stack</h2>
+                <p>We own Maps + AI + Email. You get customers.</p>
             </div>
             <div class="features-grid">
+                <div class="feature-card google-card">
+                    <span class="google-badge">MAPS DOMINATION</span>
+                    <div class="feature-icon">📍</div>
+                    <h3>Google Map Pack #1</h3>
+                    <p><strong>Page 1 Maps guaranteed.</strong> 50+ reviews/month auto-generated. 
+                    Real-time ranking tracking. Competitors crushed.</p>
+                </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <h3>AI Revenue Automation</h3>
                     <p>24/7 AI answers calls/emails, books appointments, qualifies leads. Handles 80% of routine work.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <h3>Google Map Pack #1</h3>
-                    <p>Page 1 Maps ranking. 50+ reviews/month. Real-time ROI tracking. Beat every local competitor.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📧</div>
@@ -207,17 +247,17 @@
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>Live Revenue Dashboard</h3>
-                    <p>Customer acquisition cost, LTV, pipeline health. Know exactly what's working every day.</p>
+                    <p>Customer acquisition cost, LTV, Maps ranking, pipeline health. Know what's working daily.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>48hr Done-For-You</h3>
-                    <p>No coding required. Our team builds everything. Live training + 30-day performance guarantee.</p>
+                    <p>No coding. Our team builds everything. Live training + 30-day Page 1 guarantee.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h3>Never Miss a Lead</h3>
-                    <p>AI chat captures leads 24/7. Hot prospects routed instantly to your inbox.</p>
+                    <p>AI chat captures Google traffic 24/7. Hot prospects routed instantly.</p>
                 </div>
             </div>
         </div>
@@ -227,54 +267,54 @@
     <section id="pricing" class="pricing-section">
         <div class="container">
             <div class="section-header">
-                <h2>Invisible → Visible → Scale</h2>
-                <p>$99 proves ROI first. Then we grow you. 30-day money back guarantee.</p>
+                <h2>Get Found on Google → Scale</h2>
+                <p>$99 proves Maps ROI first. 30-day Page 1 guarantee.</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Resources</h3>
+                    <h3>Google Resources</h3>
                     <div class="price">$29</div>
                     <div class="price-desc">one-time</div>
                     <ul class="feature-list">
-                        <li>AI Visibility Audit</li>
-                        <li>Google Optimization Guide</li>
-                        <li>Revenue Leak Checklist</li>
+                        <li>Maps Audit Tool</li>
+                        <li>Review System Guide</li>
+                        <li>Local SEO Checklist</li>
                         <li>Setup Templates</li>
                     </ul>
-                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary" style="width:100%;" target="_blank">Get Resources $29 →</a>
+                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary" style="width:100%;" target="_blank">$29 Google Resources →</a>
                 </div>
                 <div class="pricing-card featured">
-                    <h3>First Automation</h3>
+                    <h3>Google Automation</h3>
                     <div class="price">$99</div>
                     <div class="price-desc">one-time</div>
                     <p style="color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem;">
-                        <strong>Earn it back month 1</strong><br>
-                        We find your biggest revenue leak → build the fix → you get customers
+                        <strong>Page 1 Maps Month 1</strong><br>
+                        Maps domination + 1 revenue automation
                     </p>
                     <ul class="feature-list">
-                        <li>Deep revenue audit</li>
+                        <li>Google Maps Page 1 guarantee</li>
+                        <li>50+ reviews/month system</li>
                         <li>One core automation built</li>
-                        <li>Google Maps optimization</li>
                         <li>48hr live setup</li>
                         <li>30-day performance guarantee</li>
                     </ul>
-                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%;" target="_blank">$99 → Build My First Automation</a>
+                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%;" target="_blank">$99 → Get Map Pack #1</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>Full Growth</h3>
+                    <h3>Full Revenue System</h3>
                     <div class="price">$399</div>
                     <div class="price-desc">/month</div>
                     <p style="color:var(--text-secondary); margin-bottom:2rem;">
-                        Scale after $99 proves results
+                        Maps #1 + Complete Automation
                     </p>
                     <ul class="feature-list">
-                        <li>Everything in $99</li>
+                        <li>Maps domination maintained</li>
                         <li>5+ revenue automations</li>
-                        <li>Complete Google domination</li>
+                        <li>AI call/email handling</li>
                         <li>Monthly strategy calls</li>
-                        <li>Priority implementation</li>
+                        <li>Priority support</li>
                     </ul>
-                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%;" target="_blank">$399/mo → Full Growth</a>
+                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%;" target="_blank">$399/mo → Full System</a>
                 </div>
             </div>
         </div>
@@ -284,13 +324,13 @@
     <section id="proof" class="testimonial-section">
         <div class="container">
             <div class="section-header">
-                <h2>NC Businesses Getting Results</h2>
-                <p>Real customers using this exact system</p>
+                <h2>NC Businesses Ranking #1</h2>
+                <p>Real Google Maps results from this system</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Page 3 → Map Pack #1 in 45 days. Foot traffic doubled. Paid for itself month 1."</p>
+                    <p>"Page 3 → <strong>Map Pack #1</strong> in 45 days. Foot traffic 2x. Paid for itself month 1."</p>
                     <div class="author">
                         <div class="author-avatar">MR</div>
                         <div>
@@ -301,7 +341,7 @@
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"AI handles calls 24/7. Saved 18 hours/week. Clients think I have full staff."</p>
+                    <p>"Google calls handled by AI 24/7. Saved 18 hours/week. Now getting 20+ leads/week."</p>
                     <div class="author">
                         <div class="author-avatar">SC</div>
                         <div>
@@ -312,7 +352,7 @@
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Email automation recovered $8K lost sales first month. Instant ROI."</p>
+                    <p>"Maps #1 + email automation = $8K recovered sales month 1. Instant ROI."</p>
                     <div class="author">
                         <div class="author-avatar">DW</div>
                         <div>
@@ -325,19 +365,19 @@
         </div>
     </section>
 
-    <!-- CTA - CALENDLY + STRIPE LIVE -->
+    <!-- CTA -->
     <section id="cta" class="cta-section">
         <div class="container">
-            <h2>Ready to Get Visible?</h2>
-            <p>$99 = One automation that pays for itself. Live in 48 hours. Book a call or get started now.</p>
+            <h2>Page 1 Google Maps Guaranteed</h2>
+            <p>$99 = Map Pack domination that pays for itself. Live in 48 hours.</p>
             <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">$99 First Automation →</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">Book Strategy Call</a>
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">$99 Map Pack #1 →</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">Free Maps Audit</a>
             </div>
             <div class="audit-card">
-                <h3 style="color:var(--primary);">🚀 Free Revenue Audit</h3>
-                <p style="color:var(--text-secondary);">Find your biggest revenue leak in 60 seconds</p>
-                <a href="mailto:gabriel@elevatedlivesinc.com?subject=Free%20Revenue%20Audit" class="btn btn-primary" style="width:100%;">Get My Free Audit →</a>
+                <h3 style="color:var(--primary);">📊 Instant Maps Audit</h3>
+                <p style="color:var(--text-secondary);">See your current ranking + revenue opportunity in 60 seconds</p>
+                <a href="mailto:gabriel@elevatedlivesinc.com?subject=Maps%20Audit" class="btn btn-primary" style="width:100%;">Send My Maps Report →</a>
             </div>
         </div>
     </section>
@@ -348,7 +388,7 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem; margin-bottom:2rem;">
                 <div>
                     <h3 style="color:var(--primary); margin-bottom:1rem;">Rein N' Solutions</h3>
-                    <p style="color:var(--text-secondary);">We find your revenue leaks → build the fix → scale your growth. NC small business.</p>
+                    <p style="color:var(--text-secondary);">Google Maps domination + AI revenue systems for NC small business.</p>
                 </div>
                 <div>
                     <h4 style="color:var(--primary); margin-bottom:1rem;">Contact</h4>
@@ -358,13 +398,12 @@
                 </div>
             </div>
             <div style="text-align:center; padding-top:2rem; border-top:1px solid rgba(212,165,116,0.2); color:var(--text-muted); font-size:0.9rem;">
-                © 2025 Rein N' Solutions. All rights reserved.
+                © 2025 Rein N' Solutions. Page 1 Maps guaranteed.
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
