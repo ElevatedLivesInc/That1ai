@@ -3,97 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rein N' Solutions | Google Optimization + AI Automation That Pays For Itself in Weeks</title>
-    <meta name="description" content="$99 Starter → $399 Full Stack Revenue System → $29/mo Ongoing Assistance. North Carolina's #1 done-for-you Google + AI solution for small businesses.">
+    <title>Rein N' Solutions | Google Optimization + AI Revenue System for NC Small Businesses</title>
+    <meta name="description" content="Proven Google optimization and AI automation that drives real revenue for North Carolina small businesses. $99 Starter • $399 Full Stack • $29/mo Ongoing.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #d4a574;
-            --google-blue: #4285F4;
-            --ai-purple: #8B5CF6;
+            --primary-light: #e8d4b8;
             --dark-bg: #0f172a;
             --darker-bg: #020617;
             --card-bg: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --accent-green: #10b981;
-            --urgency-red: #ef4444;
+            --text: #f1f5f9;
+            --text-sec: #cbd5e1;
+            --muted: #94a3b8;
+            --green: #10b981;
+            --red: #ef4444;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--dark-bg); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
-        .container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
-        nav { position: sticky; top: 0; backdrop-filter: blur(20px); display: flex; justify-content: space-between; align-items: center; padding: 1.8rem 0; background: rgba(15,23,42,0.95); border-bottom: 1px solid rgba(212,165,116,0.2); z-index: 100; }
-        .nav-logo { height: 55px; filter: drop-shadow(0 0 15px rgba(212,165,116,0.6)); }
-        .nav-links { display: flex; gap: 3rem; align-items: center; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--dark-bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+        nav { position: sticky; top: 0; backdrop-filter: blur(20px); background: rgba(15,23,42,0.95); border-bottom: 1px solid rgba(212,165,116,0.15); z-index: 100; padding: 1.5rem 0; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 48px; filter: drop-shadow(0 0 12px rgba(212,165,116,0.4)); }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links a { color: var(--text-sec); text-decoration: none; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--primary); }
-        .social-icons { display: flex; gap: 2rem; }
-        .social-icons a { color: var(--text-secondary); font-size: 1.5rem; transition: all 0.3s; }
-        .social-icons a:hover { color: var(--primary); transform: translateY(-4px); }
-        .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
-        .hamburger span { width: 32px; height: 4px; background: var(--primary); border-radius: 2px; }
-        .hero { background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%); padding: 8rem 0 10rem; text-align: center; position: relative; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(212,165,116,0.18) 0%, transparent 70%); pointer-events: none; }
-        .hero-title { font-size: 4rem; font-weight: 900; margin-bottom: 2rem; line-height: 1.1; }
-        .gradient-text { background: linear-gradient(135deg, var(--primary) 0%, #f0d6b0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-subtitle { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .btn { padding: 1.4rem 3rem; border: none; border-radius: 1rem; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: all 0.4s; text-decoration: none; display: inline-block; }
-        .btn-primary { background: var(--primary); color: var(--dark-bg); box-shadow: 0 10px 30px rgba(212,165,116,0.3); }
-        .btn-primary:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(212,165,116,0.5); }
-        .btn-google { background: var(--google-blue); color: white; }
-        .btn-google:hover { background: #3367d6; transform: translateY(-6px); box-shadow: 0 25px 50px rgba(66,133,244,0.4); }
-        .urgency-badge { background: rgba(239,68,68,0.8); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; font-size: 1rem; font-weight: 700; display: inline-block; margin-bottom: 1.5rem; }
-        .trust-badges { display: flex; gap: 3rem; justify-content: center; margin-top: 5rem; flex-wrap: wrap; }
-        .trust-badge { text-align: center; }
-        .trust-badge strong { color: var(--primary); font-size: 2.5rem; display: block; font-weight: 900; }
-        .why-section, .pricing-section { padding: 8rem 0; }
+        .social-icons { display: flex; gap: 1.5rem; }
+        .social-icons a { color: var(--text-sec); font-size: 1.4rem; transition: color 0.3s; }
+        .social-icons a:hover { color: var(--primary); }
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger span { display: block; width: 28px; height: 3px; background: var(--primary); margin: 6px 0; border-radius: 2px; transition: 0.3s; }
+        .hero { padding: 10rem 0 8rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(212,165,116,0.12), transparent 70%); pointer-events: none; }
+        .urgency { background: var(--red); color: white; padding: 0.6rem 1.6rem; border-radius: 50px; font-weight: 600; display: inline-block; margin-bottom: 2rem; }
+        .hero h1 { font-size: 4.2rem; font-weight: 800; margin-bottom: 1.8rem; line-height: 1.2; }
+        .gradient { background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.4rem; color: var(--text-sec); max-width: 800px; margin: 0 auto 3rem; }
+        .cta-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 3rem 0; }
+        .btn { padding: 1.2rem 2.8rem; border-radius: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .btn-primary { background: var(--primary); color: var(--dark-bg); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(212,165,116,0.4); }
+        .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-secondary:hover { background: var(--primary); color: var(--dark-bg); }
+        .trust { display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap; margin-top: 5rem; }
+        .trust-item { text-align: center; }
+        .trust-item strong { font-size: 2.4rem; color: var(--primary); display: block; font-weight: 800; }
+        .section { padding: 8rem 0; }
         .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-size: 3.2rem; color: var(--primary); margin-bottom: 1.5rem; }
-        .section-header p { font-size: 1.3rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        .feature-card { background: var(--card-bg); padding: 2.5rem; border-radius: 1.2rem; border-left: 5px solid var(--primary); transition: all 0.3s; }
-        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .feature-icon { font-size: 3.5rem; margin-bottom: 1.2rem; }
-        .feature-card h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 1rem; }
+        .section-header h2 { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
+        .section-header p { font-size: 1.3rem; color: var(--text-sec); max-width: 700px; margin: 0 auto; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .card { background: var(--card-bg); padding: 3rem; border-radius: 1.2rem; border-left: 5px solid var(--primary); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+        .card-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+        .card h3 { font-size: 1.7rem; color: var(--primary); margin-bottom: 1rem; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3rem; margin-top: 4rem; }
-        .pricing-card { background: var(--card-bg); padding: 3rem; border-radius: 1.5rem; border: 2px solid rgba(212,165,116,0.2); text-align: center; position: relative; transition: all 0.4s; }
-        .pricing-card.featured { border: 3px solid var(--primary); box-shadow: 0 25px 50px rgba(212,165,116,0.3); }
-        .pricing-card.featured::before { content: 'BEST VALUE'; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--accent-green); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; }
-        .price { font-size: 4rem; font-weight: 900; color: var(--primary); margin: 1.5rem 0; }
-        .price small { font-size: 1.2rem; color: var(--text-secondary); }
-        .feature-list { list-style: none; text-align: left; margin: 2rem 0; }
-        .feature-list li { padding: 0.8rem 0; position: relative; padding-left: 2rem; color: var(--text-secondary); }
-        .feature-list li:before { content: "✓"; color: var(--primary); font-weight: 900; position: absolute; left: 0; }
-        .cta-section { padding: 10rem 0; text-align: center; background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%); }
-        .cta-section h2 { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--primary); }
-        footer { background: var(--darker-bg); padding: 6rem 0 3rem; text-align: center; border-top: 1px solid rgba(212,165,116,0.2); }
-        footer p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem; }
-        footer a { color: var(--primary); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        .pricing-card { background: var(--card-bg); padding: 3.5rem; border-radius: 1.5rem; text-align: center; position: relative; transition: all 0.4s; }
+        .pricing-card:hover { transform: translateY(-10px); }
+        .pricing-card.featured { border: 3px solid var(--primary); box-shadow: 0 30px 60px rgba(212,165,116,0.25); }
+        .pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--green); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; }
+        .price { font-size: 4.5rem; font-weight: 900; color: var(--primary); margin: 1.5rem 0; }
+        .price small { font-size: 1.4rem; color: var(--text-sec); }
+        .features-list { list-style: none; text-align: left; margin: 2.5rem 0; }
+        .features-list li { padding: 0.8rem 0 0.8rem 2rem; position: relative; color: var(--text-sec); }
+        .features-list li::before { content: "✓"; color: var(--green); position: absolute; left: 0; font-weight: bold; }
+        .cta-section { padding: 10rem 0; text-align: center; background: var(--darker-bg); }
+        .cta-section h2 { font-size: 3.4rem; margin-bottom: 1.5rem; color: var(--primary); }
+        footer { padding: 5rem 0 3rem; text-align: center; border-top: 1px solid rgba(212,165,116,0.15); color: var(--muted); }
         @media (max-width: 768px) {
-            .hero-title { font-size: 3.2rem; }
-            .pricing-grid { gap: 2rem; }
-            .pricing-card.featured { box-shadow: 0 15px 30px rgba(212,165,116,0.3); }
-            .hamburger { display: flex; }
-            .nav-links { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--dark-bg); flex-direction: column; padding-top: 6rem; gap: 2.5rem; transition: right 0.3s; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.2rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 360px; text-align: center; }
+            .hamburger { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--dark-bg); flex-direction: column; padding: 6rem 2rem 2rem; transition: right 0.3s; gap: 2rem; }
             .nav-links.active { right: 0; }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navigation -->
     <header class="container">
-        <nav>
-            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/59db5f52-50b8-44f2-acc6-bc05383889b3" alt="Rein N' Solutions" class="nav-logo">
+        <nav class="nav-inner">
+            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/59db5f52-50b8-44f2-acc6-bc05383889b3" alt="Rein N' Solutions Logo" class="logo">
             <div class="nav-links">
-                <a href="#features">Features</a>
+                <a href="#features">How It Works</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#cta" class="btn btn-primary">Get Started</a>
                 <div class="social-icons">
-                    <a href="https://x.com/reinnsolutions" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://facebook.com/reinnsolutions" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/reinnsolutions" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://facebook.com/reinnsolutions" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
             <div class="hamburger">
@@ -102,134 +101,129 @@
         </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="urgency-badge">Only 7 Spots Left This Month – Prices Rising Jan 1st</div>
-            <h1 class="hero-title">
-                <span class="gradient-text">North Carolina Small Businesses Are Quietly Dominating Google</span><br>
-                + Automating Revenue With AI (While You’re Still Working IN Your Business)
+            <div class="urgency">Limited Spots Remaining – Prices Increase January 1st</div>
+            <h1>
+                <span class="gradient">Google Optimization + AI Automation</span><br>
+                That Actually Drives Revenue for North Carolina Small Businesses
             </h1>
-            <p class="hero-subtitle">
-                We get you to Page 1 of Google → AI books the jobs 24/7 → You just collect the money.<br>
-                Our clients see ROI in the first 30 days or we work for free. Choose your level below.
+            <p class="hero p">
+                We combine proven local SEO with practical AI tools to get you more customers from Google — and turn those leads into booked jobs while you focus on running your business.
             </p>
-            <div class="hero-cta" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin: 3rem 0;">
-                <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">$399 Full Stack System → Best Results</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google">Free Strategy Call (7 Spots Left)</a>
+            <div class="cta-buttons">
+                <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">$399 Full Stack System → Most Popular</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary">Book Free Strategy Call</a>
             </div>
-            <div class="trust-badges">
-                <div class="trust-badge"><strong>3-7x</strong> More Monthly Leads</div>
-                <div class="trust-badge"><strong>80%</strong> Tasks Automated</div>
-                <div class="trust-badge"><strong>30-Day</strong> ROI or Free</div>
-                <div class="trust-badge"><strong>48hr</strong> Setup Complete</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why It Works Section -->
-    <section id="features" class="why-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Our Google + AI System Delivers Real Results for NC Businesses</h2>
-                <p>We don't promise overnight miracles – we deliver proven, measurable growth based on real local search data and AI efficiency. Here's the truth about how it works.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card google-card">
-                    <div class="feature-icon">📍</div>
-                    <h3>Real Google Optimization Value</h3>
-                    <p>76% of local searches lead to a store visit within 24 hours. We optimize for Page 1 rankings that bring high-intent customers to your door – not just clicks, but real revenue from NC locals.</p>
-                </div>
-                <div class="feature-card ai-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>Practical AI Automation</h3>
-                    <p>AI handles 80% of routine tasks like answering calls, booking appointments, and recovering lost sales. This frees you up to run your business, with realistic boosts in efficiency and conversions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
-                    <h3>Built for Small Businesses</h3>
-                    <p>We focus on NC realities – local competition, seasonal trends, and budget constraints. Our system is designed for contractors, salons, HVAC, and more, delivering 3-7x leads without complex tech.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Transparent, Realistic ROI</h3>
-                    <p>Clients see measurable growth in 30 days – or it's free. We use data-driven dashboards to show exactly what's working, building trust through truth and results, not hype.</p>
-                </div>
+            <div class="trust">
+                <div class="trust-item"><strong>3–7×</strong> More Qualified Leads</div>
+                <div class="trust-item"><strong>80%</strong> Routine Tasks Automated</div>
+                <div class="trust-item"><strong>30-Day</strong> Results Guarantee</div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section id="pricing" class="pricing-section">
+    <section id="features" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Choose How Fast You Want To Grow</h2>
-                <p>Every plan is backed by our "See Results in 30 Days or It's Free" Guarantee. We keep it simple and realistic for NC small businesses.</p>
+                <h2>How Our System Works for Real NC Businesses</h2>
+                <p>We focus on what actually moves the needle — local visibility, lead capture, and automated follow-up — without unnecessary complexity.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">📍</div>
+                    <h3>Dominate Local Google Search</h3>
+                    <p>Full optimization for Google Maps and organic results so customers searching for your services in North Carolina find you first.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3>AI That Handles the Busy Work</h3>
+                    <p>Automated responses, appointment booking, and lost-sale recovery — freeing up dozens of hours per month while increasing conversions.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Clear, Measurable Results</h3>
+                    <p>Custom dashboard showing exactly how many leads, bookings, and revenue dollars are coming from the system each week.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Done-For-You Setup & Support</h3>
+                    <p>We handle everything in 48 hours. No tech headaches — just a revenue system that works from day one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the level that fits your goals. Every plan includes our 30-day results guarantee.</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Starter Kit</h3>
                     <div class="price">$99<small> one-time</small></div>
-                    <p>Test the waters with core optimizations.</p>
-                    <ul class="feature-list">
+                    <ul class="features-list">
                         <li>Google Optimization Audit + Fixes</li>
                         <li>Basic AI Lead Capture</li>
                         <li>Review Generation System</li>
                         <li>48hr Setup</li>
                         <li>30-Day Guarantee</li>
                     </ul>
-                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary">Get Starter – $99</a>
+                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary">Get Starter →</a>
                 </div>
                 <div class="pricing-card featured">
                     <h3>Full Stack Revenue System</h3>
                     <div class="price">$399<small> one-time</small></div>
-                    <p>The complete package most clients choose for maximum results.</p>
-                    <ul class="feature-list">
+                    <ul class="features-list">
                         <li>Everything in Starter</li>
-                        <li>Full Google Maps + Organic Domination</li>
-                        <li>Complete AI Sales Agent (calls/texts/emails)</li>
-                        <li>Lost Sale Recovery Sequences</li>
-                        <li>Custom Dashboard & Reporting</li>
-                        <li>Priority Support + Monthly Check-Ins</li>
-                        <li>ROI in 30 Days or Free</li>
+                        <li>Complete Google Maps & Organic Optimization</li>
+                        <li>Full AI Sales Agent (calls, texts, emails)</li>
+                        <li>Lost Sale Recovery Automation</li>
+                        <li>Custom Performance Dashboard</li>
+                        <li>Priority Support + Monthly Reviews</li>
+                        <li>30-Day Results Guarantee</li>
                     </ul>
-                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">Get Full Stack – $399</a>
+                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">Get Full Stack → Most Popular</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Ongoing Assistance</h3>
                     <div class="price">$29<small> /month</small></div>
-                    <p>Keep your system running at peak performance.</p>
-                    <ul class="feature-list">
+                    <ul class="features-list">
                         <li>Continuous Ranking Maintenance</li>
-                        <li>AI System Updates & Optimizations</li>
-                        <li>New Review Campaigns</li>
+                        <li>AI System Updates</li>
+                        <li>Ongoing Review Campaigns</li>
                         <li>Monthly Performance Reports</li>
-                        <li>Priority 24/7 Support</li>
+                        <li>Priority Support</li>
                     </ul>
-                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary">Add Ongoing – $29/mo</a>
+                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary">Add Ongoing →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
     <section id="cta" class="cta-section">
         <div class="container">
-            <div class="urgency-badge">Only 7 Spots Left This Month – Prices Rising Jan 1st</div>
-            <h2>Don't Start 2026 Leaving Money on the Table</h2>
-            <p>Your competitors are already scaling with this system. Lock in today's pricing before it's gone.</p>
-            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin: 3rem 0;">
-                <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">$399 Full Stack – Secure Now</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google">Book Free Strategy Call</a>
+            <h2>Ready to Grow Your Business in 2026?</h2>
+            <p style="font-size: 1.4rem; color: var(--text-sec); max-width: 800px; margin: 2rem auto;">
+                Join the North Carolina businesses already seeing more customers and higher revenue with less daily effort.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">Secure $399 Full Stack System</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary">Schedule Free Strategy Call</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Rein N' Solutions • North Carolina's Trusted Google + AI Revenue Partner</p>
-            <p>Follow us @reinnsolutions on <a href="https://x.com/reinnsolutions" target="_blank">X</a> and <a href="https://facebook.com/reinnsolutions" target="_blank">Facebook</a></p>
+            <p>© 2025 Rein N' Solutions • Serving small businesses across North Carolina</p>
+            <p style="margin-top: 1rem;">
+                Follow us @reinnsolutions on 
+                <a href="https://x.com/reinnsolutions" target="_blank">X</a> • 
+                <a href="https://facebook.com/reinnsolutions" target="_blank">Facebook</a>
+            </p>
         </div>
     </footer>
 
