@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rein N' Solutions | Google Optimization + AI Automation That Pays For Itself in Weeks</title>
-    <meta name="description" content="$99 Starter → $399 Full Stack Revenue System → $29/mo Ongoing Assistance. North Carolina's #1 done-for-you Google + AI solution.">
+    <meta name="description" content="$99 Starter → $399 Full Stack Revenue System → $29/mo Ongoing Assistance. North Carolina's #1 done-for-you Google + AI solution for small businesses.">
     <style>
         :root {
             --primary: #d4a574;
@@ -41,6 +41,8 @@
         .btn { padding: 1.6rem 3.5rem; border: none; border-radius: 1rem; font-size: 1.3rem; font-weight: 800; cursor: pointer; transition: all 0.4s; text-decoration: none; display: inline-block; }
         .btn-primary { background: var(--primary); color: var(--dark-bg); box-shadow: 0 15px 40px rgba(212,165,116,0.4); }
         .btn-primary:hover { transform: translateY(-8px); box-shadow: 0 35px 70px rgba(212,165,116,0.6); }
+        .btn-google { background: var(--google-blue); color: white; }
+        .btn-google:hover { background: #3367d6; transform: translateY(-8px); box-shadow: 0 35px 70px rgba(66,133,244,0.4); }
         .urgency-badge { background: var(--urgency-red); color: white; padding: 0.8rem 1.8rem; border-radius: 50px; font-size: 1.1rem; font-weight: 800; display: inline-block; animation: pulse 2s infinite; margin-bottom: 2rem; }
         @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
         .trust-badges { display: flex; gap: 4rem; justify-content: center; margin-top: 6rem; flex-wrap: wrap; }
@@ -49,17 +51,18 @@
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 4rem; margin-top: 6rem; }
         .pricing-card { background: var(--card-bg); padding: 4.5rem 4rem; border-radius: 2.2rem; border: 3px solid rgba(212,165,116,0.3); text-align: center; position: relative; transition: all 0.5s; }
         .pricing-card.featured { border: 6px solid var(--primary); transform: scale(1.15); box-shadow: 0 60px 120px rgba(212,165,116,0.5); z-index: 10; }
-        .pricing-card.featured::before { content: 'MOST CLIENTS CHOOSE THIS'; background: var(--accent-green); color: white; padding: 0.9rem 2.5rem; font-size: 1.1rem; top: -25px; }
-        .pricing-card::before { content: ''; position: absolute; top: -25px; left: 50%; transform: translateX(-50%); padding: 0.8rem 2rem; border-radius: 50px; font-weight: 800; }
+        .pricing-card.featured::before { content: 'MOST CLIENTS CHOOSE THIS'; background: var(--accent-green); color: white; padding: 0.9rem 2.5rem; font-size: 1.1rem; top: -25px; left: 50%; transform: translateX(-50%); position: absolute; border-radius: 50px; font-weight: 800; }
         .price { font-size: 5.5rem; font-weight: 900; color: var(--primary); margin: 2rem 0; }
         .price small { font-size: 1.5rem; color: var(--text-secondary); }
         .cta-section { padding: 14rem 0; text-align: center; background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%); }
         .cta-section h2 { font-size: 4.5rem; margin-bottom: 2rem; color: var(--primary); }
-        footer { background: var(--darker-bg); padding: 8rem 0 4rem; }
+        footer { background: var(--darker-bg); padding: 8rem 0 4rem; text-align: center; }
         @media (max-width: 768px) {
             .hero-title { font-size: 3.4rem; }
             .pricing-card.featured { transform: none; }
             .hamburger { display: flex; }
+            .nav-links { flex-direction: column; position: fixed; top: 0; right: -100%; height: 100vh; background: var(--dark-bg); width: 300px; padding-top: 8rem; transition: right 0.4s; }
+            .nav-links.active { right: 0; }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -74,7 +77,7 @@
             <a href="#proof">Results</a>
             <a href="#cta" class="btn btn-primary">Get Started Today</a>
             <div class="social-icons" style="display:flex; gap:2rem;">
-                <a href="https://x861.com/reinnsolutions" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://x.com/reinnsolutions" target="_blank"><i class="fab fa-x-twitter"></i></a>
                 <a href="https://facebook.com/reinnsolutions" target="_blank"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
@@ -84,7 +87,7 @@
 
 <section class="hero">
     <div class="container">
-        <span class="urgency-badge">Only 7 Spots Left This Month – Prices Rising Jan 1st</span>
+        <span class="urgency-badge">Price Increase Jan 1st – Only Hours Left at Current Rates!</span>
         <h1 class="hero-title">
             <span class="gradient-text">North Carolina Small Businesses Are Quietly Dominating Google</span><br>
             + Automating Revenue With AI (While You’re Still Working IN Your Business)
@@ -94,8 +97,8 @@
             Our clients see ROI in the first 30 days or we work for free. Choose your level below.
         </p>
         <div class="hero-cta" style="display:flex; gap:2.5rem; justify-content:center; flex-wrap:wrap; margin:4rem 0;">
-            <a href="https://buy.stripe.com/your-full-stack-link" class="btn btn-primary" style="font-size:1.6rem; padding:2rem 4rem;">$399 Full Stack System → Best Results</a>
-            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="font-size:1.4rem; padding:1.8rem 3.5rem;">Free Strategy Call (7 Spots Left)</a>
+            <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="font-size:1.6rem; padding:2rem 4rem;">$399 Full Stack System → Best Results</a>
+            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="font-size:1.4rem; padding:1.8rem 3.5rem;">Free Strategy Call (Last Spots of 2025)</a>
         </div>
         <div class="trust-badges">
             <div class="trust-badge"><strong>3-7x</strong>More Monthly Leads</div>
@@ -109,57 +112,57 @@
 <section id="pricing" class="pricing-section">
     <div class="container">
         <div style="text-align:center; margin-bottom:6rem;">
-            <h2 style="font-size:3.8rem; color:var(--primary);">Choose How Fast You Want To Grow</h2>
-            <p style="font-size:1.5rem; color:var(--text-secondary); max-width:900px; margin:2rem auto;">Every plan is backed by our "See Results in 30 Days or It's Free" Guarantee</p>
+            <h2 style="font-size:3.8rem; color:var(--primary);">Choose How Fast You Want To Grow in 2026</h2>
+            <p style="font-size:1.5rem; color:var(--text-secondary); max-width:900px; margin:2rem auto;">Every plan is backed by our "See Results in 30 Days or It's Free" Guarantee – Prices Increase Tomorrow</p>
         </div>
 
         <div class="pricing-grid">
-            <!-- Starter -->
+            <!-- Starter $99 -->
             <div class="pricing-card">
                 <h3>Starter Kit</h3>
                 <div class="price">$99<span style="font-size:1.5rem;"> one-time</span></div>
-                <p style="font-size:1.2rem; margin:2rem 0;">Perfect if you want to test the system</p>
-                <ul style="text-align:left; margin:3rem 0; font-size:1.1rem;">
-                    <li>Google Optimization Audit + Fixes</li>
-                    <li>Basic AI Chat & Lead Capture</li>
-                    <li>Review Generation System</li>
-                    <li>48hr Setup</li>
-                    <li>30-Day Guarantee</li>
+                <p style="font-size:1.2rem; margin:2rem 0;">Dip your toe – perfect to test the power</p>
+                <ul style="text-align:left; margin:3rem 0; font-size:1.1rem; list-style:none;">
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ Google Optimization Audit + Fixes</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ Basic AI Chat & Lead Capture</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ Review Generation System</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ 48hr Setup</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ 30-Day Guarantee</li>
                 </ul>
                 <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%; padding:1.4rem;">Get Starter – $99 →</a>
             </div>
 
-            <!-- Full Stack - MOST POPULAR -->
+            <!-- Full Stack $399 - FEATURED -->
             <div class="pricing-card featured">
                 <h3>Full Stack Revenue System</h3>
                 <div class="price">$399<span style="font-size:1.5rem;"> one-time</span></div>
-                <p style="font-size:1.3rem; margin:2rem 0;"><strong>The exact system generating $20K–$100K+/mo for our clients</strong></p>
-                <ul style="text-align:left; margin:3rem 0; font-size:1.15rem;">
-                    <li>Everything in Starter</li>
-                    <li>Full Google Maps + Organic Domination</li>
-                    <li>Complete AI Sales Agent (calls, texts, emails)</li>
-                    <li>Lost Sale Recovery Sequences</li>
-                    <li>Custom Dashboard & Reporting</li>
-                    <li>Priority Support + Monthly Check-Ins</li>
-                    <li><strong>ROI in 30 Days or Free</strong></li>
+                <p style="font-size:1.3rem; margin:2rem 0;"><strong>The complete system generating $20K–$100K+/mo for NC businesses</strong></p>
+                <ul style="text-align:left; margin:3rem 0; font-size:1.15rem; list-style:none;">
+                    <li style="padding:0.9rem 0; position:relative; padding-left:2.5rem;">✓ Everything in Starter +</li>
+                    <li style="padding:0.9rem 0; position:relative; padding-left:2.5rem;">✓ Full Google Maps & Organic Domination</li>
+                    <li style="padding:0.9rem 0; position:relative; padding-left:2.5rem;">✓ Complete AI Sales Agent (calls/texts/emails)</li>
+                    <li style="padding:0.9rem 0; position:relative; padding-left:2.5rem;">✓ Lost Sale Recovery Sequences</li>
+                    <li style="padding:0.9rem 0; position:relative; padding-left:2.5rem;">✓ Custom Dashboard & Reporting</li>
+                    <li style="padding:0.9rem 0; position:relative; padding-left:2.5rem;">✓ Priority Support + Monthly Check-Ins</li>
+                    <li style="padding:0.9rem 0; position:relative; padding-left:2.5rem;"><strong>✓ ROI in 30 Days or It's FREE</strong></li>
                 </ul>
-                <a href="https://buy.stripe.com/your-399-link-here" class="btn btn-primary" style="width:100%; padding:1.6rem; font-size:1.3rem;">Yes! Give Me Full Stack – $399 →</a>
-                <p style="margin-top:1.5rem; font-size:1.1rem; color:var(--accent-green);"><strong>↑ Chosen by 87% of our clients</strong></p>
+                <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%; padding:1.6rem; font-size:1.3rem;">Yes! Full Stack System – $399 →</a>
+                <p style="margin-top:1.5rem; font-size:1.1rem; color:var(--accent-green);"><strong>↑ Chosen by 87% of our clients – Best Value</strong></p>
             </div>
 
-            <!-- Ongoing Assistance -->
+            <!-- Ongoing $29/mo -->
             <div class="pricing-card">
                 <h3>Ongoing Assistance</h3>
                 <div class="price">$29<span style="font-size:1.5rem;"> /month</span></div>
-                <p style="font-size:1.2rem; margin:2rem 0;">Stay #1 forever – we handle everything</p>
-                <ul style="text-align:left; margin:3rem 0; font-size:1.1rem;">
-                    <li>Continuous Ranking Maintenance</li>
-                    <li>AI System Updates & Optimizations</li>
-                    <li>New Review Campaigns</li>
-                    <li>Monthly Performance Reports</li>
-                    <li>Priority 24/7 Support</li>
+                <p style="font-size:1.2rem; margin:2rem 0;">Stay #1 forever – we handle maintenance</p>
+                <ul style="text-align:left; margin:3rem 0; font-size:1.1rem; list-style:none;">
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ Continuous Ranking Maintenance</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ AI System Updates & Optimizations</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ New Review Campaigns</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ Monthly Performance Reports</li>
+                    <li style="padding:0.8rem 0; position:relative; padding-left:2.5rem;">✓ Priority 24/7 Support</li>
                 </ul>
-                <a href="https://buy.stripe.com/your-29-link" class="btn btn-primary" style="width:100%; padding:1.4rem;">Add Ongoing – $29/mo →</a>
+                <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary" style="width:100%; padding:1.4rem;">Add Ongoing – $29/mo →</a>
             </div>
         </div>
     </div>
@@ -167,21 +170,21 @@
 
 <section id="cta" class="cta-section">
     <div class="container">
-        <span class="urgency-badge" style="font-size:1.4rem; padding:1rem 2rem;">Price Increases Jan 1st – Only 7 Spots Left in December</span>
-        <h2>Stop Leaving Money on the Table in 2026</h2>
-        <p style="font-size:1.8rem; max-width:1000px; margin:3rem auto;">Your competitors are already using this exact system. Secure your spot before we're fully booked.</p>
+        <span class="urgency-badge" style="font-size:1.4rem; padding:1rem 2rem;">Today is Dec 31 – Prices Increase Tomorrow at Midnight</span>
+        <h2>Don't Start 2026 Leaving Money on the Table</h2>
+        <p style="font-size:1.8rem; max-width:1000px; margin:3rem auto;">Your competitors are already scaling with this system. Lock in today's pricing before it's gone forever.</p>
         <div style="display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; margin:5rem 0;">
-            <a href="https://buy.stripe.com/your-399-link-here" class="btn btn-primary" style="padding:2.5rem 6rem; font-size:1.8rem;">$399 Full Stack – Lock It In Now →</a>
-            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="padding:2.3rem 5rem; font-size:1.6rem;">Book Call – See Your Custom Plan</a>
+            <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="padding:2.5rem 6rem; font-size:1.8rem;">$399 Full Stack – Secure Before Price Rise →</a>
+            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="padding:2.3rem 5rem; font-size:1.6rem;">Book Call – Last Chance in 2025</a>
         </div>
-        <p style="font-size:1.3rem; color:var(--text-secondary); margin-top:4rem;">@reinnsolutions on X & Facebook • Serving North Carolina small businesses since 2023</p>
+        <p style="font-size:1.3rem; color:var(--text-secondary); margin-top:4rem;">Follow @reinnsolutions on X & Facebook • Proudly serving NC small businesses</p>
     </div>
 </section>
 
 <footer>
-    <div class="container" style="text-align:center;">
+    <div class="container">
         <p style="font-size:1.2rem;">© 2025 Rein N' Solutions • North Carolina's Trusted Google + AI Revenue Partner</p>
-        <p style="margin-top:1rem;">Follow us @reinnsolutions on <a href="https://x.com/reinnsolutions" style="color:var(--primary);">X</a> • <a href="https://facebook.com/reinnsolutions" style="color:var(--primary);">Facebook</a></p>
+        <p style="margin-top:1rem;">Follow us @reinnsolutions on <a href="https://x.com/reinnsolutions" style="color:var(--primary);">X</a> and <a href="https://facebook.com/reinnsolutions" style="color:var(--primary);">Facebook</a></p>
     </div>
 </footer>
 
