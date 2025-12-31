@@ -1,29 +1,359 @@
-<!-- SAVED AS: reinsolutions-complete.html [code_file:473] -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- EXACT SAME HEAD FROM PREVIOUS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rein N' Solutions | AI Automation for Small Business</title>
-    <!-- ... rest of your perfect CSS ... -->
+    <meta name="description" content="$99 = One automation that earns your money back. Then we grow you. NC small business automation.">
+    <style>
+        :root {
+            --primary: #d4a574;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        nav {
+            position: sticky; top: 0; backdrop-filter: blur(20px);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; background: rgba(15,23,42,0.95);
+            border-bottom: 1px solid rgba(212,165,116,0.2); z-index: 100;
+        }
+        .nav-logo { height: 42px; width: auto; filter: drop-shadow(0 0 10px rgba(212,165,116,0.5)); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { 
+            color: var(--text-secondary); text-decoration: none; 
+            font-size: 0.95rem; transition: color 0.3s; 
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
+        .hamburger span { width: 25px; height: 3px; background: var(--primary); border-radius: 2px; }
+        .hero {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            padding: 8rem 0 10rem; text-align: center;
+        }
+        .hero-title { font-size: 3.75rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, #e8c9a0 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle { font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero-cta { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 1.2rem 2.5rem; border: none; border-radius: 0.75rem;
+            font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s;
+            text-decoration: none; display: inline-block;
+        }
+        .btn-primary { background: var(--primary); color: var(--dark-bg); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(212,165,116,0.4); }
+        .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-secondary:hover { background: var(--primary); color: var(--dark-bg); }
+        .features-section, .testimonial-section { padding: 7rem 0; }
+        .section-header { text-align: center; margin-bottom: 4.5rem; }
+        .section-header h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--primary); }
+        .section-header p { font-size: 1.2rem; color: var(--text-secondary); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .feature-card {
+            background: var(--card-bg); padding: 2.5rem; border-radius: 1rem;
+            border-left: 5px solid var(--primary); transition: all 0.4s;
+            animation: float 6s ease-in-out infinite;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(212,165,116,0.25);
+        }
+        @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+        .feature-icon { font-size: 3rem; margin-bottom: 1.25rem; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary); }
+        .pricing-section {
+            padding: 8rem 0; background: linear-gradient(135deg, rgba(212,165,116,0.08) 0%, transparent 100%);
+        }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
+        .pricing-card {
+            background: var(--card-bg); padding: 3rem 2.5rem; border-radius: 1.5rem;
+            border: 2px solid rgba(212,165,116,0.2); text-align: center; position: relative;
+            transition: all 0.4s;
+        }
+        .pricing-card.featured {
+            border: 3px solid var(--primary); transform: scale(1.08);
+            box-shadow: 0 30px 60px rgba(212,165,116,0.3);
+        }
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR'; position: absolute; top: -15px; left: 50%;
+            transform: translateX(-50%); background: var(--primary); color: var(--dark-bg);
+            padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+        }
+        .price { font-size: 3.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0; }
+        .price-desc { color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; }
+        .feature-list { list-style: none; text-align: left; margin: 2.5rem 0; }
+        .feature-list li {
+            padding: 0.75rem 0; color: var(--text-secondary);
+            border-bottom: 1px solid rgba(212,165,116,0.15); position: relative;
+        }
+        .feature-list li:before {
+            content: "✓"; color: var(--primary); font-weight: 800; font-size: 1.2rem; margin-right: 1rem;
+        }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
+        .testimonial {
+            background: var(--card-bg); padding: 2.5rem; border-radius: 1rem;
+            border-left: 5px solid var(--primary);
+        }
+        .stars { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.2rem; }
+        .testimonial p { color: var(--text-secondary); margin-bottom: 2rem; font-style: italic; font-size: 1.1rem; }
+        .author { display: flex; align-items: center; gap: 1.25rem; }
+        .author-avatar {
+            width: 50px; height: 50px; background: var(--primary); color: var(--dark-bg);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1rem;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            padding: 8rem 0; text-align: center;
+        }
+        .cta-section h2 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary); }
+        .cta-section p { font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 3rem; }
+        footer {
+            background: var(--darker-bg); padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(212,165,116,0.2);
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-cta { flex-direction: column; }
+            .btn { width: 100%; }
+            .pricing-card.featured { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-    <!-- ADD YOUR LOGO HERE (Replace text logo) -->
+    <!-- Navigation - FIXED (single logo) -->
     <header class="container">
         <nav>
-            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/59db5f52-50b8-44f2-acc6-bc05383889b3" 
-                 alt="Rein N' Solutions" 
-                 class="nav-logo"
-                 style="height: 40px; width: auto;">
-            <!-- Rest of nav stays same -->
+            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/59db5f52-50b8-44f2-acc6-bc05383889b3" alt="Rein N' Solutions" class="nav-logo">
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#proof">Proof</a>
+                <a href="#cta" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
         </nav>
     </header>
 
-    <!-- STRIPE PAYMENT BUTTONS (Replace with YOUR Stripe keys) -->
-    <a href="https://buy.stripe.com/YOUR_STARTER_LINK" class="btn btn-primary">Pay $99/mo → Live Now</a>
-    <a href="https://buy.stripe.com/YOUR_GROWTH_LINK" class="btn btn-primary">Pay $299/mo → Live Now</a>
+    <!-- Hero - FIXED COPY -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="gradient-text">$99 = One Automation</span><br>
+                Earn Your Money Back First Month
+            </h1>
+            <p class="hero-subtitle">
+                We start where you are → make you visible → grow from there. 
+                <strong>$99 builds your first revenue automation (one-time). Scale after it proves ROI.</strong>
+            </p>
+            <div class="hero-cta">
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 First Automation → Live in 48hr</a>
+                <a href="#pricing" class="btn btn-secondary">See Growth Path</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- ALL OTHER SECTIONS IDENTICAL - PERFECT -->
+    <!-- Features -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Complete Revenue System</h2>
+                <p>Invisible → Visible → Profitable. We build every piece.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Revenue Automation</h3>
+                    <p>24/7 AI answers calls/emails, books appointments, qualifies leads. Handles 80% of routine work.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Google Map Pack #1</h3>
+                    <p>Page 1 Maps ranking. 50+ reviews/month. Real-time ROI tracking. Beat every local competitor.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Lost Sales Recovery</h3>
+                    <p>Automated emails recover browsers → buyers. Track opens/clicks. Get revenue you already earned.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Live Revenue Dashboard</h3>
+                    <p>Customer acquisition cost, LTV, pipeline health. Know exactly what's working every day.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>48hr Done-For-You</h3>
+                    <p>No coding required. Our team builds everything. Live training + 30-day performance guarantee.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Never Miss a Lead</h3>
+                    <p>AI chat captures leads 24/7. Hot prospects routed instantly to your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing - FIXED MODEL -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Invisible → Visible → Scale</h2>
+                <p>$99 proves ROI first. Then we grow you. 30-day money back guarantee.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Resources</h3>
+                    <div class="price">$29</div>
+                    <div class="price-desc">one-time</div>
+                    <ul class="feature-list">
+                        <li>AI Visibility Audit</li>
+                        <li>Google Optimization Guide</li>
+                        <li>Revenue Leak Checklist</li>
+                        <li>Setup Templates</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary" style="width:100%;" target="_blank">Get Resources $29 →</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>First Automation</h3>
+                    <div class="price">$99</div>
+                    <div class="price-desc">one-time</div>
+                    <p style="color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem;">
+                        <strong>Earn it back month 1</strong><br>
+                        We find your biggest revenue leak → build the fix → you get customers
+                    </p>
+                    <ul class="feature-list">
+                        <li>Deep revenue audit</li>
+                        <li>One core automation built</li>
+                        <li>Google Maps optimization</li>
+                        <li>48hr live setup</li>
+                        <li>30-day performance guarantee</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%;" target="_blank">$99 → Build My First Automation</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Full Growth</h3>
+                    <div class="price">$399</div>
+                    <div class="price-desc">/month</div>
+                    <p style="color:var(--text-secondary); margin-bottom:2rem;">
+                        Scale after $99 proves results
+                    </p>
+                    <ul class="feature-list">
+                        <li>Everything in $99</li>
+                        <li>5+ revenue automations</li>
+                        <li>Complete Google domination</li>
+                        <li>Monthly strategy calls</li>
+                        <li>Priority implementation</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%;" target="_blank">$399/mo → Full Growth</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="proof" class="testimonial-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>NC Businesses Getting Results</h2>
+                <p>Real customers using this exact system</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Page 3 → Map Pack #1 in 45 days. Foot traffic doubled. Paid for itself month 1."</p>
+                    <div class="author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <div class="author-name">Mike R.</div>
+                            <div class="author-business">HVAC • Charlotte</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"AI handles calls 24/7. Saved 18 hours/week. Clients think I have full staff."</p>
+                    <div class="author">
+                        <div class="author-avatar">SC</div>
+                        <div>
+                            <div class="author-name">Sarah C.</div>
+                            <div class="author-business">Salon • Raleigh</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Email automation recovered $8K lost sales first month. Instant ROI."</p>
+                    <div class="author">
+                        <div class="author-avatar">DW</div>
+                        <div>
+                            <div class="author-name">David W.</div>
+                            <div class="author-business">Contractor • Durham</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>From Invisible → Visible → Scale</h2>
+            <p>$99 = One automation that pays for itself. Then we grow from proven results. Live in 48 hours.</p>
+            <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">$99 First Automation →</a>
+                <a href="mailto:gabriel@elevatedlivesinc.com?subject=Start%20With%20%2499" class="btn btn-secondary" style="padding:1.5rem 3rem; font-size:1.25rem;">Talk Next Steps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem; margin-bottom:2rem;">
+                <div>
+                    <h3 style="color:var(--primary); margin-bottom:1rem;">Rein N' Solutions</h3>
+                    <p style="color:var(--text-secondary);">We find your revenue leaks → build the fix → scale your growth. NC small business.</p>
+                </div>
+                <div>
+                    <h4 style="color:var(--primary); margin-bottom:1rem;">Contact</h4>
+                    <p style="color:var(--text-secondary);">📧 gabriel@elevatedlivesinc.com</p>
+                    <p style="color:var(--text-secondary);">📍 North Carolina</p>
+                    <p style="color:var(--text-secondary);">💬 @rein.n.solutions</p>
+                </div>
+            </div>
+            <div style="text-align:center; padding-top:2rem; border-top:1px solid rgba(212,165,116,0.2); color:var(--text-muted); font-size:0.9rem;">
+                © 2025 Rein N' Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
