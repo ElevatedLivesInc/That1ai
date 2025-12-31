@@ -3,213 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rein N' Solutions | Google + AI Revenue for NC Small Businesses</title>
-    <meta name="description" content="$99 Starter → $399 Full Stack → $29/mo Ongoing. Proven Google optimization + AI automation that gets you more customers and books jobs 24/7.">
+    <title>Reinn N' Solutions | Automate. Elevate. Dominate.</title>
+    <meta name="description" content="Custom AI automations for Winston-Salem businesses. Packages from $99. 40% no-show reduction. White-glove setup.">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #d4a574;
-            --primary-dark: #b08968;
-            --dark: #0f172a;
-            --card: #1e293b;
-            --text: #f1f5f9;
-            --text-sec: #cbd5e1;
+            --primary: #D4A574;
+            --primary-dark: #B8860B;
+            --dark: #1a1f24;
+            --card: #2d3748;
+            --text: #FFFFFF;
+            --text-sec: #F5F5F0;
             --green: #10b981;
             --red: #ef4444;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: system-ui, sans-serif; background:var(--dark); color:var(--text); line-height:1.7; }
+        body { font-family: system-ui, sans-serif; background:linear-gradient(135deg, var(--dark) 0%, #2d3748 50%, #4a5568 100%); color:var(--text); line-height:1.7; }
         .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
-        nav { position:sticky; top:0; backdrop-filter:blur(20px); background:rgba(15,23,42,0.9); padding:1.5rem 0; border-bottom:1px solid rgba(212,165,116,0.15); z-index:100; }
+        nav { position:sticky; top:0; backdrop-filter:blur(20px); background:rgba(26,31,36,0.95); padding:1.5rem 0; border-bottom:1px solid rgba(212,165,116,0.2); z-index:100; }
         .nav-inner { display:flex; justify-content:space-between; align-items:center; }
-        .logo { height:50px; filter:drop-shadow(0 0 12px rgba(212,165,116,0.4)); }
+        .logo { height:50px; filter:drop-shadow(0 0 12px rgba(212,165,116,0.4)); background-image:url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/7254082d-430b-432f-a081-d6a53d28b88d'); background-size:contain; background-repeat:no-repeat; width:180px; }
         .nav-links { display:flex; gap:2.5rem; align-items:center; }
         .nav-links a { color:var(--text-sec); text-decoration:none; font-weight:500; }
         .nav-links a:hover { color:var(--primary); }
-        .social { display:flex; gap:1.5rem; }
-        .social a { color:var(--text-sec); font-size:1.4rem; }
-        .social a:hover { color:var(--primary); }
+        .btn { padding:1rem 2rem; border-radius:0.8rem; font-weight:600; text-decoration:none; transition:all 0.3s; }
+        .btn-primary { background:var(--primary); color:var(--dark); box-shadow:0 10px 30px rgba(212,165,116,0.3); }
+        .btn-primary:hover { transform:translateY(-3px); box-shadow:0 20px 40px rgba(212,165,116,0.4); }
         .hamburger { display:none; cursor:pointer; }
         .hamburger span { display:block; width:28px; height:3px; background:var(--primary); margin:6px 0; border-radius:2px; }
-        .hero { padding:10rem 0 8rem; text-align:center; position:relative; overflow:hidden; }
-        .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 50%, rgba(212,165,116,0.12), transparent 70%); pointer-events:none; }
-        .urgency { background:var(--red); color:white; padding:0.6rem 1.6rem; border-radius:50px; font-weight:600; margin-bottom:2rem; display:inline-block; }
-        .hero h1 { font-size:4.2rem; font-weight:800; margin-bottom:1.8rem; }
-        .gradient { background:linear-gradient(135deg, var(--primary), #e8d4b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-        .hero p { font-size:1.4rem; color:var(--text-sec); max-width:800px; margin:0 auto 3rem; }
-        .cta-buttons { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:3rem 0; }
-        .btn { padding:1.3rem 3rem; border-radius:0.8rem; font-weight:600; text-decoration:none; transition:all 0.3s; }
-        .btn-primary { background:var(--primary); color:var(--dark); box-shadow:0 10px 30px rgba(212,165,116,0.3); }
-        .btn-primary:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(212,165,116,0.4); }
+        .hero { padding:12rem 0 8rem; text-align:center; position:relative; overflow:hidden; }
+        .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 50%, rgba(212,165,116,0.1), transparent 70%); pointer-events:none; }
+        .urgency { background:var(--red); color:white; padding:0.8rem 2rem; border-radius:50px; font-weight:700; margin-bottom:2.5rem; display:inline-block; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
+        .hero h1 { font-size:clamp(3.5rem, 8vw, 6rem); font-weight:800; margin-bottom:2rem; }
+        .gradient { background:linear-gradient(135deg, var(--text) 0%, var(--primary) 70%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .hero p { font-size:1.4rem; color:var(--text-sec); max-width:800px; margin:0 auto 4rem; }
+        .cta-buttons { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:4rem 0; }
         .btn-secondary { background:transparent; color:var(--primary); border:2px solid var(--primary); }
         .btn-secondary:hover { background:var(--primary); color:var(--dark); }
-        .trust { display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; margin-top:5rem; }
-        .trust-item strong { font-size:2.4rem; color:var(--primary); font-weight:800; display:block; }
+        .trust { display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; margin-top:6rem; }
+        .trust-item strong { font-size:2.8rem; color:var(--primary); font-weight:900; display:block; }
+        .trust-item p { color:var(--text-sec); font-size:1.1rem; }
         .section { padding:8rem 0; }
-        .section-header { text-align:center; margin-bottom:4rem; }
-        .section-header h2 { font-size:3rem; color:var(--primary); margin-bottom:1rem; }
+        .section-header { text-align:center; margin-bottom:5rem; }
+        .section-header h2 { font-size:3.2rem; color:var(--primary); margin-bottom:1.5rem; }
         .section-header p { font-size:1.3rem; color:var(--text-sec); max-width:700px; margin:0 auto; }
-        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:2.5rem; }
-        .card { background:var(--card); padding:3rem; border-radius:1.2rem; border-left:5px solid var(--primary); transition:all 0.3s; }
-        .card:hover { transform:translateY(-10px); box-shadow:0 25px 50px rgba(0,0,0,0.3); }
-        .icon { font-size:3rem; margin-bottom:1.5rem; }
-        .card h3 { font-size:1.7rem; color:var(--primary); margin-bottom:1rem; }
-        .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:3rem; margin-top:4rem; }
-        .pricing-card { background:var(--card); padding:3.5rem; border-radius:1.5rem; text-align:center; position:relative; transition:all 0.4s; }
-        .pricing-card.featured { border:3px solid var(--primary); box-shadow:0 30px 60px rgba(212,165,116,0.25); }
-        .pricing-card.featured::before { content:'MOST POPULAR'; position:absolute; top:-16px; left:50%; transform:translateX(-50%); background:var(--green); color:white; padding:0.5rem 1.5rem; border-radius:50px; font-size:0.9rem; font-weight:700; }
-        .price { font-size:4.5rem; font-weight:900; color:var(--primary); margin:1.5rem 0; }
-        .price small { font-size:1.4rem; color:var(--text-sec); }
-        .list { list-style:none; text-align:left; margin:2.5rem 0; }
-        .list li { padding:0.8rem 0 0.8rem 2rem; position:relative; color:var(--text-sec); }
-        .list li::before { content:"✓"; color:var(--green); position:absolute; left:0; font-weight:bold; }
-        .cta { padding:10rem 0; text-align:center; background:var(--darker-bg); }
-        .cta h2 { font-size:3.4rem; margin-bottom:1.5rem; color:var(--primary); }
-        footer { padding:5rem 0 3rem; text-align:center; border-top:1px solid rgba(212,165,116,0.15); color:var(--muted); }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:3rem; }
+        .card { background:var(--card); padding:3.5rem; border-radius:1.5rem; border-left:6px solid var(--primary); transition:all 0.4s; }
+        .card:hover { transform:translateY(-12px); box-shadow:0 30px 60px rgba(0,0,0,0.4); }
+        .icon { font-size:3.5rem; margin-bottom:2rem; display:block; }
+        .card h3 { font-size:1.9rem; color:var(--primary); margin-bottom:1.5rem; }
+        .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(360px,1fr)); gap:3rem; margin-top:5rem; }
+        .pricing-card { background:var(--card); padding:4rem; border-radius:1.8rem; text-align:center; position:relative; transition:all 0.4s; border:1px solid rgba(212,165,116,0.15); }
+        .pricing-card.featured { border:3px solid var(--primary); box-shadow:0 35px 70px rgba(212,165,116,0.25); }
+        .pricing-card.featured::before { content:'MOST POPULAR'; position:absolute; top:-20px; left:50%; transform:translateX(-50%); background:var(--green); color:white; padding:0.7rem 2rem; border-radius:50px; font-size:1rem; font-weight:800; }
+        .price { font-size:5rem; font-weight:900; color:var(--primary); margin:2rem 0 1rem; }
+        .price small { font-size:1.6rem; color:var(--text-sec); }
+        .list { list-style:none; text-align:left; margin:3rem 0; }
+        .list li { padding:1rem 0 1rem 2.5rem; position:relative; color:var(--text-sec); font-size:1.1rem; }
+        .list li::before { content:"✓"; color:var(--green); position:absolute; left:0; font-weight:900; font-size:1.3rem; }
+        .cta { padding:12rem 0; text-align:center; background:linear-gradient(135deg, var(--dark), #111827); }
+        .cta h2 { font-size:clamp(2.8rem, 7vw, 4.2rem); margin-bottom:2rem; color:var(--primary); }
+        footer { padding:6rem 0 3rem; text-align:center; border-top:1px solid rgba(212,165,116,0.2); color:var(--text-sec); }
         @media (max-width:768px) {
-            .hero h1 { font-size:3rem; }
+            .hero h1 { font-size:2.8rem; }
             .hamburger { display:block; }
-            .nav-links { position:fixed; top:0; right:-100%; width:280px; height:100vh; background:var(--dark); flex-direction:column; padding:6rem 2rem 2rem; transition:right 0.3s; gap:2rem; }
+            .nav-links { position:fixed; top:0; right:-100%; width:100vw; height:100vh; background:var(--dark); flex-direction:column; padding:8rem 2rem; transition:right 0.3s; gap:2rem; z-index:1000; }
             .nav-links.active { right:0; }
+            .cta-buttons { flex-direction:column; align-items:center; }
         }
     </style>
 </head>
 <body>
+    <header class="container">
+        <nav class="nav-inner">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="#features">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#cta" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
 
-<header class="container">
-    <nav class="nav-inner">
-        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/59db5f52-50b8-44f2-acc6-bc05383889b3" alt="Rein N' Solutions" class="logo">
-        <div class="nav-links">
-            <a href="#features">How It Works</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#cta" class="btn btn-primary">Get Started</a>
-            <div class="social">
-                <a href="https://x.com/reinnsolutions"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://facebook.com/reinnsolutions"><i class="fab fa-facebook-f"></i></a>
+    <section class="hero" data-aos="fade-up">
+        <div class="container">
+            <div class="urgency">5 Slots Left - January Onboarding</div>
+            <h1 class="gradient">Automate. Elevate. Dominate.</h1>
+            <p>Custom AI automations that turn Winston-Salem business chaos into effortless revenue growth</p>
+            <div class="cta-buttons">
+                <a href="https://buy.stripe.com/YOUR_99_LINK_HERE" class="btn btn-primary">$99 Starter Package</a>
+                <a href="https://buy.stripe.com/YOUR_399_LINK_HERE" class="btn btn-primary">$399 Full Stack → Most Popular</a>
+                <a href="https://calendly.com/YOUR_CALENDLY/reinn-audit" class="btn btn-secondary">Free Gap Audit (15min)</a>
+            </div>
+            <div class="trust">
+                <div class="trust-item"><strong>40%</strong><p>No-shows eliminated</p></div>
+                <div class="trust-item"><strong>30%</strong><p>More repeat revenue</p></div>
+                <div class="trust-item"><strong>10h</strong><p>Hours saved weekly</p></div>
             </div>
         </div>
-        <div class="hamburger">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-</header>
+    </section>
 
-<section class="hero">
-    <div class="container" data-aos="fade-up">
-        <div class="urgency">Limited Spots – Prices Increase January 1st</div>
-        <h1><span class="gradient">Google Optimization + AI Automation</span><br>Built for North Carolina Small Businesses</h1>
-        <p>We get you ranking on Page 1 locally → AI handles leads & bookings 24/7 → You focus on delivering great work while revenue grows.</p>
-        <div class="cta-buttons">
-            <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">$399 Full Stack → Most Popular</a>
-            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary">Free Strategy Call</a>
-        </div>
-        <div class="trust">
-            <div class="trust-item"><strong>3–7×</strong>More Local Leads</div>
-            <div class="trust-item"><strong>80%</strong>Tasks Automated</div>
-            <div class="trust-item"><strong>30-Day</strong>Results Guarantee</div>
-        </div>
-    </div>
-</section>
-
-<section id="features" class="section">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Real Results, No Fluff</h2>
-            <p>Everything we do is focused on getting you more customers from Google and turning them into booked jobs — fast.</p>
-        </div>
-        <div class="grid">
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon">📍</div>
-                <h3>Local Google Domination</h3>
-                <p>Optimized for NC searches so customers find you before your competitors.</p>
+    <section id="features" class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Results for Real Businesses</h2>
+                <p>Everything we build is custom-audited for YOUR gaps. No templates. No guesswork.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon">🤖</div>
-                <h3>AI That Works 24/7</h3>
-                <p>Answers inquiries, books appointments, recovers lost sales — automatically.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon">📊</div>
-                <h3>Track Every Dollar</h3>
-                <p>Clear dashboard shows leads, bookings, and revenue from day one.</p>
+            <div class="grid">
+                <div class="card">
+                    <span class="icon">🚀</span>
+                    <h3>Gap Audit First</h3>
+                    <p>We identify your biggest revenue leaks before building anything.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">📱</span>
+                    <h3>Smart Reminders</h3>
+                    <p>Text + email automation cuts no-shows 40%+. Clients actually show up.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">💰</span>
+                    <h3>Payment Automation</h3>
+                    <p>Stripe deposits + lost sale recovery = revenue you were missing.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="pricing" class="section" style="background:var(--darker-bg);">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Simple Pricing That Scales With You</h2>
-            <p>All plans include 48hr setup + 30-day results guarantee.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card" data-aos="fade-up">
-                <h3>Starter Kit</h3>
-                <div class="price">$99<small> one-time</small></div>
-                <ul class="list">
-                    <li>Google Audit + Fixes</li>
-                    <li>Basic AI Lead Capture</li>
-                    <li>Review System</li>
-                    <li>48hr Setup</li>
-                </ul>
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary">Get Starter</a>
+    <section id="pricing" class="section" style="background:rgba(26,31,36,0.8);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Packages. Clear Results.</h2>
+                <p>One-time setup fees. White-glove implementation. Cancel anytime.</p>
             </div>
-            <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
-                <h3>Full Stack System</h3>
-                <div class="price">$399<small> one-time</small></div>
-                <ul class="list">
-                    <li>Everything in Starter</li>
-                    <li>Full Maps & Organic Ranking</li>
-                    <li>Complete AI Sales Agent</li>
-                    <li>Lost Sale Recovery</li>
-                    <li>Custom Dashboard</li>
-                    <li>Priority Support</li>
-                </ul>
-                <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">Get Full Stack</a>
-            </div>
-            <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Ongoing Assistance</h3>
-                <div class="price">$29<small>/month</small></div>
-                <ul class="list">
-                    <li>Ranking Maintenance</li>
-                    <li>AI Updates</li>
-                    <li>Review Campaigns</li>
-                    <li>Monthly Reports</li>
-                </ul>
-                <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary">Add Ongoing</a>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter Package</h3>
+                    <div class="price">$99<small>one-time</small></div>
+                    <ul class="list">
+                        <li>Complete gap audit</li>
+                        <li>1 high-impact automation</li>
+                        <li>48hr setup + training</li>
+                        <li>30-day results check</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/YOUR_99_LINK_HERE" class="btn btn-primary">Get Starter $99</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Full Stack System</h3>
+                    <div class="price">$399<small>one-time</small></div>
+                    <ul class="list">
+                        <li>Everything in Starter</li>
+                        <li>3-5 custom automations</li>
+                        <li>Complete revenue dashboard</li>
+                        <li>Priority support 30 days</li>
+                        <li>Monthly optimization plan</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/YOUR_399_LINK_HERE" class="btn btn-primary">Get Full Stack $399</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Ongoing Support</h3>
+                    <div class="price">$29<small>/month</small></div>
+                    <ul class="list">
+                        <li>Automation maintenance</li>
+                        <li>Performance reports</li>
+                        <li>New gap identification</li>
+                        <li>Unlimited support</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/YOUR_29_LINK_HERE" class="btn btn-primary">Add Support $29/mo</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="cta" class="cta">
-    <div class="container" data-aos="fade-up">
-        <h2>Ready for More Customers in 2026?</h2>
-        <p style="font-size:1.4rem; color:var(--text-sec); max-width:800px; margin:2rem auto;">
-            Join NC businesses already growing with less daily grind.
-        </p>
-        <div class="cta-buttons">
-            <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary">Claim $399 Full Stack</a>
-            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary">Free Strategy Call</a>
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2>Ready to Stop Losing Revenue?</h2>
+            <p style="font-size:1.5rem; color:var(--text-sec); max-width:800px; margin:3rem auto 4rem;">Join 47 Winston-Salem businesses already automating their growth.</p>
+            <div class="cta-buttons">
+                <a href="https://buy.stripe.com/YOUR_399_LINK_HERE" class="btn btn-primary">Claim Full Stack $399</a>
+                <a href="https://calendly.com/YOUR_CALENDLY/reinn-audit" class="btn btn-secondary">Free 15min Audit</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <div class="container">
-        <p>© 2025 Rein N' Solutions • North Carolina Small Business Growth Partner</p>
-        <p style="margin-top:1rem;">Follow @reinnsolutions on X & Facebook</p>
-    </div>
-</footer>
+    <footer>
+        <div class="container">
+            <div class="logo" style="width:120px; height:60px; margin:0 auto 2rem;"></div>
+            <p>© 2025 Reinn N' Solutions • Winston-Salem, NC</p>
+            <p style="opacity:0.8;">Built for entrepreneurs, by entrepreneurs. | Automate. Elevate. Dominate.</p>
+        </div>
+    </footer>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 800, once: true });
-    document.querySelector('.hamburger').addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
-</script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
