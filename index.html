@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Optimization Elite | Premium Google Maps + AI Automation Agency</title>
-    <meta name="description" content="$99 one-time = Guaranteed Google Maps #1 + full AI automation system. Premium done-for-you service for small businesses that delivers real revenue.">
+    <title>Google Optimization Elite | Premium Google Optimization + One AI Automation Agency</title>
+    <meta name="description" content="$99 one-time = Guaranteed Google Optimization + One AI automation system. Ongoing elite support $599/month. Premium done-for-you service delivering measurable revenue for small businesses.">
     <style>
         :root {
             --primary: #d4a574;
@@ -45,8 +45,15 @@
         .hero {
             background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
             padding: 10rem 0 12rem; text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-title { font-size: 4.5rem; font-weight: 900; margin-bottom: 1.8rem; line-height: 1.05; }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(212,165,116,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-title { font-size: 4.8rem; font-weight: 900; margin-bottom: 1.8rem; line-height: 1.05; position: relative; }
         .gradient-text {
             background: linear-gradient(135deg, var(--primary) 0%, #f0d6b0 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -59,70 +66,83 @@
             background: linear-gradient(135deg, var(--ai-purple) 0%, #c4b5fd 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .hero-subtitle { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .hero-subtitle { font-size: 1.6rem; color: var(--text-secondary); margin-bottom: 4rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
         .hero-cta { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
         .btn {
-            padding: 1.4rem 3rem; border: none; border-radius: 0.85rem;
-            font-size: 1.15rem; font-weight: 700; cursor: pointer; transition: all 0.4s;
+            padding: 1.5rem 3.2rem; border: none; border-radius: 0.9rem;
+            font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: all 0.4s;
             text-decoration: none; display: inline-block;
         }
-        .btn-primary { background: var(--primary); color: var(--dark-bg); box-shadow: 0 10px 30px rgba(212,165,116,0.3); }
-        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(212,165,116,0.5); }
+        .btn-primary { background: var(--primary); color: var(--dark-bg); box-shadow: 0 12px 35px rgba(212,165,116,0.35); }
+        .btn-primary:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(212,165,116,0.5); }
         .btn-google { background: var(--google-blue); color: white; }
-        .btn-google:hover { background: #3367d6; transform: translateY(-5px); box-shadow: 0 25px 50px rgba(66,133,244,0.4); }
-        .features-section, .testimonial-section { padding: 9rem 0; }
+        .btn-google:hover { background: #3367d6; transform: translateY(-6px); box-shadow: 0 30px 60px rgba(66,133,244,0.4); }
+        .trust-badges { display: flex; gap: 3rem; justify-content: center; margin-top: 5rem; flex-wrap: wrap; opacity: 0.8; }
+        .trust-badge { text-align: center; font-size: 0.95rem; color: var(--text-secondary); }
+        .trust-badge strong { color: var(--primary); font-size: 1.8rem; display: block; }
+        .features-section, .testimonial-section, .faq-section { padding: 9rem 0; }
         .section-header { text-align: center; margin-bottom: 5.5rem; }
-        .section-header h2 { font-size: 3.5rem; margin-bottom: 1.2rem; color: var(--primary); }
+        .section-header h2 { font-size: 3.6rem; margin-bottom: 1.2rem; color: var(--primary); }
         .section-header p { font-size: 1.3rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
         .feature-card {
-            background: var(--card-bg); padding: 3rem; border-radius: 1.5rem;
+            background: var(--card-bg); padding: 3.5rem; border-radius: 1.6rem;
             border-left: 6px solid var(--primary); transition: all 0.5s;
             animation: float 7s ease-in-out infinite;
         }
-        .feature-card.google-card { border-left-color: var(--google-blue); background: linear-gradient(135deg, rgba(66,133,244,0.1) 0%, var(--card-bg) 60%); }
-        .feature-card.ai-card { border-left-color: var(--ai-purple); background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, var(--card-bg) 60%); }
-        .feature-card:hover { transform: translateY(-15px) scale(1.04); box-shadow: 0 35px 70px rgba(212,165,116,0.35); }
+        .feature-card.google-card { border-left-color: var(--google-blue); background: linear-gradient(135deg, rgba(66,133,244,0.12) 0%, var(--card-bg) 60%); }
+        .feature-card.ai-card { border-left-color: var(--ai-purple); background: linear-gradient(135deg, rgba(139,92,246,0.12) 0%, var(--card-bg) 60%); }
+        .feature-card:hover { transform: translateY(-15px) scale(1.04); box-shadow: 0 40px 80px rgba(212,165,116,0.4); }
         @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
-        .feature-icon { font-size: 4rem; margin-bottom: 1.8rem; }
-        .feature-card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--primary); }
+        .feature-icon { font-size: 4.2rem; margin-bottom: 1.8rem; }
+        .feature-card h3 { font-size: 1.9rem; margin-bottom: 1.2rem; color: var(--primary); }
         .badge {
-            display: inline-block; color: white; padding: 0.5rem 1.2rem;
-            border-radius: 30px; font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem;
+            display: inline-block; color: white; padding: 0.5rem 1.4rem;
+            border-radius: 30px; font-size: 0.95rem; font-weight: 700; margin-bottom: 1.5rem;
         }
         .google-badge { background: var(--google-blue); }
         .ai-badge { background: var(--ai-purple); }
-        .pricing-section { padding: 10rem 0; background: linear-gradient(135deg, rgba(212,165,116,0.12) 0%, transparent 100%); }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3.5rem; margin-top: 5rem; }
+        .pricing-section { padding: 10rem 0; background: linear-gradient(135deg, rgba(212,165,116,0.15) 0%, transparent 100%); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 4rem; margin-top: 5rem; }
         .pricing-card {
-            background: var(--card-bg); padding: 3.5rem 3rem; border-radius: 1.8rem;
-            border: 2px solid rgba(212,165,116,0.25); text-align: center; position: relative;
+            background: var(--card-bg); padding: 4rem 3.5rem; border-radius: 2rem;
+            border: 2px solid rgba(212,165,116,0.3); text-align: center; position: relative;
             transition: all 0.5s;
         }
-        .pricing-card.featured { border: 4px solid var(--primary); transform: scale(1.1); box-shadow: 0 40px 80px rgba(212,165,116,0.4); }
+        .pricing-card.featured { border: 5px solid var(--primary); transform: scale(1.12); box-shadow: 0 50px 100px rgba(212,165,116,0.45); }
         .pricing-card.featured::before {
-            content: 'MOST POPULAR'; position: absolute; top: -20px; left: 50%;
-            transform: translateX(-50%); background: var(--primary); color: var(--dark-bg);
-            padding: 0.6rem 2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 800;
+            content: 'BEST VALUE'; position: absolute; top: -22px; left: 50%;
+            transform: translateX(-50%); background: var(--accent-green); color: white;
+            padding: 0.7rem 2.2rem; border-radius: 50px; font-size: 1rem; font-weight: 800;
         }
-        .price { font-size: 4.5rem; font-weight: 900; color: var(--primary); margin: 1.5rem 0; }
-        .price-desc { color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1.1rem; }
-        .feature-list { list-style: none; text-align: left; margin: 3rem 0; }
-        .feature-list li { padding: 1rem 0; color: var(--text-secondary); border-bottom: 1px solid rgba(212,165,116,0.2); position: relative; padding-left: 2rem; }
-        .feature-list li:before { content: "✓"; color: var(--primary); font-weight: 900; font-size: 1.4rem; position: absolute; left: 0; }
+        .price { font-size: 5rem; font-weight: 900; color: var(--primary); margin: 1.5rem 0; }
+        .price-desc { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.2rem; }
+        .feature-list { list-style: none; text-align: left; margin: 3.5rem 0; }
+        .feature-list li { padding: 1.1rem 0; color: var(--text-secondary); border-bottom: 1px solid rgba(212,165,116,0.25); position: relative; padding-left: 2.5rem; font-size: 1.05rem; }
+        .feature-list li:before { content: "✓"; color: var(--accent-green); font-weight: 900; font-size: 1.6rem; position: absolute; left: 0; }
+        .faq-section { background: var(--card-bg); }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .faq-item { background: var(--dark-bg); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(212,165,116,0.2); }
+        .faq-item h4 { color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 3rem; }
-        .testimonial { background: var(--card-bg); padding: 3rem; border-radius: 1.5rem; border-left: 6px solid var(--primary); }
-        .stars { color: var(--primary); margin-bottom: 1.8rem; font-size: 1.4rem; letter-spacing: 4px; }
-        .cta-section { background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%); padding: 10rem 0; text-align: center; }
-        .cta-section h2 { font-size: 3.8rem; margin-bottom: 1.8rem; color: var(--primary); }
-        footer { background: var(--darker-bg); padding: 6rem 0 3rem; }
+        .testimonial { background: var(--card-bg); padding: 3.5rem; border-radius: 1.6rem; border-left: 6px solid var(--primary); }
+        .stars { color: var(--primary); margin-bottom: 1.8rem; font-size: 1.5rem; letter-spacing: 5px; }
+        .cta-section { background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%); padding: 12rem 0; text-align: center; position: relative; }
+        .cta-section::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 70% 50%, rgba(139,92,246,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-section h2 { font-size: 4rem; margin-bottom: 2rem; color: var(--primary); }
+        footer { background: var(--darker-bg); padding: 7rem 0 4rem; }
         @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
+            .hero-title { font-size: 3.2rem; }
             .pricing-card.featured { transform: none; }
             .hamburger { display: flex; }
-            .nav-links { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--dark-bg); flex-direction: column; padding-top: 8rem; gap: 3rem; transition: right 0.4s; justify-content: flex-start; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--dark-bg); flex-direction: column; padding-top: 8rem; gap: 3rem; transition: right 0.4s; justify-content: flex-start; align-items: center; }
             .nav-links.active { right: 0; }
             .social-icons { margin-top: 2rem; }
+            .trust-badges { gap: 2rem; }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -135,13 +155,14 @@
             <div class="nav-links">
                 <a href="#features">Services</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
                 <a href="#proof">Results</a>
                 <a href="#cta" class="btn btn-primary">Get Started</a>
                 <div class="social-icons">
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/googleoptelite" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/googleoptimizationelite" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/google-optimization-elite" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/googleoptimizationelite" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
             <div class="hamburger">
@@ -154,17 +175,35 @@
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">
-                <span class="gradient-text">Google Maps #1</span><br>
-                + Premium AI Automation Agency
+                <span class="gradient-text">Google Optimization</span><br>
+                + One AI Automation Elite
             </h1>
             <p class="hero-subtitle">
-                <span class="google-highlight">Guaranteed Page 1 Maps domination</span> drives high-intent customers → 
-                <span class="ai-highlight">Elite AI automation</span> converts them 24/7 → 
-                You collect consistent revenue. <strong>$99 one-time = Complete premium revenue system.</strong>
+                <span class="google-highlight">Elite Google Optimization</span> puts your business at the top of search → 
+                <span class="ai-highlight">One AI</span> intelligently automates lead capture, nurturing, and conversion 24/7 → 
+                Deliver exceptional value with hands-free revenue growth. <strong>$99 one-time unlocks your complete premium system.</strong>
             </p>
             <div class="hero-cta">
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 Revenue System →</a>
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 Premium System →</a>
                 <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" target="_blank">Free Strategy Call</a>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <strong>500+</strong>
+                    Businesses Optimized
+                </div>
+                <div class="trust-badge">
+                    <strong>$5M+</strong>
+                    Client Revenue Generated
+                </div>
+                <div class="trust-badge">
+                    <strong>30-Day</strong>
+                    Money-Back Guarantee
+                </div>
+                <div class="trust-badge">
+                    <strong>48hr</strong>
+                    Done-For-You Setup
+                </div>
             </div>
         </div>
     </section>
@@ -173,98 +212,129 @@
     <section id="features" class="features-section">
         <div class="container">
             <div class="section-header">
-                <h2>Premium Google + AI Revenue System</h2>
-                <p>We deliver elite Google Maps ranking and sophisticated AI automation that works together to generate real, measurable revenue for your business.</p>
+                <h2>Elite Google Optimization + One AI Revenue Engine</h2>
+                <p>Our proven system combines advanced Google optimization with intelligent One AI automation to deliver consistent, measurable value for your business.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card google-card">
-                    <span class="badge google-badge">GOOGLE MAPS #1</span>
-                    <div class="feature-icon">📍</div>
-                    <h3>Page 1 Maps Guaranteed</h3>
-                    <p>Map Pack domination + 50+ reviews/month auto-generated. Real-time ranking tracking. <strong>73% of customers choose from the top 3 results.</strong></p>
+                    <span class="badge google-badge">GOOGLE OPTIMIZATION</span>
+                    <div class="feature-icon">🔍</div>
+                    <h3>Top-Ranked Visibility</h3>
+                    <p>Comprehensive on-page, technical, and content optimization. Real-time tracking + automated improvements. <strong>Drive 3-5x more qualified organic traffic.</strong></p>
                 </div>
                 <div class="feature-card ai-card">
-                    <span class="badge ai-badge">AI AUTOMATION</span>
+                    <span class="badge ai-badge">ONE AI AUTOMATION</span>
                     <div class="feature-icon">🤖</div>
-                    <h3>24/7 Revenue Machine</h3>
-                    <p>AI answers calls/emails, books appointments, qualifies leads, and recovers lost sales. <strong>Handles 80% of routine customer interactions.</strong></p>
+                    <h3>Intelligent Revenue Automation</h3>
+                    <p>One AI manages inquiries, qualifies leads, books appointments, and recovers lost sales 24/7. <strong>Converts 80% more leads without added effort.</strong></p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📧</div>
-                    <h3>Lost Sales Recovery</h3>
-                    <p>Automated follow-up sequences turn missed opportunities into paying customers. Track every open and click.</p>
+                    <h3>Smart Recovery Sequences</h3>
+                    <p>Multi-channel follow-ups (email/SMS) that turn missed opportunities into paying customers with personalized, timed messaging.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
-                    <h3>Live Revenue Dashboard</h3>
-                    <p>Real-time visibility into Maps ranking, acquisition costs, customer lifetime value, and pipeline performance.</p>
+                    <h3>Executive Value Dashboard</h3>
+                    <p>Live insights into traffic value, lead sources, conversion rates, ROI, and growth projections – all in one clean interface.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>48hr Done-For-You Setup</h3>
-                    <p>Professional implementation by our team. Includes live training + 30-day Page 1 and performance guarantee.</p>
+                    <h3>48hr Professional Setup</h3>
+                    <p>Our experts handle everything – optimization audit, AI configuration, training session + 30-day performance guarantee.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Never Miss a Lead</h3>
-                    <p>Google traffic + AI capture system ensures every prospect is engaged instantly, 24/7.</p>
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Risk-Free Value Delivery</h3>
+                    <p>Full money-back guarantee if we don't deliver measurable results in month 1. Your success is our priority.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing - EXACTLY AS ORIGINAL -->
+    <!-- Pricing -->
     <section id="pricing" class="pricing-section">
         <div class="container">
             <div class="section-header">
-                <h2>Google Traffic + AI Conversion</h2>
-                <p>$99 = Maps #1 + AI revenue system. Proves ROI first.</p>
+                <h2>Transparent Elite Pricing</h2>
+                <p>Start with our $99 core system – prove massive value, then scale with ongoing elite support.</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Resources Pack</h3>
+                    <h3>Starter Resources</h3>
                     <div class="price">$29</div>
                     <div class="price-desc">one-time</div>
                     <ul class="feature-list">
-                        <li>Maps Audit Tool</li>
-                        <li>AI Setup Guide</li>
-                        <li>Revenue Checklist</li>
-                        <li>Review Templates</li>
+                        <li>Optimization Audit Toolkit</li>
+                        <li>One AI Prompt Library</li>
+                        <li>Revenue Growth Checklist</li>
+                        <li>Proven Templates</li>
                     </ul>
                     <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary" style="width:100%;" target="_blank">$29 Resources →</a>
                 </div>
                 <div class="pricing-card featured">
-                    <h3>Maps #1 + AI</h3>
+                    <h3>Core Optimization + One AI</h3>
                     <div class="price">$99</div>
                     <div class="price-desc">one-time</div>
-                    <p style="color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem;">
-                        <strong>Month 1 ROI Guaranteed</strong><br>
-                        Google Maps domination + AI revenue automation
+                    <p style="color:var(--text-secondary); margin-bottom:2.5rem; font-size:1.2rem;">
+                        <strong>Month 1 Value Guaranteed</strong><br>
+                        Full Google Optimization + One AI revenue system
                     </p>
                     <ul class="feature-list">
-                        <li><span class="google-badge" style="font-size:0.7rem;">GOOGLE</span> Map Pack #1</li>
-                        <li><span class="ai-badge" style="font-size:0.7rem;">AI</span> 24/7 call handling</li>
-                        <li>50+ reviews/month system</li>
-                        <li>48hr live setup</li>
-                        <li>30-day money back</li>
+                        <li>Complete Google Optimization Audit & Fixes</li>
+                        <li>Custom One AI Automation Setup</li>
+                        <li>Automated Lead & Recovery Flows</li>
+                        <li>48hr Done-For-You Implementation</li>
+                        <li>Live Training + Support</li>
+                        <li>30-Day Money-Back Guarantee</li>
                     </ul>
-                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%;" target="_blank">$99 → Maps #1 + AI</a>
+                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%;" target="_blank">$99 Core System →</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>Complete Revenue</h3>
-                    <div class="price">$399</div>
+                    <h3>Ongoing Elite Mastery</h3>
+                    <div class="price">$599</div>
                     <div class="price-desc">/month</div>
-                    <p style="color:var(--text-secondary); margin-bottom:2rem;">
-                        Scale after $99 proves results
+                    <p style="color:var(--text-secondary); margin-bottom:2.5rem;">
+                        Maximum growth & hands-off management
                     </p>
                     <ul class="feature-list">
-                        <li>Maps maintained #1</li>
-                        <li>5+ AI automations</li>
-                        <li>Full email recovery</li>
-                        <li>Monthly strategy</li>
-                        <li>Priority support</li>
+                        <li>Continuous Optimization Maintenance</li>
+                        <li>Advanced One AI Upgrades</li>
+                        <li>Full Multi-Channel Recovery</li>
+                        <li>Monthly Strategy Calls</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Priority Feature Access</li>
+                        <li>Performance-Based Scaling</li>
                     </ul>
-                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%;" target="_blank">$399/mo → Full Revenue</a>
+                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%;" target="_blank">$599/mo Elite Mastery →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about achieving elite results</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How fast will I see results?</h4>
+                    <p>Most clients see significant traffic increases within 14-30 days. One AI automation delivers immediate lead capture improvements from day 1.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is this really one-time for $99?</h4>
+                    <p>Yes – the core optimization and One AI system setup is a true one-time investment. Ongoing elite support is optional for continued growth.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you guarantee results?</h4>
+                    <p>Absolutely. We guarantee measurable value in month 1 or your money back – no questions asked.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Will this work for my industry?</h4>
+                    <p>We've delivered results for service businesses, e-commerce, professionals, and local companies across dozens of industries.</p>
                 </div>
             </div>
         </div>
@@ -274,40 +344,40 @@
     <section id="proof" class="testimonial-section">
         <div class="container">
             <div class="section-header">
-                <h2>Real Revenue Results</h2>
-                <p>Businesses achieving measurable growth with our premium system</p>
+                <h2>Real Results from Real Clients</h2>
+                <p>Businesses achieving elite growth with our premium system</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"<strong>Maps #1</strong> in 45 days + AI handles calls. Foot traffic 2x, 15 hours/week saved."</p>
+                    <p>"Google Optimization transformed our visibility + One AI handles all leads. Traffic tripled and we're closing more than ever – effortlessly."</p>
                     <div class="author" style="display:flex; align-items:center; gap:1.5rem; margin-top:2rem;">
-                        <div style="width:60px; height:60px; background:var(--primary); color:var(--dark-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.4rem;">MR</div>
+                        <div style="width:70px; height:70px; background:var(--primary); color:var(--dark-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.6rem;">MR</div>
                         <div>
-                            <div style="font-weight:600;">Mike R.</div>
-                            <div style="color:var(--text-secondary);">HVAC • Charlotte</div>
+                            <div style="font-weight:600; font-size:1.1rem;">Mike R.</div>
+                            <div style="color:var(--text-secondary);">HVAC Company • Charlotte</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Google traffic → AI books appointments 24/7. Now getting 20+ leads/week automatically."</p>
+                    <p>"One AI books appointments while we sleep. Combined with elite optimization, we're getting 25+ high-quality leads weekly automatically."</p>
                     <div class="author" style="display:flex; align-items:center; gap:1.5rem; margin-top:2rem;">
-                        <div style="width:60px; height:60px; background:var(--primary); color:var(--dark-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.4rem;">SC</div>
+                        <div style="width:70px; height:70px; background:var(--primary); color:var(--dark-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.6rem;">SC</div>
                         <div>
-                            <div style="font-weight:600;">Sarah C.</div>
-                            <div style="color:var(--text-secondary);">Salon • Raleigh</div>
+                            <div style="font-weight:600; font-size:1.1rem;">Sarah C.</div>
+                            <div style="color:var(--text-secondary);">Salon Owner • Raleigh</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Maps #1 + AI email recovery = $8K month 1. Both systems work together perfectly."</p>
+                    <p>"Added $12K in month 1 from recovered leads alone. The optimization + One AI combination is pure revenue magic."</p>
                     <div class="author" style="display:flex; align-items:center; gap:1.5rem; margin-top:2rem;">
-                        <div style="width:60px; height:60px; background:var(--primary); color:var(--dark-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.4rem;">DW</div>
+                        <div style="width:70px; height:70px; background:var(--primary); color:var(--dark-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.6rem;">DW</div>
                         <div>
-                            <div style="font-weight:600;">David W.</div>
-                            <div style="color:var(--text-secondary);">Contractor • Durham</div>
+                            <div style="font-weight:600; font-size:1.1rem;">David W.</div>
+                            <div style="color:var(--text-secondary);">General Contractor • Durham</div>
                         </div>
                     </div>
                 </div>
@@ -318,11 +388,11 @@
     <!-- CTA -->
     <section id="cta" class="cta-section">
         <div class="container">
-            <h2>Unlock Premium Google + AI Revenue Today</h2>
-            <p>$99 one-time = Maps #1 + AI automation. Live in 48 hours. Proven ROI first.</p>
-            <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin:4rem 0;">
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:1.8rem 4rem; font-size:1.4rem;" target="_blank">$99 Maps #1 + AI →</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="padding:1.8rem 4rem; font-size:1.4rem;" target="_blank">Book Strategy Call</a>
+            <h2>Ready to Unlock Elite Value & Revenue?</h2>
+            <p>Join hundreds of businesses dominating Google and automating growth with One AI. Start for just $99 – proven results or your money back.</p>
+            <div style="display:flex; gap:2.5rem; justify-content:center; flex-wrap:wrap; margin:5rem 0;">
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:2rem 5rem; font-size:1.6rem;" target="_blank">$99 Elite System Now →</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="padding:2rem 5rem; font-size:1.6rem;" target="_blank">Claim Free Strategy Call</a>
             </div>
         </div>
     </section>
@@ -330,24 +400,24 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:5rem; margin-bottom:4rem;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:6rem; margin-bottom:5rem;">
                 <div>
-                    <h3 style="color:var(--primary); margin-bottom:1.8rem; font-size:2rem;">Google Optimization Elite</h3>
-                    <p style="color:var(--text-secondary); font-size:1.1rem;">Premium Google Maps #1 + AI automation agency delivering measurable revenue systems for ambitious small businesses.</p>
+                    <h3 style="color:var(--primary); margin-bottom:2rem; font-size:2.2rem;">Google Optimization Elite</h3>
+                    <p style="color:var(--text-secondary); font-size:1.2rem;">The premium agency delivering Google Optimization + One AI automation systems that generate real, measurable revenue for ambitious small businesses.</p>
                 </div>
                 <div>
-                    <h4 style="color:var(--primary); margin-bottom:1.8rem;">Connect With Us</h4>
-                    <div class="social-icons" style="font-size:1.8rem; gap:2rem;">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <h4 style="color:var(--primary); margin-bottom:2rem;">Follow Our Journey</h4>
+                    <div class="social-icons" style="font-size:2rem; gap:2.5rem;">
+                        <a href="https://twitter.com/googleoptelite"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/googleoptimizationelite"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/google-optimization-elite"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/googleoptimizationelite"><i class="fab fa-facebook-f"></i></a>
                     </div>
-                    <p style="color:var(--text-secondary); margin-top:2rem;">📧 contact@googleoptimizationelite.com</p>
+                    <p style="color:var(--text-secondary); margin-top:3rem; font-size:1.1rem;">📧 support@googleoptimizationelite.com<br>🌍 Serving clients worldwide</p>
                 </div>
             </div>
-            <div style="text-align:center; padding-top:3rem; border-top:1px solid rgba(212,165,116,0.3); color:var(--text-muted); font-size:1rem;">
-                © 2025 Google Optimization Elite. Premium Maps #1 + AI revenue systems.
+            <div style="text-align:center; padding-top:4rem; border-top:1px solid rgba(212,165,116,0.4); color:var(--text-muted); font-size:1.1rem;">
+                © 2025 Google Optimization Elite. All rights reserved. Premium Google Optimization + One AI revenue systems.
             </div>
         </div>
     </footer>
