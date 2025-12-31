@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reinn N' Solutions | Automate. Elevate. Dominate.</title>
-    <script src="https://js.stripe.com/v3/pricing-table.js" async></script>
     <script src="https://js.stripe.com/v3/"></script>
     <style>
         :root {
@@ -13,7 +12,6 @@
             --copper-dark: #B8860B;
             --cream: #F5F5F0;
             --white: #FFFFFF;
-            --gradient: linear-gradient(135deg, #1a1f24 0%, #2d3748 50%, #4a5568 100%);
         }
 
         * {
@@ -24,18 +22,20 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2d3748 50%, #4a5568 100%);
             color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Logo Styles */
         .logo {
-            width: 80px;
-            height: 80px;
-            background: url('data:image/jpeg;base64,...') center/contain no-repeat; /* Replace with your logo base64 */
-            /* Or use: background-image: url('High-Resolution-Color-Logo.jpeg'); */
+            width: 120px;
+            height: 120px;
+            background-image: url('High-Resolution-Color-Logo.jpeg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 auto 2rem;
         }
 
         .hero {
@@ -47,330 +47,251 @@
             text-align: center;
             padding: 2rem;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        .logo-hero {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 2rem;
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--white) 0%, var(--copper) 50%, var(--cream) 100%);
+        .hero h1 {
+            font-size: clamp(4rem, 10vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--white) 0%, var(--copper) 70%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
         }
 
-        .tagline {
-            font-size: clamp(1.2rem, 4vw, 2rem);
-            font-weight: 600;
+        .hero .tagline {
+            font-size: clamp(1.3rem, 4vw, 2.2rem);
+            font-weight: 500;
             color: var(--cream);
-            margin-bottom: 3rem;
-            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            opacity: 0.95;
         }
 
-        .cta-section {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 165, 116, 0.2);
+        .cta-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(212,165,116,0.25);
             border-radius: 24px;
-            padding: 3rem;
-            max-width: 600px;
+            padding: 4rem 3rem;
+            max-width: 650px;
             margin: 0 auto;
-            animation: slideIn 1s ease-out 0.5s both;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
         }
 
-        .pricing-table {
-            margin-top: 4rem;
+        .cta-card h2 {
+            font-size: 2.5rem;
+            color: var(--copper);
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-        .features-grid {
+        .cta-card p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+        }
+
+        /* VALID STRIPE CHECKOUT BUTTONS */
+        .pricing-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
 
-        .feature-card {
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 165, 116, 0.1);
-            border-radius: 20px;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--copper), var(--copper-dark));
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--copper);
-            box-shadow: 0 32px 64px rgba(212, 165, 116, 0.15);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
+        .stripe-btn {
             background: linear-gradient(135deg, var(--copper), var(--copper-dark));
-            border-radius: 20px;
+            color: var(--charcoal) !important;
+            border: none;
+            padding: 1.3rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 16px;
+            cursor: pointer;
+            text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, var(--copper), var(--copper-dark));
-            color: var(--charcoal);
-            border: none;
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
             gap: 0.75rem;
-            box-shadow: 0 12px 32px rgba(212, 165, 116, 0.3);
+            box-shadow: 0 16px 32px rgba(212,165,116,0.4);
+            transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
             position: relative;
             overflow: hidden;
+            font-family: inherit;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(212, 165, 116, 0.4);
+        .stripe-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(212,165,116,0.5);
         }
 
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::after {
-            left: 100%;
-        }
-
-        .stats {
+        .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin: 6rem 0;
+            max-width: 1400px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212,165,116,0.15);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            border-color: var(--copper);
+            box-shadow: 0 30px 60px rgba(212,165,116,0.2);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--copper);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 8rem auto;
+            padding: 0 2rem;
             text-align: center;
         }
 
         .stat {
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
         .stat-number {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
             background: linear-gradient(135deg, var(--copper), var(--cream));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 8rem 2rem;
+            background: rgba(26,31,36,0.8);
+            margin: 6rem 0;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            background: linear-gradient(135deg, var(--copper), var(--cream));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
         }
 
         footer {
             text-align: center;
-            padding: 4rem 2rem;
-            border-top: 1px solid rgba(212, 165, 116, 0.2);
-            margin-top: 8rem;
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(212,165,116,0.2);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
-        }
-
-        @media (max-width: 768px) {
-            .cta-section {
-                padding: 2rem 1.5rem;
-                margin: 0 1rem;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        .floating-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--copper);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
+        .trust-badge {
+            background: rgba(212,165,116,0.15);
+            color: var(--copper);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .logo { animation: float 4s ease-in-out infinite; }
+
+        @media (max-width: 768px) {
+            .pricing-buttons { grid-template-columns: 1fr; }
+            .cta-card { padding: 2.5rem 2rem; margin: 0 1rem; }
+            .features { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Particles Background -->
-    <div class="floating-particles" id="particles"></div>
-
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="logo-hero logo"></div>
-        <div class="hero-content">
-            <h1>Automate. Elevate. Dominate.</h1>
-            <p class="tagline">We build intelligent automations that turn small business chaos into effortless revenue growth</p>
+        <div class="logo"></div>
+        <h1>Automate. Elevate. Dominate.</h1>
+        <p class="tagline">We build intelligent automations that turn small business chaos into effortless revenue growth</p>
+        
+        <div class="cta-card">
+            <h2>Ready to stop losing money?</h2>
+            <p>Setup takes 20 minutes. ROI shows up week one.</p>
             
-            <div class="cta-section">
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--copper);">Ready to stop losing money?</h2>
-                <p style="margin-bottom: 2rem; opacity: 0.9;">Setup takes 20 minutes. ROI shows up week one.</p>
-                
-                <!-- Stripe Pricing Table - Replace with YOUR pricing table ID -->
-                <div class="pricing-table">
-                    <stripe-pricing-table 
-                        pricing-table-id="YOUR_PRICING_TABLE_ID_HERE"
-                        publishable-key="pk_test_YOUR_PUBLISHABLE_KEY_HERE"
-                        client-reference-id="reinnsolutions_xyz"
-                    >
-                    </stripe-pricing-table>
-                </div>
-                
-                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
-                    No credit card required. Cancel anytime. White-glove setup included.
-                </p>
+            <!-- ✅ VALID STRIPE CHECKOUT BUTTONS - Replace price IDs with yours -->
+            <div class="pricing-buttons">
+                <button class="stripe-btn" id="starter-btn">
+                    Starter $99/mo → 
+                </button>
+                <button class="stripe-btn" id="pro-btn">
+                    Pro $199/mo → 
+                </button>
+                <button class="stripe-btn" id="elite-btn">
+                    Elite $399/mo → 
+                </button>
             </div>
+            
+            <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 2rem;">
+                No credit card required. Cancel anytime. White-glove setup included.
+            </p>
+            <div class="trust-badge">47+ Winston-Salem businesses automated</div>
         </div>
     </section>
 
-    <!-- Features Grid -->
-    <section class="features-grid">
-        <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Instant Lead Capture</h3>
+    <!-- Features -->
+    <section class="features">
+        <div class="feature">
+            <span class="feature-icon">🚀</span>
+            <h3>Instant Lead Capture</h3>
             <p>Every inquiry, form submission, and missed call gets captured and followed up automatically—24/7.</p>
         </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">📱</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Smart Reminders</h3>
+        <div class="feature">
+            <span class="feature-icon">📱</span>
+            <h3>Smart Reminders</h3>
             <p>Text + email reminders slash no-shows by 40%+. Clients show up, revenue flows.</p>
         </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">💰</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Frictionless Payments</h3>
+        <div class="feature">
+            <span class="feature-icon">💰</span>
+            <h3>Frictionless Payments</h3>
             <p>Stripe deposits, automated invoicing, and payment links that convert browsers to buyers.</p>
         </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">20-Min Setup</h3>
+        <div class="feature">
+            <span class="feature-icon">⚡</span>
+            <h3>20-Min Setup</h3>
             <p>Connects to your existing tools. No coding. No migration headaches. Live in one call.</p>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Stats -->
+    <section class="stats-grid">
         <div class="stat">
             <span class="stat-number">40%</span>
             <p>No-shows eliminated</p>
@@ -389,81 +310,56 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section style="text-align: center; padding: 6rem 2rem;">
-        <h2 style="font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--copper), var(--cream)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ready to dominate?</h2>
-        <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to dominate?</h2>
+        <p style="font-size: 1.4rem; opacity: 0.9; max-width: 700px; margin: 0 auto 3rem;">
             Join the 47 businesses already automating their growth with Reinn N' Solutions.
         </p>
-        <a href="#pricing" class="btn" onclick="document.querySelector('.pricing-table').scrollIntoView({behavior: 'smooth'})">
-            Get Started Now
-            <span style="font-size: 0.9rem;">→</span>
-        </a>
+        <div class="pricing-buttons" style="max-width: 900px; margin: 0 auto;">
+            <button class="stripe-btn" id="starter-btn-mobile">Starter $99/mo →</button>
+            <button class="stripe-btn" id="pro-btn-mobile">Pro $199/mo →</button>
+            <button class="stripe-btn" id="elite-btn-mobile">Elite $399/mo →</button>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="logo" style="width: 60px; height: 60px; margin: 0 auto 1rem;"></div>
-        <p style="opacity: 0.7;">© 2025 Reinn N' Solutions. All rights reserved.</p>
-        <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 0.5rem;">
-            Built for entrepreneurs, by entrepreneurs. Winston-Salem, NC.
-        </p>
+        <div class="logo" style="width: 80px; height: 80px;"></div>
+        <p>© 2025 Reinn N' Solutions. All rights reserved.</p>
+        <p style="opacity: 0.7; font-size: 0.95rem;">Built for entrepreneurs, by entrepreneurs. Winston-Salem, NC.</p>
     </footer>
 
     <script>
-        // Floating Particles Animation
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
+        // ✅ VALID STRIPE CHECKOUT INTEGRATION
+        const stripe = Stripe('pk_test_51R3zqX2KX0zqX2KX0zqX2KX0zqX2KX0zqX2KX'); // REPLACE WITH YOUR PK
 
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        // Replace these PRICE IDs from your Stripe Dashboard > Products
+        const prices = {
+            starter: 'price_1234567890abcdef',  // Your Starter $99/mo price ID
+            pro: 'price_abcdef1234567890',      // Your Pro $199/mo price ID  
+            elite: 'price_7890abcdef123456'     // Your Elite $399/mo price ID
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        async function createCheckoutSession(priceId) {
+            const response = await fetch('/create-checkout-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ priceId })
             });
-        }, observerOptions);
+            const session = await response.json();
+            return stripe.redirectToCheckout({ sessionId: session.id });
+        }
 
-        // Observe feature cards
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            observer.observe(card);
+        // Button event listeners
+        document.querySelectorAll('#starter-btn, #starter-btn-mobile').forEach(btn => {
+            btn.addEventListener('click', () => createCheckoutSession(prices.starter));
         });
-
-        // Initialize
-        window.addEventListener('load', () => {
-            createParticles();
+        document.querySelectorAll('#pro-btn, #pro-btn-mobile').forEach(btn => {
+            btn.addEventListener('click', () => createCheckoutSession(prices.pro));
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        document.querySelectorAll('#elite-btn, #elite-btn-mobile').forEach(btn => {
+            btn.addEventListener('click', () => createCheckoutSession(prices.elite));
         });
     </script>
 </body>
