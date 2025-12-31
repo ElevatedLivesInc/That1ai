@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rein N' Solutions | AI + Google Automation</title>
-    <meta name="description" content="$99 Google automation that pays for itself. Map Pack #1 + revenue systems for NC small business.">
+    <title>Rein N' Solutions | Google Maps + AI Automation</title>
+    <meta name="description" content="$99 = Google Maps #1 + AI automation that pays for itself. NC small business revenue systems.">
     <style>
         :root {
             --primary: #d4a574;
             --google-blue: #4285F4;
+            --ai-purple: #8B5CF6;
             --dark-bg: #0f172a;
             --darker-bg: #020617;
             --card-bg: #1e293b;
@@ -50,6 +51,10 @@
             background: linear-gradient(135deg, var(--google-blue) 0%, #34a853 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .ai-highlight {
+            background: linear-gradient(135deg, var(--ai-purple) 0%, #A78BFA 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
         .hero-subtitle { font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
         .hero-cta { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
         .btn {
@@ -61,6 +66,8 @@
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(212,165,116,0.4); }
         .btn-google { background: var(--google-blue); color: white; }
         .btn-google:hover { background: #3367d6; transform: translateY(-3px); box-shadow: 0 20px 40px rgba(66,133,244,0.4); }
+        .btn-ai { background: var(--ai-purple); color: white; }
+        .btn-ai:hover { background: #7C3AED; transform: translateY(-3px); box-shadow: 0 20px 40px rgba(139,92,246,0.4); }
         .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
         .btn-secondary:hover { background: var(--primary); color: var(--dark-bg); }
         .features-section, .testimonial-section { padding: 7rem 0; }
@@ -73,35 +80,26 @@
             border-left: 5px solid var(--primary); transition: all 0.4s;
             animation: float 6s ease-in-out infinite;
         }
-        .feature-card.google-card {
-            border-left: 5px solid var(--google-blue);
-            background: linear-gradient(135deg, rgba(66,133,244,0.1) 0%, var(--card-bg) 50%);
-        }
-        .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(212,165,116,0.25);
-        }
+        .feature-card.google-card { border-left: 5px solid var(--google-blue); background: linear-gradient(135deg, rgba(66,133,244,0.08) 0%, var(--card-bg) 50%); }
+        .feature-card.ai-card { border-left: 5px solid var(--ai-purple); background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, var(--card-bg) 50%); }
+        .feature-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 50px rgba(212,165,116,0.25); }
         @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
         .feature-icon { font-size: 3rem; margin-bottom: 1.25rem; }
         .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary); }
-        .google-badge {
-            display: inline-block; background: var(--google-blue); color: white;
-            padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
-            font-weight: 700; margin-bottom: 1rem;
+        .badge {
+            display: inline-block; color: white; padding: 0.25rem 0.75rem; 
+            border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;
         }
-        .pricing-section {
-            padding: 8rem 0; background: linear-gradient(135deg, rgba(212,165,116,0.08) 0%, transparent 100%);
-        }
+        .google-badge { background: var(--google-blue); }
+        .ai-badge { background: var(--ai-purple); }
+        .pricing-section { padding: 8rem 0; background: linear-gradient(135deg, rgba(212,165,116,0.08) 0%, transparent 100%); }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
         .pricing-card {
             background: var(--card-bg); padding: 3rem 2.5rem; border-radius: 1.5rem;
             border: 2px solid rgba(212,165,116,0.2); text-align: center; position: relative;
             transition: all 0.4s;
         }
-        .pricing-card.featured {
-            border: 3px solid var(--primary); transform: scale(1.08);
-            box-shadow: 0 30px 60px rgba(212,165,116,0.3);
-        }
+        .pricing-card.featured { border: 3px solid var(--primary); transform: scale(1.08); box-shadow: 0 30px 60px rgba(212,165,116,0.3); }
         .pricing-card.featured::before {
             content: 'MOST POPULAR'; position: absolute; top: -15px; left: 50%;
             transform: translateX(-50%); background: var(--primary); color: var(--dark-bg);
@@ -110,61 +108,34 @@
         .price { font-size: 3.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0; }
         .price-desc { color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; }
         .feature-list { list-style: none; text-align: left; margin: 2.5rem 0; }
-        .feature-list li {
-            padding: 0.75rem 0; color: var(--text-secondary);
-            border-bottom: 1px solid rgba(212,165,116,0.15); position: relative;
-        }
-        .feature-list li:before {
-            content: "✓"; color: var(--primary); font-weight: 800; font-size: 1.2rem; margin-right: 1rem;
-        }
+        .feature-list li { padding: 0.75rem 0; color: var(--text-secondary); border-bottom: 1px solid rgba(212,165,116,0.15); position: relative; }
+        .feature-list li:before { content: "✓"; color: var(--primary); font-weight: 800; font-size: 1.2rem; margin-right: 1rem; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
-        .testimonial {
-            background: var(--card-bg); padding: 2.5rem; border-radius: 1rem;
-            border-left: 5px solid var(--primary);
-        }
+        .testimonial { background: var(--card-bg); padding: 2.5rem; border-radius: 1rem; border-left: 5px solid var(--primary); }
         .stars { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.2rem; }
         .testimonial p { color: var(--text-secondary); margin-bottom: 2rem; font-style: italic; font-size: 1.1rem; }
         .author { display: flex; align-items: center; gap: 1.25rem; }
-        .author-avatar {
-            width: 50px; height: 50px; background: var(--primary); color: var(--dark-bg);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 1rem;
-        }
-        .cta-section {
-            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
-            padding: 8rem 0; text-align: center;
-        }
+        .author-avatar { width: 50px; height: 50px; background: var(--primary); color: var(--dark-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
+        .cta-section { background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%); padding: 8rem 0; text-align: center; }
         .cta-section h2 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary); }
         .cta-section p { font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 3rem; }
-        .audit-card {
-            background: var(--card-bg); border-radius: 1.5rem; border-left: 5px solid var(--primary);
-            padding: 2.5rem; margin-top: 3rem; text-align: center; max-width: 500px; margin-left: auto; margin-right: auto;
-        }
-        .google-stats {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem; margin: 3rem 0; background: var(--card-bg);
-            padding: 2rem; border-radius: 1rem; border-left: 5px solid var(--google-blue);
-        }
+        .audit-card { background: var(--card-bg); border-radius: 1.5rem; border-left: 5px solid var(--primary); padding: 2.5rem; margin-top: 3rem; text-align: center; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .combo-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 3rem 0; background: var(--card-bg); padding: 2rem; border-radius: 1rem; }
         .stat { text-align: center; }
-        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--google-blue); }
+        .stat-number { font-size: 2.5rem; font-weight: 800; }
+        .stat-google .stat-number { color: var(--google-blue); }
+        .stat-ai .stat-number { color: var(--ai-purple); }
         .stat-label { color: var(--text-secondary); font-size: 0.95rem; }
-        footer {
-            background: var(--darker-bg); padding: 4rem 0 2rem;
-            border-top: 1px solid rgba(212,165,116,0.2);
-        }
+        footer { background: var(--darker-bg); padding: 4rem 0 2rem; border-top: 1px solid rgba(212,165,116,0.2); }
         @media (max-width: 768px) {
             .hamburger { display: flex; }
-            .nav-links { 
-                position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
-                background: var(--dark-bg); flex-direction: column; padding-top: 6rem; gap: 2rem;
-                transition: right 0.3s; 
-            }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 300px; height: 100vh; background: var(--dark-bg); flex-direction: column; padding-top: 6rem; gap: 2rem; transition: right 0.3s; }
             .nav-links.active { right: 0; }
             .hero-title { font-size: 2.5rem; }
             .hero-cta { flex-direction: column; }
             .btn { width: 100%; }
             .pricing-card.featured { transform: scale(1); }
-            .google-stats { grid-template-columns: 1fr; }
+            .combo-stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -174,9 +145,9 @@
         <nav>
             <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/59db5f52-50b8-44f2-acc6-bc05383889b3" alt="Rein N' Solutions" class="nav-logo">
             <div class="nav-links">
-                <a href="#features">Features</a>
+                <a href="#features">Google + AI</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#proof">Proof</a>
+                <a href="#proof">Results</a>
                 <a href="#cta" class="btn btn-primary">Get Started</a>
             </div>
             <div class="hamburger">
@@ -185,79 +156,86 @@
         </nav>
     </header>
 
-    <!-- Hero - GOOGLE EMPHASIZED -->
+    <!-- Hero - BALANCED GOOGLE + AI -->
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">
-                <span class="gradient-text">$99 Google Automation</span><br>
-                Map Pack #1 + Revenue Guaranteed
+                <span class="gradient-text">$99 Google Maps #1</span><br>
+                + AI That Handles Everything Else
             </h1>
             <p class="hero-subtitle">
-                Invisible on Google? We fix it → <span class="google-highlight">Page 1 Maps + 50+ reviews/mo</span> → 
-                customers find you. <strong>$99 = Your first revenue system (one-time).</strong>
+                <span class="google-highlight">Page 1 Maps</span> gets customers searching for you → 
+                <span class="ai-highlight">AI automation</span> converts them 24/7 → 
+                You collect revenue. <strong>$99 = Complete revenue system (one-time).</strong>
             </p>
             <div class="hero-cta">
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 Google Automation →</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" target="_blank">Google Audit Call</a>
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 Revenue System →</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" target="_blank">Free Strategy Call</a>
             </div>
         </div>
     </section>
 
-    <!-- Google Stats Row -->
-    <section class="google-stats" style="margin-top: -4rem;">
-        <div class="stat">
+    <!-- Google + AI Stats -->
+    <section class="combo-stats">
+        <div class="stat stat-google">
             <div class="stat-number">95%</div>
-            <div class="stat-label">Local customers use Google Maps</div>
+            <div class="stat-label">Find you on Google Maps</div>
         </div>
-        <div class="stat">
-            <div class="stat-number">73%</div>
-            <div class="stat-label">Choose Map Pack #1-3</div>
+        <div class="stat stat-ai">
+            <div class="stat-number">80%</div>
+            <div class="stat-label">Routine work AI handles</div>
         </div>
-        <div class="stat">
-            <div class="stat-number">Page 1</div>
-            <div class="stat-label">Guaranteed or money back</div>
+        <div class="stat stat-google">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Maps + AI never sleep</div>
         </div>
     </section>
 
-    <!-- Features - GOOGLE FEATURE #1 -->
+    <!-- Features - GOOGLE #1 + AI #2 -->
     <section id="features" class="features-section">
         <div class="container">
             <div class="section-header">
-                <h2>Google-First Revenue Stack</h2>
-                <p>We own Maps + AI + Email. You get customers.</p>
+                <h2>Google Gets Them → AI Closes Them</h2>
+                <p>We handle both ends of the revenue funnel. You collect checks.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card google-card">
-                    <span class="google-badge">MAPS DOMINATION</span>
+                    <span class="google-badge">GOOGLE MAPS #1</span>
                     <div class="feature-icon">📍</div>
-                    <h3>Google Map Pack #1</h3>
-                    <p><strong>Page 1 Maps guaranteed.</strong> 50+ reviews/month auto-generated. 
-                    Real-time ranking tracking. Competitors crushed.</p>
+                    <h3>Page 1 Maps Guaranteed</h3>
+                    <p>Map Pack domination + 50+ reviews/month auto-generated. 
+                    Real-time ranking tracking. <strong>73% of customers pick #1-3.</strong></p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card ai-card">
+                    <span class="ai-badge">AI AUTOMATION</span>
                     <div class="feature-icon">🤖</div>
-                    <h3>AI Revenue Automation</h3>
-                    <p>24/7 AI answers calls/emails, books appointments, qualifies leads. Handles 80% of routine work.</p>
+                    <h3>24/7 Revenue Machine</h3>
+                    <p>AI answers Google calls/emails, books appointments, qualifies leads, 
+                    recovers lost sales. <strong>Handles 80% of your routine work.</strong></p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📧</div>
                     <h3>Lost Sales Recovery</h3>
-                    <p>Automated emails recover browsers → buyers. Track opens/clicks. Get revenue you already earned.</p>
+                    <p>Automated emails turn browsers → buyers. Track opens/clicks. 
+                    Revenue you already earned but lost.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>Live Revenue Dashboard</h3>
-                    <p>Customer acquisition cost, LTV, Maps ranking, pipeline health. Know what's working daily.</p>
+                    <p>Maps ranking, customer acquisition cost, LTV, pipeline health. 
+                    Know exactly what's working every day.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>48hr Done-For-You</h3>
-                    <p>No coding. Our team builds everything. Live training + 30-day Page 1 guarantee.</p>
+                    <h3>48hr Done-For-You Setup</h3>
+                    <p>No coding. Our team builds Google + AI systems. Live training + 
+                    30-day Page 1 + performance guarantee.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Never Miss a Lead</h3>
-                    <p>AI chat captures Google traffic 24/7. Hot prospects routed instantly.</p>
+                    <h3>Never Miss Revenue</h3>
+                    <p>Google traffic + AI chat captures every lead 24/7. 
+                    Hot prospects routed instantly to you.</p>
                 </div>
             </div>
         </div>
@@ -267,54 +245,54 @@
     <section id="pricing" class="pricing-section">
         <div class="container">
             <div class="section-header">
-                <h2>Get Found on Google → Scale</h2>
-                <p>$99 proves Maps ROI first. 30-day Page 1 guarantee.</p>
+                <h2>Google Traffic + AI Conversion</h2>
+                <p>$99 = Maps #1 + AI revenue system. Proves ROI first.</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Google Resources</h3>
+                    <h3>Resources Pack</h3>
                     <div class="price">$29</div>
                     <div class="price-desc">one-time</div>
                     <ul class="feature-list">
                         <li>Maps Audit Tool</li>
-                        <li>Review System Guide</li>
-                        <li>Local SEO Checklist</li>
-                        <li>Setup Templates</li>
+                        <li>AI Setup Guide</li>
+                        <li>Revenue Checklist</li>
+                        <li>Review Templates</li>
                     </ul>
-                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary" style="width:100%;" target="_blank">$29 Google Resources →</a>
+                    <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary" style="width:100%;" target="_blank">$29 Resources →</a>
                 </div>
                 <div class="pricing-card featured">
-                    <h3>Google Automation</h3>
+                    <h3>Maps #1 + AI</h3>
                     <div class="price">$99</div>
                     <div class="price-desc">one-time</div>
                     <p style="color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem;">
-                        <strong>Page 1 Maps Month 1</strong><br>
-                        Maps domination + 1 revenue automation
+                        <strong>Month 1 ROI Guaranteed</strong><br>
+                        Google Maps domination + AI revenue automation
                     </p>
                     <ul class="feature-list">
-                        <li>Google Maps Page 1 guarantee</li>
+                        <li><span class="google-badge" style="font-size:0.7rem;">GOOGLE</span> Map Pack #1</li>
+                        <li><span class="ai-badge" style="font-size:0.7rem;">AI</span> 24/7 call handling</li>
                         <li>50+ reviews/month system</li>
-                        <li>One core automation built</li>
                         <li>48hr live setup</li>
-                        <li>30-day performance guarantee</li>
+                        <li>30-day money back</li>
                     </ul>
-                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%;" target="_blank">$99 → Get Map Pack #1</a>
+                    <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="width:100%;" target="_blank">$99 → Maps #1 + AI</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>Full Revenue System</h3>
+                    <h3>Complete Revenue</h3>
                     <div class="price">$399</div>
                     <div class="price-desc">/month</div>
                     <p style="color:var(--text-secondary); margin-bottom:2rem;">
-                        Maps #1 + Complete Automation
+                        Scale after $99 proves results
                     </p>
                     <ul class="feature-list">
-                        <li>Maps domination maintained</li>
-                        <li>5+ revenue automations</li>
-                        <li>AI call/email handling</li>
-                        <li>Monthly strategy calls</li>
+                        <li>Maps maintained #1</li>
+                        <li>5+ AI automations</li>
+                        <li>Full email recovery</li>
+                        <li>Monthly strategy</li>
                         <li>Priority support</li>
                     </ul>
-                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%;" target="_blank">$399/mo → Full System</a>
+                    <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary" style="width:100%;" target="_blank">$399/mo → Full Revenue</a>
                 </div>
             </div>
         </div>
@@ -324,13 +302,13 @@
     <section id="proof" class="testimonial-section">
         <div class="container">
             <div class="section-header">
-                <h2>NC Businesses Ranking #1</h2>
-                <p>Real Google Maps results from this system</p>
+                <h2>Maps #1 + AI = Revenue</h2>
+                <p>NC businesses using Google + AI systems</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Page 3 → <strong>Map Pack #1</strong> in 45 days. Foot traffic 2x. Paid for itself month 1."</p>
+                    <p>"<strong>Maps #1</strong> in 45 days + AI handles calls. Foot traffic 2x, 15 hours/week saved."</p>
                     <div class="author">
                         <div class="author-avatar">MR</div>
                         <div>
@@ -341,7 +319,7 @@
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Google calls handled by AI 24/7. Saved 18 hours/week. Now getting 20+ leads/week."</p>
+                    <p>"Google traffic → AI books appointments 24/7. Now getting 20+ leads/week automatically."</p>
                     <div class="author">
                         <div class="author-avatar">SC</div>
                         <div>
@@ -352,7 +330,7 @@
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Maps #1 + email automation = $8K recovered sales month 1. Instant ROI."</p>
+                    <p>"Maps #1 + AI email recovery = $8K month 1. Both systems work together perfectly."</p>
                     <div class="author">
                         <div class="author-avatar">DW</div>
                         <div>
@@ -368,16 +346,16 @@
     <!-- CTA -->
     <section id="cta" class="cta-section">
         <div class="container">
-            <h2>Page 1 Google Maps Guaranteed</h2>
-            <p>$99 = Map Pack domination that pays for itself. Live in 48 hours.</p>
+            <h2>Google Traffic + AI Revenue</h2>
+            <p>$99 = Maps #1 + AI automation. Live in 48 hours. Proves ROI first.</p>
             <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
-                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">$99 Map Pack #1 →</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">Free Maps Audit</a>
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">$99 Maps #1 + AI →</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-google" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">Strategy Call</a>
             </div>
             <div class="audit-card">
-                <h3 style="color:var(--primary);">📊 Instant Maps Audit</h3>
-                <p style="color:var(--text-secondary);">See your current ranking + revenue opportunity in 60 seconds</p>
-                <a href="mailto:gabriel@elevatedlivesinc.com?subject=Maps%20Audit" class="btn btn-primary" style="width:100%;">Send My Maps Report →</a>
+                <h3 style="color:var(--primary);">🚀 Free Revenue Audit</h3>
+                <p style="color:var(--text-secondary);">Maps ranking + AI opportunity analysis</p>
+                <a href="mailto:gabriel@elevatedlivesinc.com?subject=Revenue%20Audit" class="btn btn-primary" style="width:100%;">Send My Audit →</a>
             </div>
         </div>
     </section>
@@ -388,7 +366,7 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem; margin-bottom:2rem;">
                 <div>
                     <h3 style="color:var(--primary); margin-bottom:1rem;">Rein N' Solutions</h3>
-                    <p style="color:var(--text-secondary);">Google Maps domination + AI revenue systems for NC small business.</p>
+                    <p style="color:var(--text-secondary);">Google Maps #1 + AI automation = revenue you don't have to chase.</p>
                 </div>
                 <div>
                     <h4 style="color:var(--primary); margin-bottom:1rem;">Contact</h4>
@@ -398,7 +376,7 @@
                 </div>
             </div>
             <div style="text-align:center; padding-top:2rem; border-top:1px solid rgba(212,165,116,0.2); color:var(--text-muted); font-size:0.9rem;">
-                © 2025 Rein N' Solutions. Page 1 Maps guaranteed.
+                © 2025 Rein N' Solutions. Maps #1 + AI revenue guaranteed.
             </div>
         </div>
     </footer>
