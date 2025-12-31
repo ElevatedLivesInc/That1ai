@@ -3,109 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReinnSolutions | AI Revenue Automation</title>
+  <title>ReinnSolutions - AI Revenue Automation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <canvas id="particles"></canvas>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo-space">ReinnSolutions</div>
+      <nav>
+        <a href="#pricing">Pricing</a>
+        <a href="#why-us">Why Us</a>
+        <a href="/report.html">Free Audit</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <h1 class="h1-gradient">AI Finds Your<br>Lost Revenue</h1>
-          <p style="font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.95;">
-            Small businesses lose $47k/year to broken Google profiles and manual processes.
-            We built the AI automation that finds it and turns it into revenue.
-          </p>
-          <div class="cta-group">
-            <a href="/report.html" class="btn-primary">Free AI Audit (2 min)</a>
-            <a href="#pricing" class="btn-secondary">See Pricing →</a>
-          </div>
+      <div class="hero-content">
+        <h1>AI Finds Your<br>Lost Revenue</h1>
+        <p>Small businesses lose $47K/year to broken Google profiles and manual processes.</p>
+        <div class="hero-buttons">
+          <a href="/report.html" class="btn btn-primary">Free AI Audit</a>
+          <a href="#pricing" class="btn btn-outline">Pricing</a>
         </div>
-        <div class="hero-metric">
-          <div class="metric-card">
-            <div class="metric-number">$284K</div>
-            <div>Recovered Last 90 Days</div>
-          </div>
+      </div>
+      <!-- WAVE QR -->
+      <div class="qr-section">
+        <img src="wave-qr-code-2.jpg" alt="Scan to book" class="wave-qr">
+        <p>Scan → Book Strategy Call</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <h2>Why ReinnSolutions</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <span>⚡</span>
+          <h3>48-Hour Setup</h3>
+          <p>Live in 2 days, not 2 months.</p>
+        </div>
+        <div class="feature">
+          <span>💰</span>
+          <h3>Revenue Guarantee</h3>
+          <p>No results? Full refund.</p>
+        </div>
+        <div class="feature">
+          <span>📈</span>
+          <h3>$284K Recovered</h3>
+          <p>47+ businesses served.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing: $29 / $99 / $399 -->
-  <section id="pricing" class="pricing-section">
+  <!-- PRICING - ALL 3 WIRED -->
+  <section id="pricing" class="pricing">
     <div class="container">
-      <h2 class="section-title">Choose Your Growth Path</h2>
+      <div class="pricing-header">
+        <h2>Your Growth Path</h2>
+        <p>Cancel anytime. Scale when ready.</p>
+      </div>
       <div class="pricing-grid">
-        <!-- $29 Resources -->
-        <div class="pricing-card">
+        <!-- $29 RESOURCES -->
+        <div class="price-card">
           <h3>Resources</h3>
-          <div class="price">$29<span>/mo</span></div>
+          <div class="price">$29<small>/mo</small></div>
           <ul>
-            <li>AI Visibility Reports</li>
+            <li>AI Reports</li>
             <li>Citation Builder</li>
-            <li>Weekly Templates</li>
-            <li>Google Profile Guide</li>
+            <li>Templates</li>
           </ul>
-          <a href="https://buy.stripe.com/YOUR_29_LINK_HERE" class="btn-buy" target="_blank">Get Resources $29</a>
+          <a href="https://buy.stripe.com/6oU3cvcvDe7cbuVghn18c02" class="btn btn-primary block" target="_blank">Start $29</a>
         </div>
 
-        <!-- $99 Starter (Recommended) -->
-        <div class="pricing-card popular">
+        <!-- $99 STARTER (POPULAR) -->
+        <div class="price-card popular">
           <div class="popular-badge">Most Popular</div>
           <h3>Starter</h3>
-          <div class="price">$99<span>/mo</span></div>
+          <div class="price">$99<small>/mo</small></div>
           <ul>
-            <li>Everything in Resources</li>
-            <li>Google Profile Setup</li>
-            <li>1 Revenue Automation</li>
+            <li>Everything + Setup</li>
+            <li>1 Automation</li>
             <li>Weekly Reports</li>
-            <li>Email Support</li>
           </ul>
-          <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn-buy accent" target="_blank">Get Starter $99</a>
+          <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary block accent" target="_blank">Start $99</a>
         </div>
 
-        <!-- $399 Elite -->
-        <div class="pricing-card">
+        <!-- $399 ELITE -->
+        <div class="price-card">
           <h3>Elite</h3>
-          <div class="price">$399<span>/mo</span></div>
+          <div class="price">$399<small>/mo</small></div>
           <ul>
-            <li>Everything in Starter</li>
-            <li>Unlimited Automations</li>
+            <li>Unlimited Everything</li>
             <li>Custom AI Agent</li>
-            <li>Social Media Engine</li>
-            <li>Monthly Strategy Call</li>
-            <li>Revenue Guarantee</li>
+            <li>Monthly Calls</li>
           </ul>
-          <a href="https://buy.stripe.com/YOUR_399_LINK_HERE" class="btn-buy" target="_blank">Get Elite $399</a>
+          <a href="https://buy.stripe.com/9B65kDdzH8MS6aB5CJ18c03" class="btn btn-primary block" target="_blank">Start $399</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REST API -->
-  <section class="api-section">
+  <!-- CTA -->
+  <section class="cta">
     <div class="container">
-      <h2 class="section-title">REST API for Agencies</h2>
-      <div class="api-grid">
-        <div class="api-card">
-          <h3>POST /api/reinn-agent</h3>
-          <code>{"businessName": "Test Business", "city": "NYC"}</code>
-          <p>→ AI Visibility Report JSON</p>
-        </div>
-        <div class="api-card">
-          <h3>POST /api/stripe-checkout</h3>
-          <code>{"tier": "starter"}</code>
-          <p>→ Stripe Checkout URL</p>
-        </div>
-      </div>
-      <a href="/api.html" class="btn-primary">API Docs →</a>
+      <h2>Ready to Scale?</h2>
+      <a href="/report.html" class="btn btn-primary">Free AI Audit</a>
     </div>
   </section>
-
-  <script src="script.js"></script>
 </body>
 </html>
