@@ -36,7 +36,7 @@
             color: var(--text-secondary); text-decoration: none; 
             font-size: 0.95rem; transition: color 0.3s; 
         }
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover, .nav-links .btn-primary { color: var(--dark-bg); }
         .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
         .hamburger span { width: 25px; height: 3px; background: var(--primary); border-radius: 2px; }
         .hero {
@@ -123,13 +123,22 @@
         }
         .cta-section h2 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary); }
         .cta-section p { font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 3rem; }
+        .audit-card {
+            background: var(--card-bg); border-radius: 1.5rem; border-left: 5px solid var(--primary);
+            padding: 2.5rem; margin-top: 3rem; text-align: center; max-width: 500px; margin-left: auto; margin-right: auto;
+        }
         footer {
             background: var(--darker-bg); padding: 4rem 0 2rem;
             border-top: 1px solid rgba(212,165,116,0.2);
         }
         @media (max-width: 768px) {
             .hamburger { display: flex; }
-            .nav-links { display: none; }
+            .nav-links { 
+                position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
+                background: var(--dark-bg); flex-direction: column; padding-top: 6rem; gap: 2rem;
+                transition: right 0.3s; 
+            }
+            .nav-links.active { right: 0; }
             .hero-title { font-size: 2.5rem; }
             .hero-cta { flex-direction: column; }
             .btn { width: 100%; }
@@ -138,7 +147,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation - FIXED (single logo) -->
+    <!-- Navigation -->
     <header class="container">
         <nav>
             <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/59db5f52-50b8-44f2-acc6-bc05383889b3" alt="Rein N' Solutions" class="nav-logo">
@@ -154,7 +163,7 @@
         </nav>
     </header>
 
-    <!-- Hero - FIXED COPY -->
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">
@@ -167,7 +176,7 @@
             </p>
             <div class="hero-cta">
                 <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank">$99 First Automation → Live in 48hr</a>
-                <a href="#pricing" class="btn btn-secondary">See Growth Path</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary" target="_blank">Book Strategy Call</a>
             </div>
         </div>
     </section>
@@ -214,7 +223,7 @@
         </div>
     </section>
 
-    <!-- Pricing - FIXED MODEL -->
+    <!-- Pricing -->
     <section id="pricing" class="pricing-section">
         <div class="container">
             <div class="section-header">
@@ -316,14 +325,19 @@
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA - CALENDLY + STRIPE LIVE -->
     <section id="cta" class="cta-section">
         <div class="container">
-            <h2>From Invisible → Visible → Scale</h2>
-            <p>$99 = One automation that pays for itself. Then we grow from proven results. Live in 48 hours.</p>
+            <h2>Ready to Get Visible?</h2>
+            <p>$99 = One automation that pays for itself. Live in 48 hours. Book a call or get started now.</p>
             <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
                 <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">$99 First Automation →</a>
-                <a href="mailto:gabriel@elevatedlivesinc.com?subject=Start%20With%20%2499" class="btn btn-secondary" style="padding:1.5rem 3rem; font-size:1.25rem;">Talk Next Steps</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-secondary" style="padding:1.5rem 3rem; font-size:1.25rem;" target="_blank">Book Strategy Call</a>
+            </div>
+            <div class="audit-card">
+                <h3 style="color:var(--primary);">🚀 Free Revenue Audit</h3>
+                <p style="color:var(--text-secondary);">Find your biggest revenue leak in 60 seconds</p>
+                <a href="mailto:gabriel@elevatedlivesinc.com?subject=Free%20Revenue%20Audit" class="btn btn-primary" style="width:100%;">Get My Free Audit →</a>
             </div>
         </div>
     </section>
