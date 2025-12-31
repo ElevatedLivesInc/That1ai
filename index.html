@@ -3,36 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReinnSolutions - AI Business Automation</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, sans-serif; line-height: 1.6; color: #020617; }
-    .hero { background: linear-gradient(135deg, #00d4ff, #020617); color: white; padding: 4rem 2rem; text-align: center; }
-    .btn { display: inline-block; padding: 1rem 2rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 1.1rem; margin: 0.5rem; transition: all 0.3s; }
-    .btn-primary { background: #00d4ff; color: #020617; }
-    .btn-primary:hover { background: white; transform: translateY(-2px); }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-  </style>
+  <title>ReinnSolutions | AI Revenue Automation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Particle Canvas -->
+  <canvas id="particles"></canvas>
+
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>Make Your Business Visible</h1>
-      <p>Small businesses lose when Google maps, social signals, and automations don't work together.</p>
-      <p>Build calls, bookings, and sales that actually scale.</p>
-      
-      <div style="margin: 2rem 0;">
-        <a href="/report.html" class="btn btn-primary">Get My AI Visibility Report</a>
-        <a href="mailto:gabriel@reinnsolutions.xyz" class="btn" style="background: transparent; color: white; border: 2px solid white;">Or email Gabriel</a>
-      </div>
-      
-      <!-- YOUR STRIPE BUTTON -->
-      <div>
-        <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn btn-primary" target="_blank" rel="noopener">
-          Lock in $111 Founder Access
-        </a>
+      <div style="display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto;">
+        <div>
+          <h1 class="h1-gradient">AI That Finds<br>Your Lost Revenue</h1>
+          <p style="font-size: 1.4rem; margin-bottom: 3rem; opacity: 0.9; max-width: 500px;">
+            Small businesses bleed money from broken Google profiles, ghosted leads, 
+            and manual processes. We built the AI that finds it, automates it, 
+            and turns it into revenue—guaranteed.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+            <a href="/report.html" class="btn-neum">
+              ✨ Free AI Audit
+            </a>
+            <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="btn-neum" target="_blank" style="background: linear-gradient(135deg, #00d4ff, #ff6b9d);">
+              $111 Founder Lock
+            </a>
+          </div>
+          <div style="margin-top: 3rem; opacity: 0.8; font-size: 0.95rem;">
+            Trusted by 47+ local businesses | 3.8x average revenue lift
+          </div>
+        </div>
+        <div style="perspective: 1000px;">
+          <div class="glass card-glass" style="padding: 3rem; transform: rotateY(-15deg);">
+            <div style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #00d4ff, #667eea); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              $47,892
+            </div>
+            <p style="opacity: 0.8; margin-top: 1rem;">Recovered last month</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Services Grid -->
+  <section style="padding: 8rem 0;">
+    <div class="container">
+      <h2 class="h1-gradient" style="text-align: center; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 5rem;">Automation That Works</h2>
+      <div class="grid">
+        <div class="glass card-glass" style="text-align: center;">
+          <div style="font-size: 4rem; background: linear-gradient(135deg, #00d4ff, #667eea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem;">📍</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Local SEO AI</h3>
+          <p style="opacity: 0.9;">Google Maps domination, review automation, ranking guarantees.</p>
+        </div>
+        <div class="glass card-glass" style="text-align: center;">
+          <div style="font-size: 4rem; background: linear-gradient(135deg, #ff6b9d, #f7931e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem;">💬</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Social Engine</h3>
+          <p style="opacity: 0.9;">24/7 posting, engagement, DM lead capture.</p>
+        </div>
+        <div class="glass card-glass" style="text-align: center;">
+          <div style="font-size: 4rem; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem;">⚡</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Revenue Flows</h3>
+          <p style="opacity: 0.9;">Visitor → booked call → closed sale. Fully automated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
