@@ -93,3 +93,55 @@ export async function onRequest(context) {
     },
   );
 }
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: radial-gradient(circle at center, #ff00ff, #000000);
+      transition: background 0.1s linear;
+      overflow: hidden;
+      font-family: sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div>listening to you…</div>
+  <script>
+    async function start() {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const source = audioCtx.createMediaStreamSource(stream);
+      const analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 256;
+      source.connect(analyser);
+
+      const data = new Uint8Array(analyser.frequencyBinCount);
+
+      function tick() {
+        analyser.getByteFrequencyData(data);
+        const level = data.reduce((a, v) => a + v, 0) / data.length;
+        const intensity = Math.min(level / 255, 1);
+        const hue = 200 + intensity * 160; // blue → magenta
+        const glow = 10 + intensity * 40;
+
+        document.body.style.background =
+          `radial-gradient(circle at center,
+             hsl(${hue}, 90%, ${40 + intensity * 20}%),
+             #000000 ${glow}%)`;
+
+        requestAnimationFrame(tick);
+      }
+      tick();
+    }
+    start();
+  </script>
+</body>
+</html>
