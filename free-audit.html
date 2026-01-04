@@ -4,60 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Lead Audit | Rein N' Solutions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #667eea;
-            --primary-dark: #5a6fd8;
-            --secondary: #764ba2;
-            --text: #333;
-            --white: #fff;
+            --charcoal: #2D2E30;
+            --copper-light: #C58B6B;
+            --copper-dark: #8C5A44;
+            --bronze: #A67C52;
+            --white: #FFFFFF;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .header { text-align: center; padding: 60px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 20px; margin-bottom: 40px; }
-        .header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; }
-        .form-wrapper { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
-        .cta-btn { padding: 18px 36px; font-size: 18px; border-radius: 12px; font-weight: bold; min-width: 280px; text-align: center; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .form-wrapper {
+            margin: 3rem 0;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .cta-btn {
+            padding: 18px 36px;
+            font-size: 18px;
+            border-radius: 12px;
+            font-weight: bold;
+            min-width: 280px;
+        }
         .call-btn { background: #4CAF50; color: white; }
         .whatsapp-btn { background: #25D366; color: white; }
-        .calendly-btn { background: var(--primary); color: white; }
-        .privacy { text-align: center; margin-top: 40px; font-size: 0.9rem; color: #666; }
+        .calendly-btn { background: var(--copper-light); color: var(--charcoal); }
+        .privacy { margin-top: 40px; font-size: 0.9rem; color: #888; }
         @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; }
+            h1 { font-size: 2.5rem; }
             .cta-buttons { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Get Your Free Lead Audit</h1>
-            <p style="font-size: 1.4rem; margin-top: 1rem;">See exactly where you're losing customers — in 60 seconds</p>
-        </div>
+        <h1>Get Your Free Lead Audit</h1>
+        <p style="font-size: 1.4rem;">See exactly where you're losing customers — in 60 seconds</p>
 
         <div class="form-wrapper">
-            <h2 style="text-align: center; margin-bottom: 20px;">Enter Your Info Below</h2>
-            <p style="text-align: center; margin-bottom: 40px;">We'll analyze your website, GBP, and socials for missed opportunities.</p>
-
-            <!-- Your Actual Jotform Embedded -->
+            <p>Enter your info below — we'll analyze your website, GBP, and socials.</p>
             <script type="text/javascript" src="https://form.jotform.com/jsform/260031052591142"></script>
-
-            <div class="cta-buttons">
-                <a href="tel:2485687617" class="cta-btn call-btn">📞 Call Now: (248) 568-7617</a>
-                <a href="https://wa.me/message/W7Z2R4GLUIMBL1" class="cta-btn whatsapp-btn" target="_blank">💬 Text on WhatsApp</a>
-                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="cta-btn calendly-btn" target="_blank">📅 Book Strategy Call</a>
-            </div>
-
-            <p class="privacy">
-                Your information is secure and used only for your audit. 
-                See our <a href="/privacy-policy.html">Privacy Policy</a>.
-            </p>
         </div>
+
+        <div class="cta-buttons">
+            <a href="tel:2485687617" class="cta-btn call-btn">📞 Call Now: (248) 568-7617</a>
+            <a href="https://wa.me/message/W7Z2R4GLUIMBL1" class="cta-btn whatsapp-btn" target="_blank">💬 Text on WhatsApp</a>
+            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="cta-btn calendly-btn" target="_blank">📅 Book Strategy Call</a>
+        </div>
+
+        <p class="privacy">
+            Your information is secure and used only for your audit. 
+            See our <a href="/privacy-policy.html">Privacy Policy</a>.
+        </p>
     </div>
 </body>
 </html>
