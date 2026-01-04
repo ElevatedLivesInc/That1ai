@@ -1,177 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Lead Generation Audit | Reinn Solutions</title>
-  <meta name="description" content="Discover exactly where you're losing leads on your website, Google Business Profile, and social media — in 60 seconds. Free, no pitch.">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
-      line-height: 1.6;
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-      overflow: hidden;
-    }
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 60px 40px;
-      text-align: center;
-    }
-    .header h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-    .header p {
-      font-size: 20px;
-      opacity: 0.9;
-    }
-    .form-section {
-      padding: 60px 40px;
-      text-align: center;
-    }
-    .form-section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-    .form-section p {
-      font-size: 18px;
-      margin-bottom: 40px;
-      color: #666;
-    }
-    .jotform-container {
-      max-width: 600px;
-      margin: 0 auto 40px;
-    }
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-    .cta-btn {
-      display: inline-block;
-      padding: 18px 36px;
-      font-size: 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s;
-      min-width: 280px;
-      text-align: center;
-    }
-    .call-btn {
-      background: #4CAF50;
-      color: white;
-    }
-    .call-btn:hover {
-      background: #45a049;
-      transform: translateY(-3px);
-    }
-    .whatsapp-btn {
-      background: #25D366;
-      color: white;
-    }
-    .whatsapp-btn:hover {
-      background: #128C7E;
-      transform: translateY(-3px);
-    }
-    .calendly-btn {
-      background: #667eea;
-      color: white;
-    }
-    .calendly-btn:hover {
-      background: #5a6fd8;
-      transform: translateY(-3px);
-    }
-    .privacy-note {
-      font-size: 14px;
-      color: #888;
-      margin-top: 40px;
-      padding: 20px;
-      background: #f9f9f9;
-      border-radius: 10px;
-    }
-    @media (max-width: 768px) {
-      .header h1 { font-size: 36px; }
-      .header p { font-size: 18px; }
-      .form-section { padding: 40px 20px; }
-      .cta-buttons { flex-direction: column; align-items: center; }
-      .cta-btn { min-width: 100%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Lead Audit | Rein N' Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a6fd8;
+            --secondary: #764ba2;
+            --text: #333;
+            --white: #fff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .header { text-align: center; padding: 60px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 20px; margin-bottom: 40px; }
+        .header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; }
+        .form-wrapper { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+        .cta-btn { padding: 18px 36px; font-size: 18px; border-radius: 12px; font-weight: bold; min-width: 280px; text-align: center; }
+        .call-btn { background: #4CAF50; color: white; }
+        .whatsapp-btn { background: #25D366; color: white; }
+        .calendly-btn { background: var(--primary); color: white; }
+        .privacy { text-align: center; margin-top: 40px; font-size: 0.9rem; color: #666; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Get Your Free Lead Audit</h1>
-      <p>See exactly where you're losing customers on your website, Google Business Profile, and social media — in 60 seconds.</p>
+    <div class="container">
+        <div class="header">
+            <h1>Get Your Free Lead Audit</h1>
+            <p style="font-size: 1.4rem; margin-top: 1rem;">See exactly where you're losing customers — in 60 seconds</p>
+        </div>
+
+        <div class="form-wrapper">
+            <h2 style="text-align: center; margin-bottom: 20px;">Enter Your Info Below</h2>
+            <p style="text-align: center; margin-bottom: 40px;">We'll analyze your website, GBP, and socials for missed opportunities.</p>
+
+            <!-- Your Actual Jotform Embedded -->
+            <script type="text/javascript" src="https://form.jotform.com/jsform/260031052591142"></script>
+
+            <div class="cta-buttons">
+                <a href="tel:2485687617" class="cta-btn call-btn">📞 Call Now: (248) 568-7617</a>
+                <a href="https://wa.me/message/W7Z2R4GLUIMBL1" class="cta-btn whatsapp-btn" target="_blank">💬 Text on WhatsApp</a>
+                <a href="https://calendly.com/sgsmarketingsolutions/30min" class="cta-btn calendly-btn" target="_blank">📅 Book Strategy Call</a>
+            </div>
+
+            <p class="privacy">
+                Your information is secure and used only for your audit. 
+                See our <a href="/privacy-policy.html">Privacy Policy</a>.
+            </p>
+        </div>
     </div>
-
-    <div class="form-section">
-      <h2>Enter Your Info Below</h2>
-      <p>We'll analyze your online presence and show you missed opportunities. No sales pitch — just real data.</p>
-
-      <div class="jotform-container">
-        <!-- REPLACE THIS WITH YOUR ACTUAL JOTFORM EMBED CODE -->
-        <iframe
-          id="JotFormIFrame"
-          title="Free Lead Generation Audit"
-          onload="window.parent.scrollTo(0,0)"
-          allowtransparency="true"
-          allowfullscreen="true"
-          allow="geolocation; microphone; camera"
-          src="https://form.jotform.com/YOUR_FORM_ID_HERE"
-          frameborder="0"
-          style="min-width:100%; max-width:100%; height:539px; border:none;"
-          scrolling="no">
-        </iframe>
-        <!-- END JOTFORM EMBED -->
-      </div>
-
-      <div class="cta-buttons">
-        <a href="tel:2485687617" class="cta-btn call-btn">
-          📞 Call Now: (248) 568-7617
-        </a>
-        <a href="https://wa.me/12694091113" class="cta-btn whatsapp-btn" target="_blank">
-          💬 Text on WhatsApp
-        </a>
-        <a href="https://calendly.com/sgsmarketingsolutions/30min" class="cta-btn calendly-btn" target="_blank">
-          📅 Book Strategy Call
-        </a>
-      </div>
-
-      <div class="privacy-note">
-        <strong>Privacy Guaranteed:</strong> Your information is secure and will only be used to deliver your audit. 
-        We never share or sell your data. By submitting, you agree to our 
-        <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Optional: Auto-scroll to form on load (for better UX)
-    window.addEventListener('load', function() {
-      const iframe = document.getElementById('JotFormIFrame');
-      if (iframe) {
-        iframe.onload = function() {
-          window.scrollTo(0, document.querySelector('.form-section').offsetTop - 100);
-        }
-      }
-    });
-  </script>
 </body>
 </html>
