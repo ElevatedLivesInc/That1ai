@@ -22,15 +22,17 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.05);
+            background: var(--white);
+            color: var(--charcoal);
             border-radius: 20px;
             padding: 60px;
             text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
-            color: var(--white);
+            color: var(--charcoal);
             margin-bottom: 1rem;
         }
         .form-wrapper {
@@ -53,7 +55,7 @@
         .call-btn { background: #4CAF50; color: white; }
         .whatsapp-btn { background: #25D366; color: white; }
         .calendly-btn { background: var(--copper-light); color: var(--charcoal); }
-        .privacy { margin-top: 40px; font-size: 0.9rem; color: #888; }
+        .privacy { margin-top: 40px; font-size: 0.9rem; color: #666; }
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .cta-buttons { flex-direction: column; }
@@ -63,11 +65,11 @@
 <body>
     <div class="container">
         <h1>Get Your Free Lead Audit</h1>
-        <p style="font-size: 1.4rem;">See exactly where you're losing customers — in 60 seconds</p>
+        <p style="font-size: 1.4rem; color: #444;">See exactly where you're losing customers — in 60 seconds</p>
 
         <div class="form-wrapper">
-            <p>Enter your info below — we'll analyze your website, GBP, and socials.</p>
-            <!-- Jotform with NO branding -->
+            <p>Enter your info below — we'll analyze your online presence instantly.</p>
+            <!-- Jotform - NO AD, NO LOGO (jsform cheat code) -->
             <script type="text/javascript" src="https://form.jotform.com/jsform/260031052591142"></script>
         </div>
 
@@ -78,8 +80,7 @@
         </div>
 
         <p class="privacy">
-            Your information is secure and used only for your audit. 
-            See our <a href="/privacy-policy.html">Privacy Policy</a>.
+            Your information is secure and used only for your audit.
         </p>
     </div>
 </body>
