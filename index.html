@@ -18,371 +18,55 @@
             --white: #fff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background: #f5f5f5;
-        }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; background: #f5f5f5; }
         a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; }
-
-        /* Header */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        .tagline {
-            font-size: 0.9rem;
-            color: var(--bronze);
-            font-weight: 500;
-        }
-        .nav-cta {
-            background: var(--primary);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        .nav-cta:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            text-align: center;
-            padding: 160px 20px 100px;
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-        .highlight {
-            color: #ffd700;
-        }
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        .cta-container {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .btn-primary {
-            background: white;
-            color: var(--primary);
-        }
-        .btn-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
-        }
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Social Proof */
-        .social-proof {
-            background: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        .social-proof-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-        }
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        .stat-label {
-            font-size: 1rem;
-            color: var(--text);
-        }
-
-        /* Specialization */
-        .specialization-grid {
-            max-width: 1200px;
-            margin: 4rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 2rem;
-        }
-        .spec-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .spec-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-        .spec-note {
-            text-align: center;
-            max-width: 800px;
-            margin: 3rem auto;
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        /* Audit Section */
-        #audit {
-            background: var(--light);
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-        .steps {
-            max-width: 1000px;
-            margin: 4rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .step {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .step-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        /* Problem Section */
-        .problem-section {
-            background: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-        .problem-stat {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 2rem 0;
-        }
-
-        /* Pricing */
-        #pricing {
-            padding: 6rem 2rem;
-            background: var(--light);
-        }
-        .pricing-grid {
-            max-width: 1200px;
-            margin: 4rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .pricing-card {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            position: relative;
-        }
-        .featured {
-            border: 4px solid var(--primary);
-        }
-        .featured-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            margin-bottom: 0.5rem;
-        }
-        .price {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        .price-note {
-            color: #666;
-            margin: 1rem 0;
-        }
-        .features-list {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-        .features-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        .features-list li::before {
-            content: "✓";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* About */
-        .about-section {
-            padding: 6rem 2rem;
-            background: white;
-        }
-        .founders {
-            max-width: 800px;
-            margin: 3rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        .founder-card {
-            text-align: center;
-        }
-        .founder-image {
-            width: 120px;
-            height: 120px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-        .story {
-            max-width: 800px;
-            margin: 4rem auto;
-            line-height: 1.8;
-        }
-
-        /* Final CTA */
-        .final-cta {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-        .cta-options {
-            margin: 2rem 0;
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .trust-badges {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-        .badge {
-            background: rgba(255,255,255,0.2);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-        }
-
-        /* Footer */
-        footer {
-            background: #222;
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        .footer-section a {
-            color: #ccc;
-            display: block;
-            margin: 0.5rem 0;
-        }
-        .footer-bottom {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #444;
-            font-size: 0.9rem;
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        /* Mobile */
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+        .tagline { font-size: 0.9rem; color: var(--bronze); font-weight: 500; }
+        .nav-cta { background: var(--primary); color: white; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; }
+        .nav-cta:hover { background: var(--primary-dark); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; padding: 160px 20px 100px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+        .highlight { color: #ffd700; }
+        .hero-subtitle { font-size: 1.4rem; margin-bottom: 2rem; opacity: 0.9; }
+        .cta-container { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 1rem 2rem; border-radius: 12px; font-size: 1.2rem; font-weight: 600; transition: transform 0.3s; }
+        .btn-primary { background: white; color: var(--primary); }
+        .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid white; }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .social-proof { background: white; padding: 2rem 0; text-align: center; }
+        .social-proof-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 1rem; color: var(--text); }
+        .specialization-grid { max-width: 1200px; margin: 4rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 0 2rem; }
+        .spec-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+        .spec-icon { font-size: 4rem; margin-bottom: 1rem; }
+        .spec-note { text-align: center; max-width: 800px; margin: 3rem auto; font-size: 1.1rem; color: #666; }
+        .problem-section { background: white; padding: 6rem 2rem; text-align: center; }
+        .problem-stat { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 2rem 0; }
+        #pricing { padding: 6rem 2rem; background: var(--light); }
+        .pricing-grid { max-width: 1200px; margin: 4rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .pricing-card { background: white; border-radius: 20px; padding: 3rem 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; position: relative; }
+        .featured { border: 4px solid var(--primary); }
+        .featured-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; }
+        .original-price { text-decoration: line-through; color: #999; margin-bottom: 0.5rem; }
+        .price { font-size: 3.5rem; font-weight: 800; color: var(--primary); }
+        .price-note { color: #666; margin: 1rem 0; }
+        .features-list { list-style: none; margin: 2rem 0; text-align: left; }
+        .features-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        .features-list li::before { content: "✓"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+        .about-section { padding: 6rem 2rem; background: white; }
+        .founders { max-width: 800px; margin: 3rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+        .founder-card { text-align: center; }
+        .founder-image { width: 120px; height: 120px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; margin: 0 auto 1rem; }
+        .story { max-width: 800px; margin: 4rem auto; line-height: 1.8; }
+        footer { background: #222; color: white; padding: 4rem 2rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .footer-section h3 { margin-bottom: 1rem; color: var(--primary); }
+        .footer-section a { color: #ccc; display: block; margin: 0.5rem 0; }
+        .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #444; font-size: 0.9rem; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.8rem; }
             .hero-subtitle { font-size: 1.2rem; }
@@ -400,7 +84,7 @@
                 <div class="logo-text">Rein N' Solutions</div>
                 <div class="tagline">Automate. Elevate. Dominate.</div>
             </div>
-            <a href="#audit" class="nav-cta">Book Free Audit</a>
+            <a href="/free-audit.html" class="nav-cta">Book Free Audit</a>
         </nav>
     </header>
 
@@ -415,7 +99,7 @@
                 We'll show you how many leads YOU'RE missing—for free.
             </p>
             <div class="cta-container">
-                <a href="#audit" class="btn btn-primary">Book Your Free Audit</a>
+                <a href="/free-audit.html" class="btn btn-primary">Get Your Free Audit</a>
                 <a href="#pricing" class="btn btn-secondary">See Founding Member Pricing</a>
             </div>
         </div>
@@ -463,52 +147,6 @@
         <p class="spec-note">
             Whether you're a dentist, salon owner, contractor, gym, law firm, or anything in between—if you're losing leads to slow follow-up, we can help.
         </p>
-    </section>
-
-    <!-- Audit Section -->
-    <section id="audit">
-        <h2>How the Free Audit Works</h2>
-        <p class="section-subtitle">No pitch, no pressure—just data</p>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">01</div>
-                <h3>Book 10-Minute Call</h3>
-                <p>Pick a time that works for you. We'll meet on Zoom or phone—your choice.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">02</div>
-                <h3>We Pull Your Data</h3>
-                <p>We'll analyze your Google Business Profile live—response times, inquiry volume, missed opportunities.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">03</div>
-                <h3>See Your Lost Revenue</h3>
-                <p>We'll show you exactly how much money you're losing every month from slow follow-up. Real numbers, not guesses.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">04</div>
-                <h3>Optional: Fix It</h3>
-                <p>If you want to capture those leads, we'll walk you through our Founding Member offer. No hard sell—just an option.</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-primary">Book Your Free Audit Now</a>
-        </div>
-
-        <!-- Jotform Embed Placeholder -->
-        <div style="max-width: 700px; margin: 4rem auto 0;">
-            <h3>Or Start Your Audit Here</h3>
-            <p>Instant results — no waiting</p>
-            <!-- REPLACE WITH YOUR ACTUAL JOTFORM EMBED CODE -->
-            <script type="text/javascript" src="https://form.jotform.com/jsform/YOUR_FORM_ID_HERE"></script>
-            <!-- END JOTFORM -->
-        </div>
-
-        <div class="cta-options" style="margin-top: 3rem;">
-            <a href="tel:2485687617" class="btn btn-primary">📞 Call Now (248) 568-7617</a>
-            <a href="https://wa.me/message/W7Z2R4GLUIMBL1" class="btn btn-secondary">💬 Text on WhatsApp</a>
-        </div>
     </section>
 
     <!-- Problem -->
@@ -580,19 +218,13 @@
                 <div class="founder-image">G</div>
                 <div class="founder-name">Gabriel</div>
                 <div class="founder-role">Systems & Design</div>
-                <p class="founder-bio">
-                    Applications and marketing specialist. The design brain behind Rein N' Solutions.
-                    Builds automation that just work—no complexity, no confusion, just results.
-                </p>
+                <p class="founder-bio">Applications and marketing specialist. The design brain behind Rein N' Solutions. Builds automation that just work—no complexity, no confusion, just results.</p>
             </div>
             <div class="founder-card">
                 <div class="founder-image">C</div>
                 <div class="founder-name">Calee</div>
                 <div class="founder-role">Strategy & Growth</div>
-                <p class="founder-bio">
-                    Psychology of business expert. Ensures every system has the right checks and balances.
-                    Believes every business deserves to capture every lead—and has the strategic mind to make it happen.
-                </p>
+                <p class="founder-bio">Psychology of business expert. Ensures every system has the right checks and balances. Believes every business deserves to capture every lead—and has the strategic mind to make it happen.</p>
             </div>
         </div>
         <div class="story">
@@ -615,7 +247,7 @@
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="#audit">Book Free Audit</a>
+                <a href="/free-audit.html">Book Free Audit</a>
                 <a href="#pricing">Pricing</a>
             </div>
             <div class="footer-section">
@@ -636,11 +268,10 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/message/W7Z2R4GLUIMBL1" class="whatsapp-float" target="_blank">💬</a>
 
     <script>
-        // Scroll animation (your original)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
