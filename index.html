@@ -6,89 +6,403 @@
     <title>Rein N' Solutions | Stop Losing Winston-Salem & Triad Customers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #667eea;
-            --primary-dark: #5a6fd8;
-            --secondary: #764ba2;
-            --bronze: #c58b6b;
-            --text: #333;
-            --light: #f9f9f9;
-            --white: #fff;
+            --charcoal: #2D2E30;
+            --copper-light: #C58B6B;
+            --copper-dark: #8C5A44;
+            --bronze: #A67C52;
+            --white: #FFFFFF;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; background: #f5f5f5; }
-        a { text-decoration: none; color: inherit; }
-        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
-        nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: var(--primary); }
-        .tagline { font-size: 0.9rem; color: var(--bronze); font-weight: 500; }
-        .nav-cta { background: var(--primary); color: white; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; }
-        .nav-cta:hover { background: var(--primary-dark); }
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; padding: 160px 20px 100px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
-        .highlight { color: #ffd700; }
-        .hero-subtitle { font-size: 1.4rem; margin-bottom: 2rem; opacity: 0.9; }
-        .cta-container { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
-        .btn { padding: 1rem 2rem; border-radius: 12px; font-size: 1.2rem; font-weight: 600; transition: transform 0.3s; }
-        .btn-primary { background: white; color: var(--primary); }
-        .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid white; }
-        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .social-proof { background: white; padding: 2rem 0; text-align: center; }
-        .social-proof-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
-        .stat-number { font-size: 3rem; font-weight: 800; color: var(--primary); }
-        .stat-label { font-size: 1rem; color: var(--text); }
-        .specialization-grid { max-width: 1200px; margin: 4rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 0 2rem; }
-        .spec-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
-        .spec-icon { font-size: 4rem; margin-bottom: 1rem; }
-        .spec-note { text-align: center; max-width: 800px; margin: 3rem auto; font-size: 1.1rem; color: #666; }
-        .problem-section { background: white; padding: 6rem 2rem; text-align: center; }
-        .problem-stat { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 2rem 0; }
-        #pricing { padding: 6rem 2rem; background: var(--light); }
-        .pricing-grid { max-width: 1200px; margin: 4rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .pricing-card { background: white; border-radius: 20px; padding: 3rem 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; position: relative; }
-        .featured { border: 4px solid var(--primary); }
-        .featured-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; }
-        .original-price { text-decoration: line-through; color: #999; margin-bottom: 0.5rem; }
-        .price { font-size: 3.5rem; font-weight: 800; color: var(--primary); }
-        .price-note { color: #666; margin: 1rem 0; }
-        .features-list { list-style: none; margin: 2rem 0; text-align: left; }
-        .features-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
-        .features-list li::before { content: "✓"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
-        .about-section { padding: 6rem 2rem; background: white; }
-        .founders { max-width: 800px; margin: 3rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
-        .founder-card { text-align: center; }
-        .founder-image { width: 120px; height: 120px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; margin: 0 auto 1rem; }
-        .story { max-width: 800px; margin: 4rem auto; line-height: 1.8; }
-        footer { background: #222; color: white; padding: 4rem 2rem 2rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .footer-section h3 { margin-bottom: 1rem; color: var(--primary); }
-        .footer-section a { color: #ccc; display: block; margin: 0.5rem 0; }
-        .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #444; font-size: 0.9rem; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--charcoal);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+        header {
+            background: rgba(45, 46, 48, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 139, 107, 0.2);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tagline {
+            font-size: 0.75rem;
+            color: var(--bronze);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(197, 139, 107, 0.3);
+        }
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(180deg, var(--charcoal) 0%, #1a1b1c 100%);
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(197, 139, 107, 0.1), transparent);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .highlight {
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--bronze);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: var(--white);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            color: var(--white);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(34, 197, 94, 0.4);
+        }
+        .social-proof {
+            background: rgba(197, 139, 107, 0.1);
+            padding: 2rem;
+            border-top: 1px solid rgba(197, 139, 107, 0.2);
+            border-bottom: 1px solid rgba(197, 139, 107, 0.2);
+        }
+        .social-proof-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            color: var(--bronze);
+            font-size: 0.9rem;
+        }
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            color: var(--bronze);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .spec-card {
+            background: rgba(197, 139, 107, 0.05);
+            border: 1px solid rgba(197, 139, 107, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        .spec-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--copper-light);
+            box-shadow: 0 20px 50px rgba(197, 139, 107, 0.2);
+        }
+        .spec-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .spec-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--copper-light);
+        }
+        .spec-card p {
+            color: var(--bronze);
+            line-height: 1.8;
+        }
+        .spec-note {
+            font-size: 1.2rem;
+            color: var(--bronze);
+            font-style: italic;
+            margin-top: 2rem;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .step {
+            text-align: center;
+        }
+        .step-number {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .problem-section {
+            background: rgba(197, 139, 107, 0.05);
+            border-radius: 30px;
+            padding: 4rem 3rem;
+        }
+        .problem-stat {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 2rem 0;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .pricing-card {
+            background: rgba(197, 139, 107, 0.05);
+            border: 2px solid rgba(197, 139, 107, 0.3);
+            border-radius: 30px;
+            padding: 3rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .pricing-card.featured {
+            border-color: var(--copper-light);
+            box-shadow: 0 20px 60px rgba(197, 139, 107, 0.3);
+        }
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .features-list {
+            text-align: left;
+            margin: 2rem 0;
+            list-style: none;
+        }
+        .features-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--bronze);
+        }
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--copper-light);
+            font-weight: bold;
+        }
+        .about-section {
+            background: linear-gradient(180deg, var(--charcoal) 0%, #1a1b1c 100%);
+        }
+        .founders {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        .founder-card {
+            text-align: center;
+        }
+        .founder-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--copper-light), var(--copper-dark));
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+        .founder-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--copper-light);
+        }
+        .founder-role {
+            color: var(--bronze);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .story {
+            max-width: 900px;
+            margin: 4rem auto 0;
+            padding: 3rem;
+            background: rgba(197, 139, 107, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(197, 139, 107, 0.2);
+        }
+        .final-cta {
+            background: linear-gradient(135deg, rgba(197, 139, 107, 0.2), rgba(140, 90, 68, 0.2));
+            border-radius: 30px;
+            padding: 5rem 3rem;
+            text-align: center;
+        }
+        footer {
+            background: #1a1b1c;
+            padding: 3rem 2rem 1.5rem;
+            border-top: 1px solid rgba(197, 139, 107, 0.2);
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 {
+            color: var(--copper-light);
+            margin-bottom: 1rem;
+        }
+        .footer-section p, .footer-section a {
+            color: var(--bronze);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .cta-container { flex-direction: column; }
-            .social-proof-content { gap: 2rem; }
-            .stat-number { font-size: 2.5rem; }
+            .cta-container, .cta-options { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; }
+            .pricing-card.featured { transform: none; }
+            nav { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <div class="logo">
                 <div class="logo-text">Rein N' Solutions</div>
                 <div class="tagline">Automate. Elevate. Dominate.</div>
             </div>
-            <a href="/free-audit.html" class="nav-cta">Book Free Audit</a>
+            <a href="/free-audit.html" class="nav-cta">Get Free Audit</a>
         </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <h1>Winston-Salem & Triad Businesses:<br>
@@ -105,7 +419,6 @@
         </div>
     </section>
 
-    <!-- Social Proof -->
     <div class="social-proof">
         <div class="social-proof-content">
             <div class="stat">
@@ -123,7 +436,6 @@
         </div>
     </div>
 
-    <!-- Specialization -->
     <section>
         <h2>We've Helped Businesses Like Yours</h2>
         <p class="section-subtitle">Proudly serving Winston-Salem, Greensboro, High Point & surrounding areas</p>
@@ -149,7 +461,48 @@
         </p>
     </section>
 
-    <!-- Problem -->
+    <section id="audit">
+        <h2>How the Free Audit Works</h2>
+        <p class="section-subtitle">No pitch, no pressure—just data</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Fill the Form</h3>
+                <p>4 quick questions — takes 60 seconds</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>We Analyze Your Site</h3>
+                <p>Our system reviews your website, GBP, and socials for lead leaks</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Get Instant Report</h3>
+                <p>See exactly where you're losing money — real numbers</p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Fix It (Optional)</h3>
+                <p>Want help? Book a call. No obligation.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="https://calendly.com/sgsmarketingsolutions/30min" class="btn btn-primary">Book Strategy Call Now</a>
+        </div>
+
+        <div style="max-width: 700px; margin: 4rem auto 0;">
+            <h3>Start Your Free Audit Below</h3>
+            <p>Instant results — no waiting</p>
+            <script type="text/javascript" src="https://form.jotform.com/jsform/260031052591142"></script>
+        </div>
+
+        <div class="cta-options" style="margin-top: 3rem;">
+            <a href="tel:2485687617" class="btn btn-primary">📞 Call Now (248) 568-7617</a>
+            <a href="https://wa.me/message/W7Z2R4GLUIMBL1" class="btn btn-secondary">💬 Text on WhatsApp</a>
+        </div>
+    </section>
+
     <section class="problem-section">
         <h2>The Problem</h2>
         <p>We started offering free GBP audits to understand the Triad market. What we found shocked us:</p>
@@ -157,7 +510,6 @@
         <p>Not because owners don't care — because they're too busy running great businesses.</p>
     </section>
 
-    <!-- Pricing -->
     <section id="pricing">
         <h2>Be One of the First 5</h2>
         <p class="section-subtitle">Founding Member pricing ends when all spots are filled</p>
@@ -209,7 +561,6 @@
         </div>
     </section>
 
-    <!-- About -->
     <section class="about-section">
         <h2>Meet Your Neighbors</h2>
         <p class="section-subtitle">From Michigan to Winston-Salem: Building Something Real in the Triad</p>
@@ -218,13 +569,19 @@
                 <div class="founder-image">G</div>
                 <div class="founder-name">Gabriel</div>
                 <div class="founder-role">Systems & Design</div>
-                <p class="founder-bio">Applications and marketing specialist. The design brain behind Rein N' Solutions. Builds automation that just work—no complexity, no confusion, just results.</p>
+                <p class="founder-bio">
+                    Applications and marketing specialist. The design brain behind Rein N' Solutions.
+                    Builds automation that just work—no complexity, no confusion, just results.
+                </p>
             </div>
             <div class="founder-card">
                 <div class="founder-image">C</div>
                 <div class="founder-name">Calee</div>
                 <div class="founder-role">Strategy & Growth</div>
-                <p class="founder-bio">Psychology of business expert. Ensures every system has the right checks and balances. Believes every business deserves to capture every lead—and has the strategic mind to make it happen.</p>
+                <p class="founder-bio">
+                    Psychology of business expert. Ensures every system has the right checks and balances.
+                    Believes every business deserves to capture every lead—and has the strategic mind to make it happen.
+                </p>
             </div>
         </div>
         <div class="story">
@@ -237,18 +594,22 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="final-cta">
+        <h2>Ready to Stop Losing Customers?</h2>
+        <p>Choose the option that works best for you:</p>
+        <div class="cta-options">
+            <a href="/free-audit.html" class="btn btn-primary">Get Free Audit</a>
+            <a href="https://buy.stripe.com/dRm00j9jr6EKgPf8OV18c04" class="btn btn-secondary">Founding Member</a>
+            <a href="https://buy.stripe.com/6oU9AT9jr2ougPfaX318c05" class="btn btn-secondary">Buy Full System</a>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Rein N' Solutions</h3>
                 <p>Automate. Elevate. Dominate.</p>
                 <p>Proudly serving Winston-Salem, Greensboro, High Point & surrounding NC communities.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="/free-audit.html">Book Free Audit</a>
-                <a href="#pricing">Pricing</a>
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
@@ -268,25 +629,6 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
     <a href="https://wa.me/message/W7Z2R4GLUIMBL1" class="whatsapp-float" target="_blank">💬</a>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section > *, .spec-card, .step, .pricing-card').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
