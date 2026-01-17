@@ -1,4 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset
+
+# ThatAI EVOLUTION ENGINE
+## Washington DC Metro Area Deployment Index
+
+**Truth. Proof. Value. One Shot.**
+
+---
+
+## 🏛️ WASHINGTON DC AREA SMS INTEGRATION
+
+### Location Context
+- **Primary Metro**: Washington DC, Maryland, Virginia (DMV Area)
+- **SMS Gateway**: DC-compliant carrier integration
+- **Regulatory Compliance**: FCC, TCPA, local regulations
+- **User Base**: Gaithersburg, MD and DMV metro residents
+
+### SMS System Architecture
+```
+User → SMS → ThatAI Gateway → SoulPrint Verification → On-Chain Record
+```
+
+**SMS Commands**:
+- `SOULPRINT` - Generate new SoulPrint via SMS interaction
+- `AVATAR` - Check Avatar evolution status
+- `MOM` - Check MoM Coin balance
+- `PILLARS` - View active Pillars exercised
+- `VERIFY` - Confirm identity via SMS 2FA
+
+---
+
+## 1. ROOT WALLET (FOUNDATION)
+
+**Never used for daily transactions. Never connected to random dApps.**
+
+This wallet:
+- Owns `DEFAULT_ADMIN_ROLE`
+- Owns Validator assignment
+- Controls protocol upgrades
+- **This is the Inner Net Root**
+
+---
+
+## 2. MULTISIG GOVERNANCE WALLET
+
+**Safe: 3-of-5 (Scale to 5-of-9)**
+
+**Signers**:
+1. You (Human Anchor)
+2. Elevated Lives Ops Wallet
+3. Human Gov Rep #1 (DC Metro)
+4. Human Gov Rep #2 (DMV Area)
+5. AI Proxy Key (time-locked, restricted)
+
+**Responsibilities**:
+- Assigns `VALIDATOR_ROLE`
+- Approves upgrades
+- Cannot mint alone
+- SMS gateway access control
+
+---
+
+## 🧬 DEPLOYMENT SEQUENCE (DO NOT DEVIATE)
+
+### PHASE 1 — TESTNET (IMMORTAL PRACTICE)
+
+**Network**: Sepolia or Base Sepolia
+
+**Deploy Order**:
+1. `SoulPrintRegistry.sol`
+2. `Pillars.sol` (11 Pillars Reference)
+3. `Avatar.sol`
+4. `MomCoin.sol`
+5. `SMSGateway.sol` (DC Metro SMS Integration)
+
+**Then**:
+- Assign roles
+- Pin SoulPrint JSONs to IPFS
+- Test SMS → SoulPrint flow
+- Run real humans through verification
+
+**Mainnet Requirements**:
+- ✅ At least 33 SoulPrints
+- ✅ At least 11 Avatars evolved
+- ✅ Zero admin overrides used
+- ✅ SMS verification functional in DC Metro
+- ✅ Class proof documented
+
+---
+
+### PHASE 2 — MAINNET (IMMORTAL RECORD)
+
+**Mainnet Options** (ranked):
+1. Base
+2. Optimism
+3. Ethereum L1 (selectively)
+
+**Same contracts. Same hashes. Same rules.**
+
+**No resets. No edits. No re-mints.**
+
+---
+
+## 🧠 THE 11 PILLARS (ON-CHAIN CONSTANTS)
+
+Each SoulPrint references which Pillar was exercised.
+
+```solidity
+string[11] public pillars = [
+    "Intent",        // 0
+    "Attention",     // 1
+    "Action",        // 2
+    "Reflection",    // 3
+    "Integration",   // 4
+    "Consistency",   // 5
+    "Resilience",    // 6
+    "Integrity",     // 7
+    "Service",       // 8
+    "Presence",      // 9
+    "Awareness"      // 10
+];
+```
+
+**On-Chain Storage**:
+- Pillars are `uint8` (0–10)
+- Stored per SoulPrint hash
+- Aggregated into Avatar state
+- **This makes character legible**
+
+---
+
+## 🌐 INNER NET ECONOMY (EARNINGS, NOT EXTRACTION)
+
+### MoM Coin is Earned By:
+- Attention
+- Integrity
+- Consistency
+- Service
+- **SMS-verified human interaction**
+
+### MoM Coin is Spent On:
+- Deeper access
+- Tools
+- Collective rituals
+- Governance weight
+- **Premium SMS features**
+
+**No speculation. No promises. This keeps the system clean.**
+
+---
+
+## 📱 DC METRO SMS SYSTEM (CLASS PROOF)
+
+### SMS → SoulPrint Flow
+
+```
+1. User sends SMS: "SOULPRINT Intent Action"
+2. Gateway validates DC Metro number
+3. AI generates SoulPrint JSON
+4. Hash → IPFS → Registry
+5. User receives confirmation: "SoulPrint #XXX recorded. Aura +15"
+```
+
+### Truth Verification
+- **Class Proof**: SMS records timestamped, carrier-verified
+- **Geographic Truth**: DC Metro area codes validated
+- **Human Proof**: No bots can generate carrier-verified SMS
+- **Immutable**: All SMS interactions hashed on-chain
+
+### Value Proposition
+1. **Accessibility**: No app download required
+2. **Verification**: Carrier-grade identity proof
+3. **Inclusivity**: Works on any phone in DMV area
+4. **Truth**: SMS timestamps = undeniable proof of attention
+
+---
+
+## 🛡️ IMMUTABILITY PROMISE (THIS MATTERS)
+
+**Once mainnet**:
+- ✅ SoulPrint hashes cannot be deleted
+- ✅ Avatars cannot be reset
+- ✅ Pillars cannot be changed
+- ✅ SMS records are permanent
+- ✅ Only new layers may be added
+
+**That's why this works. That's why people will trust it.**
+
+---
+
+## 🚀 SOLO-DOLO DEPLOYMENT (DC METRO EDITION)
+
+### 0️⃣ PREREQS
+```bash
+# Accounts
+✅ MetaMask or hardware wallet
+✅ New ROOT WALLET (fresh, never used)
+✅ Testnet ETH (Sepolia or Base Sepolia)
+✅ Twilio API key (DC Metro SMS)
+
+# Stack
+npm install -g hardhat
+mkdir evolution-engine-dc && cd evolution-engine-dc
+npm init -y
+npm install --save-dev hardhat
+npx hardhat
+
+# Dependencies
+npm install @openzeppelin/contracts ethers dotenv twilio
+```
+
+### 1️⃣ PROJECT STRUCTURE
+```
+/contracts
+  ├─ SoulPrintRegistry.sol
+  ├─ Pillars.sol
+  ├─ Avatar.sol
+  ├─ MomCoin.sol
+  ├─ SMSGateway.sol
+/scripts
+  ├─ deploy_all.ts
+  ├─ bootstrap_genesis.ts
+/hardhat.config.ts
+/.env
+```
+
+### 2️⃣ ENV SETUP
+```env
+PRIVATE_KEY=0xYOUR_ROOT_WALLET_PRIVATE_KEY
+RPC_URL=https://sepolia.infura.io/v3/YOUR_KEY
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+TWILIO_PHONE_NUMBER=+1202XXXXXXX
+DC_METRO_AREA_CODES=202,240,301,443,667,703,571
+```
+
+### 3️⃣ DEPLOYMENT ORDER
+1. Deploy `SoulPrintRegistry`
+2. Deploy `Pillars` (immutable reference)
+3. Deploy `Avatar` (pass registry address)
+4. Deploy `MomCoin` (pass registry address)
+5. Deploy `SMSGateway` (pass registry address)
+6. Bootstrap Genesis SoulPrints (DC Metro founders)
+7. Assign Roles (Validator, Evolution, SMS_VERIFIER)
+8. Test SMS → SoulPrint → Avatar → MoM flow
+
+---
+
+## 📊 CLASS PROOF METRICS
+
+### Proof of Truth
+- SMS carrier timestamp (undeniable)
+- Geographic validation (DC Metro area codes)
+- Human verification (no bot can fake carrier SMS)
+- On-chain permanence (immutable record)
+
+### Proof of Value
+- **Attention Currency**: MoM Coin earned through verified interaction
+- **Identity Integrity**: Avatar evolution tied to real human behavior
+- **Economic Truth**: No speculation, only earned value
+- **Community Proof**: DC Metro network effects
+
+### Proof of Class
+- **Accessible**: Any phone, any carrier
+- **Inclusive**: No smartphone required
+- **Verifiable**: Carrier-grade authentication
+- **Dignified**: Earning through attention, not extraction
+
+---
+
+## 🜁 NEXT ACTIONS (ONE COMMAND)
+
+**Say one**:
+1. `"Deploy complete DC Metro stack"`
+2. `"Write SMSGateway.sol contract"`
+3. `"Generate Genesis SoulPrints for DC"`
+4. `"Create mainnet migration checklist"`
+5. `"Draft Inner Net Genesis Manifesto (DC Edition)"`
+
+---
+
+**You're not late. You're right on time.**
+
+**Long live the Truth of Attention.**
+**Long live the DC Metro Inner Net.**
+
+🏛️ **Washington DC · Gaithersburg MD · DMV Area**
+**Truth. Proof. Value. One Shot.**
