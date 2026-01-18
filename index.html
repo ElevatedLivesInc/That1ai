@@ -24,14 +24,10 @@
       color: #f8f8ff; 
       line-height: 1.7; 
       overflow-x: hidden;
-      position: relative;
     }
     
     /* FLOATING PARTICLES */
-    .particles {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-      pointer-events: none; z-index: 1;
-    }
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
     .particle {
       position: absolute;
       background: radial-gradient(circle, var(--gold-soft), transparent);
@@ -46,7 +42,7 @@
       100% { transform: translateY(-100px) scale(1); opacity: 0; }
     }
     
-    /* ELEVATED HEADER */
+    /* HEADER */
     .header {
       position: fixed; top: 0; left: 0; right: 0;
       background: rgba(15,19,40,0.97);
@@ -59,14 +55,10 @@
       max-width: 1400px; margin: 0 auto; padding: 0 24px;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .logo {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.75rem; font-weight: 700;
+    .logo { font-family: 'Orbitron', monospace; font-size: 1.75rem; font-weight: 700;
       background: linear-gradient(135deg, var(--gold-soft), var(--bronze-warm));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-decoration: none;
-      letter-spacing: -0.4px;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-decoration: none; letter-spacing: -0.4px;
       filter: drop-shadow(0 0 20px rgba(245,214,163,0.3));
     }
     .header-cta {
@@ -94,54 +86,72 @@
       box-shadow: 0 25px 60px rgba(212,165,116,0.55);
     }
     
-    .hero {
+    /* BRAND PRESENTATION SECTION */
+    .brand-intro {
       min-height: 100vh;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center; padding: 220px 24px 140px;
-      position: relative; z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 220px 24px 140px;
+      position: relative;
+      z-index: 10;
     }
-    .hero-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--bronze-warm), var(--copper-warm));
-      color: #1a0f0a;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 32px;
-      box-shadow: 0 10px 30px rgba(212,165,116,0.3);
-      animation: badgeFloat 6s ease-in-out infinite;
+    .brand-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1400px;
+      width: 100%;
     }
-    @keyframes badgeFloat {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+    .brand-sigil {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .hero-title {
+    .brand-sigil img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      filter: drop-shadow(0 0 60px rgba(212,165,116,0.5));
+      animation: sigil-pulse 6s ease-in-out infinite;
+    }
+    @keyframes sigil-pulse {
+      0%, 100% { filter: drop-shadow(0 0 50px rgba(212,165,116,0.4)); }
+      50% { filter: drop-shadow(0 0 80px rgba(245,214,163,0.6)); }
+    }
+    .brand-statement {
+      text-align: left;
+    }
+    .brand-statement h2 {
       font-family: 'Orbitron', monospace;
-      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
       background: linear-gradient(135deg, var(--gold-soft), var(--bronze-warm));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 28px;
+      margin-bottom: 35px;
       font-weight: 800;
-      letter-spacing: -1.5px;
-      filter: drop-shadow(0 0 40px rgba(245,214,163,0.4));
-      animation: titleGlow 4s ease-in-out infinite alternate;
+      line-height: 1.1;
     }
-    @keyframes titleGlow {
-      from { filter: drop-shadow(0 0 30px rgba(245,214,163,0.3)); }
-      to { filter: drop-shadow(0 0 60px rgba(212,165,116,0.6)); }
-    }
-    .hero-subtitle {
-      font-size: clamp(1.4rem, 3.8vw, 2.1rem);
-      max-width: 850px;
-      margin-bottom: 60px;
+    .brand-values {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      line-height: 2;
       opacity: 0.96;
-      font-weight: 400;
+      margin-bottom: 50px;
+      font-weight: 300;
     }
-    
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .value-item::before {
+      content: '▸';
+      color: var(--bronze-warm);
+      font-size: 2rem;
+      margin-right: 20px;
+      opacity: 0.8;
+    }
     .cta-primary {
       position: relative;
       padding: 28px 65px;
@@ -157,6 +167,8 @@
       letter-spacing: 0.8px;
       text-transform: uppercase;
       overflow: hidden;
+      display: inline-block;
+      margin-top: 20px;
     }
     .cta-primary::before {
       content: ''; position: absolute; top: 50%; left: 50%;
@@ -166,14 +178,13 @@
       transition: all 0.6s;
       transform: translate(-50%, -50%);
     }
-    .cta-primary:hover::before {
-      width: 300px; height: 300px;
-    }
+    .cta-primary:hover::before { width: 300px; height: 300px; }
     .cta-primary:hover { 
       transform: translateY(-10px) scale(1.08); 
       box-shadow: 0 50px 120px rgba(212,165,116,0.6); 
     }
     
+    /* FEATURES AFTER BRAND */
     .section { padding: 160px 24px; max-width: 1400px; margin: 0 auto; }
     .features-grid { 
       display: grid; 
@@ -225,6 +236,7 @@
       font-weight: 600;
     }
     
+    /* SYSTEM LAUNCH */
     .system-launch {
       position: relative;
       background: var(--bg-warm);
@@ -318,9 +330,11 @@
       border-top: 1px solid var(--border-warm); 
       font-size: 1.05rem;
     }
+    
     @media (max-width: 768px) {
+      .brand-container { grid-template-columns: 1fr; gap: 60px; }
       .header-container { padding: 0 20px; }
-      .hero { padding: 240px 20px 120px; }
+      .brand-intro { padding: 240px 20px 120px; }
       .section { padding: 110px 20px; }
       .cta-stack { flex-direction: column; align-items: center; gap: 25px; }
       .system-launch { padding: 70px 35px; margin: 120px 20px; }
@@ -328,28 +342,43 @@
   </style>
 </head>
 <body>
-  <!-- FLOATING SYSTEM -->
   <div class="particles" id="particles"></div>
   
   <header class="header">
     <div class="header-container">
       <a href="#" class="logo">ReinN <span class="logo-accent">Solutions</span></a>
-      <a href="sms:6192928451?body=ReinN..." class="header-cta">Enter Network</a>
+      <a href="#partnership" class="header-cta">Enter Network</a>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-badge">DC Premium Cart System</div>
-    <h1 class="hero-title">Join Development Network</h1>
-    <p class="hero-subtitle">
-      Exclusive AI partnership for DC cannabis wholesalers. 
-      Cutting-edge I71 execution. Built with leading shops.
-    </p>
-    <a href="sms:6192928451?body=ReinN..." class="cta-primary">
-      Enter Partnership
-    </a>
+  <!-- BRAND PRESENTATION -->
+  <section class="brand-intro">
+    <div class="brand-container">
+      <div class="brand-sigil">
+        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/878e31fb-a546-49ae-98be-02b9968dba05" alt="ReinN Solutions Sigil" />
+      </div>
+      <div class="brand-statement">
+        <h2>What ReinN Solutions Represents</h2>
+        <div class="brand-values">
+          <div class="value-item">
+            <span><strong>Automate</strong> — Your volume through intelligent buyer acquisition systems</span>
+          </div>
+          <div class="value-item">
+            <span><strong>Elevate</strong> — Your wholesaler into premium DC network positioning</span>
+          </div>
+          <div class="value-item">
+            <span><strong>Dominate</strong> — Your market through I71-compliant automation edge</span>
+          </div>
+        </div>
+        <p style="font-size: 1.15rem; opacity: 0.9; margin: 50px 0;">
+          We're building the future of DC cannabis wholesaling. Professional execution. Proven partnerships. Network advantage.
+        </p>
+        <a href="#partnership" class="cta-primary">Join Development</a>
+      </div>
+    </div>
   </section>
 
+  <!-- FEATURES -->
   <section class="section">
     <div class="features-grid">
       <div class="feature">
@@ -370,10 +399,11 @@
     </div>
   </section>
 
-  <section class="system-launch">
+  <!-- ACTIVATION -->
+  <section class="system-launch" id="partnership">
     <h2 class="launch-title">Network Activation</h2>
     <p style="font-size: 1.3rem; opacity: 0.95; margin-bottom: 55px; max-width: 750px; margin-left: auto; margin-right: auto;">
-      Professional outreach for DC wholesaler partnership
+      Partnership message for DC wholesalers ready to scale
     </p>
     <div class="pitch-code" onclick="navigator.clipboard.writeText(this.textContent); event.target.style.transform='scale(1.02)'; setTimeout(()=>event.target.style.transform='scale(1)', 300); alert('✅ Activation message copied!')">
 ReinN Solutions | DC Cart Network Launch
@@ -400,7 +430,6 @@ Network activation?
   </footer>
 
   <script>
-    // ADVANCED FLOATING PARTICLES
     function createParticle() {
       const particle = document.createElement('div');
       particle.className = 'particle';
@@ -409,25 +438,10 @@ Network activation?
       particle.style.animationDelay = Math.random() * 2 + 's';
       particle.style.width = particle.style.height = (Math.random() * 8 + 2) + 'px';
       document.getElementById('particles').appendChild(particle);
-      
-      setTimeout(() => {
-        particle.remove();
-      }, 7000);
+      setTimeout(() => particle.remove(), 7000);
     }
-    
-    // CONTINUOUS GENERATION
     setInterval(createParticle, 300);
     for(let i = 0; i < 5; i++) createParticle();
-    
-    // SMOOTH SCROLL
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
   </script>
 </body>
 </html>
