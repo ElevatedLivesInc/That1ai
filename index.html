@@ -3,223 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReinNSolutions | DC Cart Automation</title>
-  <meta name="description" content="AI cart sales automation. 26% net profit boost. Text leads → I71 gifting → Licensed scale. Deploy now.">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <title>ReinN Solutions | DC Cart Sales Automation</title>
+  <meta name="description" content="Professional AI automation for DC cannabis cart sales. I71 compliant. 26% revenue boost.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-hero: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 70%, #16213e 100%);
       --bg-dark: #0a0a0f;
-      --neon-bronze: #cd7f32;
-      --neon-copper: #b87333;
-      --neon-gold: #ffd700;
-      --glass: rgba(255,255,255,0.05);
-      --glow: rgba(205,127,50,0.4);
+      --bronze-primary: #cd7f32;
+      --copper-accent: #b87333;
+      --gold-highlight: #ffd700;
+      --glass: rgba(255,255,255,0.06);
+      --glow: rgba(205,127,50,0.35);
+      --border-subtle: rgba(205,127,50,0.2);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
-      font-family: 'Inter', sans-serif; 
+      font-family: 'Inter', -apple-system, sans-serif; 
       background: var(--bg-hero); 
       color: white; 
+      line-height: 1.65;
       overflow-x: hidden;
     }
-    .hero {
-      min-height: 100vh; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      text-align: center; 
-      padding: 0 20px;
-      position: relative;
+    
+    /* PROFESSIONAL HEADER */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(10,10,15,0.95);
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+      padding: 20px 0;
+    }
+    .header-container {
+      max-width: 1300px; margin: 0 auto; padding: 0 20px;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .logo {
+      display: flex; align-items: center;
       font-family: 'Orbitron', monospace;
-      font-size: clamp(3rem, 8vw, 6rem);
-      background: linear-gradient(45deg, var(--neon-gold), var(--neon-bronze));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 40px var(--neon-gold));
-      animation: pulse 3s infinite;
-      margin-bottom: 20px;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--gold-highlight);
+      text-decoration: none;
+      letter-spacing: -0.5px;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    .logo span {
+      color: var(--bronze-primary);
+      font-weight: 900;
+      margin-left: 4px;
     }
-    .tagline {
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
-      color: var(--neon-gold);
-      font-weight: 300;
-      margin-bottom: 40px;
-      opacity: 0.9;
+    .header-tagline {
+      font-size: 0.85rem; 
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+      margin-left: 12px;
+    }
+    .cta-header {
+      padding: 12px 28px;
+      background: linear-gradient(135deg, var(--bronze-primary), var(--copper-accent));
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(205,127,50,0.4);
+      letter-spacing: 0.5px;
+    }
+    .cta-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(205,127,50,0.6);
+    }
+    
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; padding: 180px 20px 100px;
+      position: relative;
     }
     .profit-hero {
       font-family: 'Orbitron', monospace;
-      font-size: clamp(5rem, 12vw, 9rem);
-      background: linear-gradient(45deg, var(--neon-bronze), var(--neon-gold));
+      font-size: clamp(5.5rem, 13vw, 9.5rem);
+      background: linear-gradient(45deg, var(--bronze-primary), var(--gold-highlight));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 50px var(--neon-bronze));
+      filter: drop-shadow(0 0 50px var(--bronze-primary));
       margin: 30px 0;
       font-weight: 900;
+      line-height: 0.9;
     }
     .hero-subtitle {
-      font-size: clamp(1.3rem, 4vw, 2rem);
-      max-width: 700px;
-      line-height: 1.4;
-      margin-bottom: 50px;
-      opacity: 0.95;
+      font-size: clamp(1.5rem, 4vw, 2.3rem);
+      max-width: 800px;
+      margin-bottom: 60px;
+      opacity: 0.98;
+      font-weight: 400;
     }
     .cta-primary {
       display: inline-block;
-      padding: 25px 50px;
-      background: linear-gradient(45deg, var(--neon-bronze), var(--neon-gold));
+      padding: 28px 60px;
+      background: linear-gradient(135deg, var(--bronze-primary), var(--copper-accent));
       color: #000;
-      font-family: 'Orbitron', monospace;
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 0 20px 40px var(--glow);
+      box-shadow: 0 25px 50px var(--glow);
       transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
       position: relative;
       overflow: hidden;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
     }
-    .cta-primary:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 30px 60px rgba(205,127,50,0.6);
+    .cta-primary:hover { 
+      transform: translateY(-8px) scale(1.05); 
+      box-shadow: 0 40px 80px rgba(205,127,50,0.7); 
     }
-    .cta-primary::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      transition: left 0.5s;
-    }
-    .cta-primary:hover::after { left: 100%; }
     
-    .section {
-      padding: 100px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .section { padding: 120px 20px; max-width: 1300px; margin: 0 auto; }
     .dark-section { background: var(--bg-dark); }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-      margin-top: 80px;
+    .features-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
+      gap: 50px; 
+      margin-top: 100px; 
     }
     .feature {
       background: var(--glass);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(205,127,50,0.2);
+      backdrop-filter: blur(30px);
+      border: 1px solid var(--border-subtle);
       border-radius: 25px;
-      padding: 40px 30px;
+      padding: 50px 40px;
       text-align: center;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      transition: all 0.4s ease;
     }
-    .feature::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--neon-bronze), var(--neon-gold));
+    .feature:hover { 
+      transform: translateY(-15px); 
+      border-color: var(--bronze-primary); 
+      box-shadow: 0 35px 70px var(--glow); 
     }
-    .feature:hover {
-      transform: translateY(-15px);
-      border-color: var(--neon-gold);
-      box-shadow: 0 30px 60px var(--glow);
+    .feature-icon { 
+      font-size: 4rem; 
+      background: linear-gradient(var(--copper-accent), var(--gold-highlight)); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+      margin-bottom: 30px; 
     }
-    .feature-icon {
-      font-size: 4rem;
-      background: linear-gradient(var(--neon-copper), var(--neon-gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 25px;
-    }
-    .feature-h3 {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.6rem;
-      color: var(--neon-gold);
-      margin-bottom: 20px;
+    .feature-h3 { 
+      font-family: 'Orbitron', monospace; 
+      font-size: 1.7rem; 
+      color: var(--gold-highlight); 
+      margin-bottom: 25px; 
+      font-weight: 600;
     }
     
     .pitch-hero {
       background: linear-gradient(135deg, rgba(205,127,50,0.2), rgba(184,115,51,0.1));
-      border: 2px solid var(--neon-bronze);
-      border-radius: 25px;
-      padding: 50px;
-      margin: 80px auto;
-      max-width: 800px;
+      border: 2px solid var(--bronze-primary);
+      border-radius: 30px;
+      padding: 70px;
+      margin: 120px auto;
+      max-width: 950px;
       text-align: center;
+      box-shadow: 0 30px 80px var(--glow);
+    }
+    .pitch-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 2.4rem;
+      color: var(--gold-highlight);
+      margin-bottom: 35px;
+      font-weight: 700;
     }
     .pitch-code {
-      background: rgba(0,0,0,0.8);
-      border: 1px solid var(--neon-gold);
-      border-radius: 15px;
-      padding: 30px;
-      font-family: 'Monaco', monospace;
+      background: rgba(0,0,0,0.9);
+      border: 2px solid var(--gold-highlight);
+      border-radius: 20px;
+      padding: 40px;
+      font-family: 'SF Mono', Monaco, monospace;
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.7;
       white-space: pre-wrap;
       cursor: pointer;
-      transition: all 0.3s;
-      margin-top: 25px;
+      transition: all 0.4s;
+      margin-top: 30px;
+      box-shadow: inset 0 0 25px rgba(255,215,0,0.1);
     }
-    .pitch-code:hover { background: rgba(205,127,50,0.15); }
+    .pitch-code:hover { 
+      background: rgba(205,127,50,0.15); 
+      border-color: var(--bronze-primary); 
+      transform: scale(1.015); 
+    }
     
     .cta-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      margin: 60px 0;
+      display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin: 80px 0;
     }
     .cta-secondary {
-      padding: 18px 40px;
+      padding: 22px 50px;
       background: rgba(255,255,255,0.1);
       color: white;
-      border: 2px solid var(--neon-bronze);
+      border: 2px solid var(--bronze-primary);
       border-radius: 50px;
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s;
+      transition: all 0.4s;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
     }
-    .cta-secondary:hover {
-      background: var(--neon-bronze);
-      transform: translateY(-3px);
+    .cta-secondary:hover { 
+      background: var(--bronze-primary); 
+      transform: translateY(-5px); 
+      box-shadow: 0 25px 50px var(--glow); 
     }
     
-    footer {
-      text-align: center;
-      padding: 80px 20px 40px;
-      color: rgba(255,255,255,0.7);
-      border-top: 1px solid rgba(205,127,50,0.2);
+    footer { 
+      text-align: center; 
+      padding: 100px 20px 60px; 
+      color: rgba(255,255,255,0.75); 
+      border-top: 1px solid var(--border-subtle); 
+      font-size: 1rem;
     }
     @media (max-width: 768px) {
-      .hero { padding: 100px 20px 50px; }
-      .section { padding: 60px 20px; }
-      .cta-stack { flex-direction: column; }
+      .header-container { padding: 0 15px; }
+      .hero { padding: 200px 20px 80px; }
+      .section { padding: 90px 20px; }
+      .cta-stack { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
-  <!-- HERO FUNNEL -->
+  <!-- PROFESSIONAL FIXED HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="logo">
+        ReinN <span>Solutions</span>
+        <span class="header-tagline">| DC Cart Automation</span>
+      </a>
+      <a href="sms:6192928451?body=ReinN%20Solutions..." class="cta-header">Activate Now</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
   <section class="hero">
-    <div class="logo">ReinN</div>
-    <p class="tagline">Your attention funded. Your soul remembered.</p>
     <div class="profit-hero">26% NET</div>
     <h1 class="hero-subtitle">
-      AI Automation for DC Cart Consignment<br>
-      <span style="color: var(--neon-gold);">Text → I71 → Licensed Scale</span>
+      Professional AI Automation<br>
+      <span style="color: var(--gold-highlight);">DC I71 Cart Sales</span>
     </h1>
-    <a href="sms:6192928451?body=ReinNSolutions%20AI%20Cart%20Automation%20ready..." class="cta-primary">
-      🚀 Deploy My Sales Bot Now
+    <a href="sms:6192928451?body=ReinN%20Solutions%20DC%20automation..." class="cta-primary">
+      Deploy Sales System
     </a>
   </section>
 
@@ -228,47 +264,48 @@
     <div class="features-grid">
       <div class="feature">
         <div class="feature-icon">🤖</div>
-        <h3 class="feature-h3">AI Lead Engine</h3>
-        <p>Scrapes your promo images → Generates 500+ targeted texts/week → Converts browsers to buyers</p>
+        <h3 class="feature-h3">AI Lead Generation</h3>
+        <p>Automated SMS campaigns from DC promo content. Gifted Curators volume. 500+ qualified leads weekly</p>
       </div>
       <div class="feature">
         <div class="feature-icon">📱</div>
-        <h3 class="feature-h3">Text Funnel</h3>
-        <p>SMS sequences + Discord lists. Catering-proven. Drives 20-50 sales/week immediately</p>
+        <h3 class="feature-h3">I71 Compliance</h3>
+        <p>Legal gifting partnerships. Peace In The Air execution. Sticker + cart model perfected</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">🎁</div>
-        <h3 class="feature-h3">I71 Compliance</h3>
-        <p>Gifted Curators partnerships. Legal sticker gifts. $200-500/week while licensing</p>
+        <div class="feature-icon">📈</div>
+        <h3 class="feature-h3">Revenue Automation</h3>
+        <p>Your 26% consignment + my systems = immediate scale. Professional DC execution</p>
       </div>
     </div>
   </section>
 
-  <!-- PITCH CTA -->
+  <!-- PITCH -->
   <section class="section dark-section">
     <div class="pitch-hero">
-      <h2 style="font-family: 'Orbitron'; font-size: 2.5rem; color: var(--neon-gold); margin-bottom: 30px;">
-        Send This Exact Message → Get Response Today
-      </h2>
-      <div class="pitch-code" onclick="navigator.clipboard.writeText(this.textContent); this.style.background='rgba(205,127,50,0.3)'; setTimeout(()=>this.style.background='rgba(0,0,0,0.8)', 1000); alert('✅ Copied! Send to 619-292-8451')">
-Thrilled for DC cart consignment—26% net/no-inventory perfect. 
+      <h2 class="pitch-title">Send This → Close Today</h2>
+      <div class="pitch-code" onclick="navigator.clipboard.writeText(this.textContent); this.style.background='rgba(205,127,50,0.25)'; setTimeout(()=>this.style.background='rgba(0,0,0,0.9)', 2000); alert('✅ Copied! Send 619-292-8451')">
+ReinN Solutions | DC Cart Sales Automation
 
-ReinNSolutions: AI bot → 500 texts/wk from your images. 
-I71 gifting w/ Gifted Curators running NOW (legal, 1g carts). 
-20-50 sales/wk proven. NC clean, license process. 
+Deployed for your 26% consignment model.
 
-Scale your wholesaler? Call now.
+✅ AI SMS → 500 DC leads/wk from your content
+✅ I71 gifting: Gifted Curators + Peace In The Air  
+✅ 20-50 sales/wk execution ready
+✅ Professional systems. DC specialist.
+
+Activate partnership?
       </div>
       <div class="cta-stack">
-        <a href="sms:6192928451?body=Rein-N-Solutions%20AI%20Cart%20Automation..." class="cta-primary">📱 Send Auto-Pitch</a>
-        <a href="tel:2028609137" class="cta-secondary">🤝 I71 Partner (202-860-9137)</a>
+        <a href="sms:6192928451?body=ReinN%20Solutions..." class="cta-primary">📱 Send Professional Pitch</a>
+        <a href="tel:2028609137" class="cta-secondary">Partner Gifted Curators</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p><strong>Rein-N-Solutions</strong> | Gabriel | DC Cart Automation Specialist</p>
-    <p><a href="https://reinnsolutions.xyz" style="color: var(--neon-bronze);">reinnsolutions.xyz</a> | Deployed via Cloudflare Pages</p>
+    <p><strong>ReinN Solutions</strong> | Professional DC Cannabis Automation</p>
+    <p><a href="https://reinnsolutions.xyz" style="color: var(--bronze-primary);">reinnsolutions.xyz</a></p>
   </footer>
 </body>
 </html>
