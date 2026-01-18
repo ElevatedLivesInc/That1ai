@@ -1,195 +1,37 @@
-
-2. Optimism
-3. Ethereum L1 (selectively)
-
-**Same contracts. Same hashes. Same rules.**
-
-**No resets. No edits. No re-mints.**
-
----
-
-## 🧠 THE 11 PILLARS (ON-CHAIN CONSTANTS)
-
-Each SoulPrint references which Pillar was exercised.
-
-```solidity
-string[11] public pillars = [
-    "Intent",        // 0
-    "Attention",     // 1
-    "Action",        // 2
-    "Reflection",    // 3
-    "Integration",   // 4
-    "Consistency",   // 5
-    "Resilience",    // 6
-    "Integrity",     // 7
-    "Service",       // 8
-    "Presence",      // 9
-    "Awareness"      // 10
-];
-```
-
-**On-Chain Storage**:
-- Pillars are `uint8` (0–10)
-- Stored per SoulPrint hash
-- Aggregated into Avatar state
-- **This makes character legible**
-
----
-
-## 🌐 INNER NET ECONOMY (EARNINGS, NOT EXTRACTION)
-
-### MoM Coin is Earned By:
-- Attention
-- Integrity
-- Consistency
-- Service
-- **SMS-verified human interaction**
-
-### MoM Coin is Spent On:
-- Deeper access
-- Tools
-- Collective rituals
-- Governance weight
-- **Premium SMS features**
-
-**No speculation. No promises. This keeps the system clean.**
-
----
-
-## 📱 DC METRO SMS SYSTEM (CLASS PROOF)
-
-### SMS → SoulPrint Flow
-
-```
-1. User sends SMS: "SOULPRINT Intent Action"
-2. Gateway validates DC Metro number
-3. AI generates SoulPrint JSON
-4. Hash → IPFS → Registry
-5. User receives confirmation: "SoulPrint #XXX recorded. Aura +15"
-```
-
-### Truth Verification
-- **Class Proof**: SMS records timestamped, carrier-verified
-- **Geographic Truth**: DC Metro area codes validated
-- **Human Proof**: No bots can generate carrier-verified SMS
-- **Immutable**: All SMS interactions hashed on-chain
-
-### Value Proposition
-1. **Accessibility**: No app download required
-2. **Verification**: Carrier-grade identity proof
-3. **Inclusivity**: Works on any phone in DMV area
-4. **Truth**: SMS timestamps = undeniable proof of attention
-
----
-
-## 🛡️ IMMUTABILITY PROMISE (THIS MATTERS)
-
-**Once mainnet**:
-- ✅ SoulPrint hashes cannot be deleted
-- ✅ Avatars cannot be reset
-- ✅ Pillars cannot be changed
-- ✅ SMS records are permanent
-- ✅ Only new layers may be added
-
-**That's why this works. That's why people will trust it.**
-
----
-
-## 🚀 SOLO-DOLO DEPLOYMENT (DC METRO EDITION)
-
-### 0️⃣ PREREQS
-```bash
-# Accounts
-✅ MetaMask or hardware wallet
-✅ New ROOT WALLET (fresh, never used)
-✅ Testnet ETH (Sepolia or Base Sepolia)
-✅ Twilio API key (DC Metro SMS)
-
-# Stack
-npm install -g hardhat
-mkdir evolution-engine-dc && cd evolution-engine-dc
-npm init -y
-npm install --save-dev hardhat
-npx hardhat
-
-# Dependencies
-npm install @openzeppelin/contracts ethers dotenv twilio
-```
-
-### 1️⃣ PROJECT STRUCTURE
-```
-/contracts
-  ├─ SoulPrintRegistry.sol
-  ├─ Pillars.sol
-  ├─ Avatar.sol
-  ├─ MomCoin.sol
-  ├─ SMSGateway.sol
-/scripts
-  ├─ deploy_all.ts
-  ├─ bootstrap_genesis.ts
-/hardhat.config.ts
-/.env
-```
-
-### 2️⃣ ENV SETUP
-```env
-PRIVATE_KEY=0xYOUR_ROOT_WALLET_PRIVATE_KEY
-RPC_URL=https://sepolia.infura.io/v3/YOUR_KEY
-TWILIO_ACCOUNT_SID=your_twilio_sid
-TWILIO_AUTH_TOKEN=your_twilio_token
-TWILIO_PHONE_NUMBER=+1202XXXXXXX
-DC_METRO_AREA_CODES=202,240,301,443,667,703,571
-```
-
-### 3️⃣ DEPLOYMENT ORDER
-1. Deploy `SoulPrintRegistry`
-2. Deploy `Pillars` (immutable reference)
-3. Deploy `Avatar` (pass registry address)
-4. Deploy `MomCoin` (pass registry address)
-5. Deploy `SMSGateway` (pass registry address)
-6. Bootstrap Genesis SoulPrints (DC Metro founders)
-7. Assign Roles (Validator, Evolution, SMS_VERIFIER)
-8. Test SMS → SoulPrint → Avatar → MoM flow
-
----
-
-## 📊 CLASS PROOF METRICS
-
-### Proof of Truth
-- SMS carrier timestamp (undeniable)
-- Geographic validation (DC Metro area codes)
-- Human verification (no bot can fake carrier SMS)
-- On-chain permanence (immutable record)
-
-### Proof of Value
-- **Attention Currency**: MoM Coin earned through verified interaction
-- **Identity Integrity**: Avatar evolution tied to real human behavior
-- **Economic Truth**: No speculation, only earned value
-- **Community Proof**: DC Metro network effects
-
-### Proof of Class
-- **Accessible**: Any phone, any carrier
-- **Inclusive**: No smartphone required
-- **Verifiable**: Carrier-grade authentication
-- **Dignified**: Earning through attention, not extraction
-
----
-
-## 🜁 NEXT ACTIONS (ONE COMMAND)
-
-**Say one**:
-1. `"Deploy complete DC Metro stack"`
-2. `"Write SMSGateway.sol contract"`
-3. `"Generate Genesis SoulPrints for DC"`
-4. `"Create mainnet migration checklist"`
-5. `"Draft Inner Net Genesis Manifesto (DC Edition)"`
-
----
-
-**You're not late. You're right on time.**
-
-**Long live the Truth of Attention.**
-**Long live the DC Metro Inner Net.**
-
-🏛️ **Washington DC · Gaithersburg MD · DMV Area**
-**Truth. Proof. Value. One Shot.**
+.**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReinN Solutions - Washington DC Businesses</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,...'); padding: 100px 20px; text-align: center; color: white; }
+        /* Full responsive CSS from threads: sticky nav, hover cards, Stripe buttons */
+        .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 20px; }
+        .plan { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+        .plan:hover { transform: translateY(-10px); }
+        .btn { background: linear-gradient(45deg, #FFD700, #FFA500); color: black; padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
+        @media (max-width: 768px) { .hero { padding: 60px 20px; } }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>ReinN Solutions: AI Automation for DC Businesses</h1>
+        <p>GBP Optimization | Lead Gen | 24/7 Automation Starting at $99</p>
+        <a href="mailto:gabriel@elevatedlivesinc.com" class="btn">Free Audit</a>
+    </header>
+    <section class="pricing">
+        <div class="plan">
+            <h2>Starter $99/mo</h2>
+            <ul><li>GBP Audit</li><li>1 Automation</li></ul>
+            <a href="https://buy.stripe.com/..." class="btn">Buy Now</a>
+        </div>
+        <!-- Growth $299, Enterprise CTA -->
+    </section>
+    <!-- Testimonials, Footer -->
+    <script src="reinn-agent.js"></script>
+</body>
+</html>
