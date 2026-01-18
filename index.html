@@ -1,37 +1,164 @@
-.**
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReinN Solutions - Washington DC Businesses</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,...'); padding: 100px 20px; text-align: center; color: white; }
-        /* Full responsive CSS from threads: sticky nav, hover cards, Stripe buttons */
-        .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 20px; }
-        .plan { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
-        .plan:hover { transform: translateY(-10px); }
-        .btn { background: linear-gradient(45deg, #FFD700, #FFA500); color: black; padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
-        @media (max-width: 768px) { .hero { padding: 60px 20px; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DC Cart Consignment | ReinNSolutions Cart Sales</title>
+  <meta name="description" content="No-inventory cannabis cart consignment sales DC. 26% net profit on text-based sales. I71 gifting + THCA ready.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 50%, #16213e 100%);
+      --neon-green: #00ff88;
+      --neon-purple: #aa00ff;
+      --neon-orange: #ff6b00;
+      --card-glow: rgba(0, 255, 136, 0.3);
+      --text-main: #ffffff;
+      --text-muted: #a0a0a0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    header {
+      text-align: center; padding: 40px 0;
+      background: rgba(0,0,0,0.5);
+      border-radius: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 40px rgba(0,255,136,0.1);
+    }
+    h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      background: linear-gradient(45deg, var(--neon-green), var(--neon-purple), var(--neon-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px var(--neon-green);
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-bottom: 10px;
+    }
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 20px var(--neon-green)); }
+      to { filter: drop-shadow(0 0 40px var(--neon-purple)); }
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--neon-green);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .profit-highlight {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-family: 'Orbitron', monospace;
+      background: linear-gradient(45deg, var(--neon-orange), var(--neon-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .paths {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin: 40px 0;
+    }
+    .path-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,255,136,0.2);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .path-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--neon-green);
+      box-shadow: 0 20px 50px var(--card-glow);
+    }
+    .path-icon {
+      font-size: 3rem; margin-bottom: 20px; text-align: center;
+      background: linear-gradient(var(--neon-green), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .path-title { font-family: 'Orbitron', monospace; font-size: 1.5rem; margin-bottom: 15px; color: var(--neon-orange); }
+    .contact-btn {
+      display: block; width: 100%; padding: 15px; background: linear-gradient(45deg, var(--neon-green), var(--neon-purple));
+      color: #000; font-weight: 600; text-decoration: none; border-radius: 50px;
+      text-align: center; margin-top: 20px; transition: all 0.3s;
+      box-shadow: 0 10px 20px rgba(0,255,136,0.4);
+    }
+    .contact-btn:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,255,136,0.6); }
+    .pitch-section {
+      background: rgba(0,255,136,0.1);
+      border-left: 5px solid var(--neon-green);
+      padding: 25px; margin: 40px 0; border-radius: 10px;
+    }
+    .pitch-text {
+      background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px;
+      font-family: monospace; font-size: 1rem; line-height: 1.5;
+      white-space: pre-wrap; cursor: pointer; transition: all 0.3s;
+    }
+    .pitch-text:hover { background: rgba(0,255,136,0.2); }
+    footer {
+      text-align: center; padding: 40px 0; color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    @media (max-width: 768px) {
+      .container { padding: 10px; }
+      .paths { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <header class="hero">
-        <h1>ReinN Solutions: AI Automation for DC Businesses</h1>
-        <p>GBP Optimization | Lead Gen | 24/7 Automation Starting at $99</p>
-        <a href="mailto:gabriel@elevatedlivesinc.com" class="btn">Free Audit</a>
+  <div class="container">
+    <header>
+      <h1>DC Cart Consignment</h1>
+      <p class="subtitle">Cannabis Vape Sales (DC) - No Inventory, Text-Based</p>
+      <div class="profit-highlight">26% Net Profit</div>
+      <p>Customer-based cart volume sales | Wholesaler Grasshopper | Text/Credit</p>
     </header>
-    <section class="pricing">
-        <div class="plan">
-            <h2>Starter $99/mo</h2>
-            <ul><li>GBP Audit</li><li>1 Automation</li></ul>
-            <a href="https://buy.stripe.com/..." class="btn">Buy Now</a>
-        </div>
-        <!-- Growth $299, Enterprise CTA -->
+
+    <section class="paths">
+      <div class="path-card">
+        <div class="path-icon">🛒</div>
+        <h3 class="path-title">Path 1: Hemp/THCA Carts</h3>
+        <p>Legal <0.3% Delta-9 carts. Wholesale NC/DC. 50-70% margins. No license.</p>
+        <a href="https://tribetokes.com/thca-wholesale-north-carolina/" class="contact-btn" target="_blank">Source Now</a>
+      </div>
+      <div class="path-card">
+        <div class="path-icon">🎁</div>
+        <h3 class="path-title">Path 2: I-71 Gifting</h3>
+        <p>Compliant DC "gifts" w/ sticker. Partner Gifted Curators. $200-500/wk.</p>
+        <a href="tel:2028609137" class="contact-btn">Call 202-860-9137</a>
+      </div>
+      <div class="path-card">
+        <div class="path-icon">📱</div>
+        <h3 class="path-title">Path 3: Grasshopper Consignment</h3>
+        <p>Your 26% model. License bridge. AI text leads ready.</p>
+        <a href="sms:6192928451?body=Hey%2C%20saw%20DC%20cart%20post%E2%80%A6" class="contact-btn">Text Pitch</a>
+      </div>
     </section>
-    <!-- Testimonials, Footer -->
-    <script src="reinn-agent.js"></script>
+
+    <section class="pitch-section">
+      <h3 style="color: var(--neon-orange); margin-bottom: 15px;">Copy-Paste Pitch for 619-292-8451</h3>
+      <div class="pitch-text" onclick="navigator.clipboard.writeText(this.textContent)">
+Thrilled for DC cart consignment—your 26% net/no-inventory model is perfect. 
+Path 2 value: I run I71 gifting promo for shops like Gifted Curators now (legal gifts w/ sticker buy, 1g carts hot). 
+Use my AI bot for targeted texts (500+ leads/mo from your image-style posts), Discord lists—proven from catering gigs. 
+Drives 20-50 sales/wk fast, scales to licensed. NC-based, clean, ready to prove. Call?
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Click to copy → Send today</p>
+    </section>
+
+    <footer>
+      <p>ReinNSolutions | DC Cart Sales Automation | <a href="https://reinnsolutions.xyz" style="color: var(--neon-green);">reinnsolutions.xyz</a></p>
+      <p>Your attention funded. Your soul remembered.</p>
+    </footer>
+  </div>
 </body>
 </html>
