@@ -3,239 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReinNSolutions | DC Cart Sales Automation</title>
-  <meta name="description" content="AI-powered cannabis cart sales automation for DC wholesalers. Text outreach, lead gen, I71 compliance. No inventory.">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>ReinNSolutions | DC Cart Automation</title>
+  <meta name="description" content="AI cart sales automation. 26% net profit boost. Text leads → I71 gifting → Licensed scale. Deploy now.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 50%, #16213e 100%);
+      --bg-hero: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 70%, #16213e 100%);
+      --bg-dark: #0a0a0f;
       --neon-bronze: #cd7f32;
       --neon-copper: #b87333;
       --neon-gold: #ffd700;
-      --card-glow: rgba(205, 127, 50, 0.3);
-      --text-main: #ffffff;
-      --text-muted: #a0a0a0;
+      --glass: rgba(255,255,255,0.05);
+      --glow: rgba(205,127,50,0.4);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: var(--bg-hero); 
+      color: white; 
       overflow-x: hidden;
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    header {
-      text-align: center; padding: 40px 0;
-      background: rgba(0,0,0,0.5);
-      border-radius: 20px;
-      margin-bottom: 40px;
-      box-shadow: 0 20px 40px var(--card-glow);
-      border: 1px solid rgba(205,127,50,0.2);
+    .hero {
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      text-align: center; 
+      padding: 0 20px;
+      position: relative;
     }
     .logo {
       font-family: 'Orbitron', monospace;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      background: linear-gradient(45deg, var(--neon-bronze), var(--neon-gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px var(--neon-bronze);
-      animation: glow 2s ease-in-out infinite alternate;
-      margin-bottom: 10px;
-      letter-spacing: -2px;
-    }
-    @keyframes glow {
-      from { filter: drop-shadow(0 0 20px var(--neon-bronze)); }
-      to { filter: drop-shadow(0 0 40px var(--neon-copper)); }
-    }
-    .tagline {
-      font-size: 1.1rem;
-      color: var(--neon-gold);
-      font-weight: 300;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    .service-title {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: var(--neon-copper);
-      text-align: center;
-      margin-bottom: 10px;
-      text-shadow: 0 0 20px var(--neon-bronze);
-    }
-    .profit-highlight {
-      font-size: clamp(4rem, 10vw, 7rem);
-      font-family: 'Orbitron', monospace;
+      font-size: clamp(3rem, 8vw, 6rem);
       background: linear-gradient(45deg, var(--neon-gold), var(--neon-bronze));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-align: center;
-      margin: 20px 0;
-      font-weight: 900;
+      filter: drop-shadow(0 0 40px var(--neon-gold));
+      animation: pulse 3s infinite;
+      margin-bottom: 20px;
     }
-    .value-prop {
-      text-align: center; max-width: 800px; margin: 0 auto 40px;
-      font-size: 1.1rem; line-height: 1.7;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
-    .automation-features {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 50px 0;
+    .tagline {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: var(--neon-gold);
+      font-weight: 300;
+      margin-bottom: 40px;
+      opacity: 0.9;
     }
-    .feature-card {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(205,127,50,0.2);
-      border-radius: 20px;
-      padding: 30px;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-    .feature-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--neon-bronze);
-      box-shadow: 0 20px 50px var(--card-glow);
-    }
-    .feature-icon {
-      font-size: 3.5rem; margin-bottom: 20px;
-      background: linear-gradient(var(--neon-bronze), var(--neon-gold));
+    .profit-hero {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(5rem, 12vw, 9rem);
+      background: linear-gradient(45deg, var(--neon-bronze), var(--neon-gold));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 50px var(--neon-bronze));
+      margin: 30px 0;
+      font-weight: 900;
     }
-    .paths {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin: 60px 0;
+    .hero-subtitle {
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      max-width: 700px;
+      line-height: 1.4;
+      margin-bottom: 50px;
+      opacity: 0.95;
     }
-    .path-card {
-      background: rgba(255,255,255,0.05);
+    .cta-primary {
+      display: inline-block;
+      padding: 25px 50px;
+      background: linear-gradient(45deg, var(--neon-bronze), var(--neon-gold));
+      color: #000;
+      font-family: 'Orbitron', monospace;
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 20px 40px var(--glow);
+      transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-primary:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(205,127,50,0.6);
+    }
+    .cta-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+    .cta-primary:hover::after { left: 100%; }
+    
+    .section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .dark-section { background: var(--bg-dark); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 80px;
+    }
+    .feature {
+      background: var(--glass);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(205,127,50,0.2);
-      border-radius: 20px;
-      padding: 30px;
+      border-radius: 25px;
+      padding: 40px 30px;
+      text-align: center;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
     }
-    .path-card:hover { transform: translateY(-10px); border-color: var(--neon-gold); }
-    .path-title { 
-      font-family: 'Orbitron', monospace; 
-      font-size: 1.4rem; 
-      margin-bottom: 15px; 
-      color: var(--neon-bronze); 
-      text-shadow: 0 0 15px var(--neon-copper);
+    .feature::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--neon-bronze), var(--neon-gold));
     }
-    .contact-btn {
-      display: block; width: 100%; padding: 18px; 
-      background: linear-gradient(45deg, var(--neon-bronze), var(--neon-gold));
-      color: #000; font-weight: 700; text-decoration: none; 
-      border-radius: 50px; text-align: center; margin-top: 20px; 
-      transition: all 0.3s; font-family: 'Orbitron', monospace;
-      box-shadow: 0 10px 25px rgba(205,127,50,0.4);
-      font-size: 1.1rem;
-    }
-    .contact-btn:hover { 
-      transform: scale(1.03); 
-      box-shadow: 0 15px 35px rgba(205,127,50,0.6); 
-    }
-    .pitch-section {
-      background: rgba(205,127,50,0.15);
-      border-left: 5px solid var(--neon-bronze);
-      padding: 30px; margin: 50px 0; border-radius: 15px;
-    }
-    .pitch-text {
-      background: rgba(0,0,0,0.7); 
-      padding: 25px; 
-      border-radius: 12px;
-      font-family: 'Inter', monospace; 
-      font-size: 1rem; 
-      line-height: 1.6;
-      white-space: pre-wrap; 
-      cursor: pointer; 
-      transition: all 0.3s;
-      border: 1px solid rgba(205,127,50,0.3);
-    }
-    .pitch-text:hover { 
-      background: rgba(205,127,50,0.2); 
+    .feature:hover {
+      transform: translateY(-15px);
       border-color: var(--neon-gold);
+      box-shadow: 0 30px 60px var(--glow);
     }
+    .feature-icon {
+      font-size: 4rem;
+      background: linear-gradient(var(--neon-copper), var(--neon-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 25px;
+    }
+    .feature-h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.6rem;
+      color: var(--neon-gold);
+      margin-bottom: 20px;
+    }
+    
+    .pitch-hero {
+      background: linear-gradient(135deg, rgba(205,127,50,0.2), rgba(184,115,51,0.1));
+      border: 2px solid var(--neon-bronze);
+      border-radius: 25px;
+      padding: 50px;
+      margin: 80px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+    .pitch-code {
+      background: rgba(0,0,0,0.8);
+      border: 1px solid var(--neon-gold);
+      border-radius: 15px;
+      padding: 30px;
+      font-family: 'Monaco', monospace;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 25px;
+    }
+    .pitch-code:hover { background: rgba(205,127,50,0.15); }
+    
+    .cta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin: 60px 0;
+    }
+    .cta-secondary {
+      padding: 18px 40px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 2px solid var(--neon-bronze);
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .cta-secondary:hover {
+      background: var(--neon-bronze);
+      transform: translateY(-3px);
+    }
+    
     footer {
-      text-align: center; 
-      padding: 50px 0; 
-      color: var(--text-muted);
+      text-align: center;
+      padding: 80px 20px 40px;
+      color: rgba(255,255,255,0.7);
       border-top: 1px solid rgba(205,127,50,0.2);
-      font-size: 0.95rem;
     }
     @media (max-width: 768px) {
-      .container { padding: 15px; }
-      .automation-features, .paths { grid-template-columns: 1fr; }
+      .hero { padding: 100px 20px 50px; }
+      .section { padding: 60px 20px; }
+      .cta-stack { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">ReinN</div>
-      <p class="tagline">Your attention funded. Your soul remembered.</p>
-    </header>
+  <!-- HERO FUNNEL -->
+  <section class="hero">
+    <div class="logo">ReinN</div>
+    <p class="tagline">Your attention funded. Your soul remembered.</p>
+    <div class="profit-hero">26% NET</div>
+    <h1 class="hero-subtitle">
+      AI Automation for DC Cart Consignment<br>
+      <span style="color: var(--neon-gold);">Text → I71 → Licensed Scale</span>
+    </h1>
+    <a href="sms:6192928451?body=ReinNSolutions%20AI%20Cart%20Automation%20ready..." class="cta-primary">
+      🚀 Deploy My Sales Bot Now
+    </a>
+  </section>
 
-    <h2 class="service-title">DC Cart Sales Automation</h2>
-    <div class="profit-highlight">26% Net Profit</div>
-    
-    <p class="value-prop">
-      AI-powered text outreach & lead generation for your cannabis cart consignment. 
-      No inventory risk. I-71 compliant. Scales your wholesaler volume instantly.
-    </p>
-
-    <section class="automation-features">
-      <div class="feature-card">
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="features-grid">
+      <div class="feature">
         <div class="feature-icon">🤖</div>
-        <h3>AI Lead Bot</h3>
-        <p>Automated text campaigns from your promo images. 500+ targeted leads/month.</p>
+        <h3 class="feature-h3">AI Lead Engine</h3>
+        <p>Scrapes your promo images → Generates 500+ targeted texts/week → Converts browsers to buyers</p>
       </div>
-      <div class="feature-card">
+      <div class="feature">
         <div class="feature-icon">📱</div>
-        <h3>Text Sales Funnel</h3>
-        <p>Discord + SMS sequences convert browsers to buyers. Proven catering outreach.</p>
+        <h3 class="feature-h3">Text Funnel</h3>
+        <p>SMS sequences + Discord lists. Catering-proven. Drives 20-50 sales/week immediately</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">✅</div>
-        <h3>I-71 Compliance</h3>
-        <p>Legal gifting partnerships with DC shops. Risk-free volume bridge to licensing.</p>
+      <div class="feature">
+        <div class="feature-icon">🎁</div>
+        <h3 class="feature-h3">I71 Compliance</h3>
+        <p>Gifted Curators partnerships. Legal sticker gifts. $200-500/week while licensing</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="paths">
-      <div class="path-card">
-        <h3 class="path-title">Hemp/THCA Bridge</h3>
-        <p>Legal carts now while building med license. 50-70% margins. NC/DC supply chain.</p>
-        <a href="https://tribetokes.com/thca-wholesale-north-carolina/" class="contact-btn" target="_blank">Activate Supply</a>
-      </div>
-      <div class="path-card">
-        <h3 class="path-title">I-71 Gifting Network</h3>
-        <p>Partner Gifted Curators + DC Finest. Drive gift volume. $200-500/wk immediate.</p>
-        <a href="tel:2028609137" class="contact-btn">Partner Now (202-860-9137)</a>
-      </div>
-      <div class="path-card">
-        <h3 class="path-title">Your Consignment Scale</h3>
-        <p>26% net model + my AI volume. License-ready execution.</p>
-        <a href="sms:6192928451?body=Hey%2C%20ReinNSolutions%20here%E2%80%A6" class="contact-btn">Deploy Automation</a>
-      </div>
-    </section>
+  <!-- PITCH CTA -->
+  <section class="section dark-section">
+    <div class="pitch-hero">
+      <h2 style="font-family: 'Orbitron'; font-size: 2.5rem; color: var(--neon-gold); margin-bottom: 30px;">
+        Send This Exact Message → Get Response Today
+      </h2>
+      <div class="pitch-code" onclick="navigator.clipboard.writeText(this.textContent); this.style.background='rgba(205,127,50,0.3)'; setTimeout(()=>this.style.background='rgba(0,0,0,0.8)', 1000); alert('✅ Copied! Send to 619-292-8451')">
+Thrilled for DC cart consignment—26% net/no-inventory perfect. 
 
-    <section class="pitch-section">
-      <h3 style="color: var(--neon-gold); margin-bottom: 20px; font-family: 'Orbitron';">One-Click Outreach to 619-292-8451</h3>
-      <div class="pitch-text" onclick="navigator.clipboard.writeText(this.textContent); alert('Copied! Send to 619-292-8451')">
-Thrilled for your DC cart consignment—26% net/no-inventory is perfect. 
+ReinNSolutions: AI bot → 500 texts/wk from your images. 
+I71 gifting w/ Gifted Curators running NOW (legal, 1g carts). 
+20-50 sales/wk proven. NC clean, license process. 
 
-ReinNSolutions value: AI text bot drives 500+ leads/mo from your images. 
-Run I71 gifting w/ Gifted Curators now (legal sticker gifts, 1g carts). 
-Proven catering volume → 20-50 sales/wk. NC-based, license in process. 
-
-Ready to scale your wholesaler. Call?
+Scale your wholesaler? Call now.
       </div>
-    </section>
+      <div class="cta-stack">
+        <a href="sms:6192928451?body=ReinNSolutions%20AI%20Cart%20Automation..." class="cta-primary">📱 Send Auto-Pitch</a>
+        <a href="tel:2028609137" class="cta-secondary">🤝 I71 Partner (202-860-9137)</a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <p>ReinNSolutions | Gabriel | <a href="https://reinnsolutions.xyz" style="color: var(--neon-bronze);">reinnsolutions.xyz</a></p>
-      <p>Built for DC cannabis wholesalers | Deployed via Cloudflare Pages</p>
-    </footer>
-  </div>
+  <footer>
+    <p><strong>ReinNSolutions</strong> | Gabriel | DC Cart Automation Specialist</p>
+    <p><a href="https://reinnsolutions.xyz" style="color: var(--neon-bronze);">reinnsolutions.xyz</a> | Deployed via Cloudflare Pages</p>
+  </footer>
 </body>
 </html>
