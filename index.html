@@ -1,447 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReinN Solutions | DC Cart Network</title>
-  <meta name="description" content="DC cannabis cart sales automation. Premium wholesaler system. I71 compliant network.">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-hero: radial-gradient(ellipse at center, #0f1328 0%, #1a1a3a 50%, #0a0a1f 100%);
-      --bg-warm: linear-gradient(145deg, #1e0f0a 0%, #2a1a0f 100%);
-      --bronze-warm: #d4a574;
-      --copper-warm: #c89664;
-      --gold-soft: #f5d6a3;
-      --glass-warm: rgba(212,165,116,0.08);
-      --glow-warm: rgba(212,165,116,0.4);
-      --border-warm: rgba(212,165,116,0.18);
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background: var(--bg-hero); 
-      color: #f8f8ff; 
-      line-height: 1.7; 
-      overflow-x: hidden;
-    }
-    
-    /* FLOATING PARTICLES */
-    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-    .particle {
-      position: absolute;
-      background: radial-gradient(circle, var(--gold-soft), transparent);
-      border-radius: 50%;
-      animation: float linear infinite;
-      opacity: 0.1;
-    }
-    @keyframes float {
-      0% { transform: translateY(100vh) scale(0); opacity: 0; }
-      10% { opacity: 0.3; }
-      90% { opacity: 0.1; }
-      100% { transform: translateY(-100px) scale(1); opacity: 0; }
-    }
-    
-    /* HEADER */
-    .header {
-      position: fixed; top: 0; left: 0; right: 0;
-      background: rgba(15,19,40,0.97);
-      backdrop-filter: blur(40px);
-      border-bottom: 1px solid var(--border-warm);
-      z-index: 1000; padding: 24px 0;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    }
-    .header-container {
-      max-width: 1400px; margin: 0 auto; padding: 0 24px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .logo { font-family: 'Orbitron', monospace; font-size: 1.75rem; font-weight: 700;
-      background: linear-gradient(135deg, var(--gold-soft), var(--bronze-warm));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      text-decoration: none; letter-spacing: -0.4px;
-      filter: drop-shadow(0 0 20px rgba(245,214,163,0.3));
-    }
-    .header-cta {
-      padding: 16px 36px;
-      background: linear-gradient(135deg, var(--bronze-warm), var(--copper-warm));
-      color: #1a0f0a;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      border-radius: 40px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
-      box-shadow: 0 12px 40px rgba(212,165,116,0.35);
-    }
-    .header-cta::before {
-      content: ''; position: absolute; top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      transition: left 0.6s;
-    }
-    .header-cta:hover::before { left: 100%; }
-    .header-cta:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 25px 60px rgba(212,165,116,0.55);
-    }
-    
-    /* BRAND PRESENTATION SECTION */
-    .brand-intro {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 220px 24px 140px;
-      position: relative;
-      z-index: 10;
-    }
-    .brand-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      max-width: 1400px;
-      width: 100%;
-    }
-    .brand-sigil {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .brand-sigil img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      filter: drop-shadow(0 0 60px rgba(212,165,116,0.5));
-      animation: sigil-pulse 6s ease-in-out infinite;
-    }
-    @keyframes sigil-pulse {
-      0%, 100% { filter: drop-shadow(0 0 50px rgba(212,165,116,0.4)); }
-      50% { filter: drop-shadow(0 0 80px rgba(245,214,163,0.6)); }
-    }
-    .brand-statement {
-      text-align: left;
-    }
-    .brand-statement h2 {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(2.5rem, 6vw, 4.2rem);
-      background: linear-gradient(135deg, var(--gold-soft), var(--bronze-warm));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 35px;
-      font-weight: 800;
-      line-height: 1.1;
-    }
-    .brand-values {
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      line-height: 2;
-      opacity: 0.96;
-      margin-bottom: 50px;
-      font-weight: 300;
-    }
-    .value-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 28px;
-    }
-    .value-item::before {
-      content: '▸';
-      color: var(--bronze-warm);
-      font-size: 2rem;
-      margin-right: 20px;
-      opacity: 0.8;
-    }
-    .cta-primary {
-      position: relative;
-      padding: 28px 65px;
-      background: linear-gradient(135deg, var(--bronze-warm), var(--copper-warm));
-      color: #1a0f0a;
-      font-family: 'Inter', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      text-decoration: none;
-      border-radius: 55px;
-      box-shadow: 0 30px 70px var(--glow-warm);
-      transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      overflow: hidden;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .cta-primary::before {
-      content: ''; position: absolute; top: 50%; left: 50%;
-      width: 0; height: 0;
-      background: rgba(255,255,255,0.3);
-      border-radius: 50%;
-      transition: all 0.6s;
-      transform: translate(-50%, -50%);
-    }
-    .cta-primary:hover::before { width: 300px; height: 300px; }
-    .cta-primary:hover { 
-      transform: translateY(-10px) scale(1.08); 
-      box-shadow: 0 50px 120px rgba(212,165,116,0.6); 
-    }
-    
-    /* FEATURES AFTER BRAND */
-    .section { padding: 160px 24px; max-width: 1400px; margin: 0 auto; }
-    .features-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-      gap: 70px; 
-      margin-top: 140px; 
-    }
-    .feature {
-      position: relative;
-      background: var(--glass-warm);
-      backdrop-filter: blur(45px);
-      border: 1px solid var(--border-warm);
-      border-radius: 32px;
-      padding: 70px 50px;
-      text-align: center;
-      transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-      cursor: pointer;
-    }
-    .feature::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 6px; background: linear-gradient(90deg, var(--bronze-warm), var(--gold-soft));
-      border-radius: 32px 32px 0 0;
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-    .feature:hover::before { opacity: 1; }
-    .feature:hover { 
-      transform: translateY(-20px) rotateX(5deg); 
-      border-color: var(--bronze-warm); 
-      box-shadow: 0 60px 140px var(--glow-warm); 
-    }
-    .feature-icon { 
-      font-size: 4.8rem; 
-      background: linear-gradient(135deg, var(--copper-warm), var(--gold-soft)); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      margin-bottom: 40px; 
-      transition: transform 0.4s;
-    }
-    .feature:hover .feature-icon { transform: scale(1.1) rotate(10deg); }
-    .feature-h3 { 
-      font-family: 'Orbitron', monospace; 
-      font-size: 1.9rem; 
-      background: linear-gradient(135deg, var(--gold-soft), var(--bronze-warm));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 30px; 
-      font-weight: 600;
-    }
-    
-    /* SYSTEM LAUNCH */
-    .system-launch {
-      position: relative;
-      background: var(--bg-warm);
-      border-radius: 40px;
-      padding: 100px;
-      margin: 160px auto;
-      max-width: 1100px;
-      text-align: center;
-      border: 2px solid var(--border-warm);
-      box-shadow: 0 60px 160px rgba(30,15,10,0.5);
-      animation: launchPulse 8s ease-in-out infinite;
-    }
-    @keyframes launchPulse {
-      0%, 100% { box-shadow: 0 60px 160px rgba(30,15,10,0.5); }
-      50% { box-shadow: 0 80px 200px rgba(212,165,116,0.15); }
-    }
-    .launch-title {
-      font-family: 'Orbitron', monospace;
-      font-size: 3rem;
-      background: linear-gradient(135deg, var(--bronze-warm), var(--gold-soft));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 50px;
-      filter: drop-shadow(0 0 30px rgba(212,165,116,0.4));
-    }
-    .pitch-code {
-      position: relative;
-      background: rgba(15,19,40,0.98);
-      border: 3px solid var(--gold-soft);
-      border-radius: 28px;
-      padding: 55px;
-      font-family: 'SF Mono', monospace;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      white-space: pre-wrap;
-      cursor: pointer;
-      transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-      margin-top: 45px;
-      box-shadow: inset 0 0 40px rgba(245,214,163,0.12);
-    }
-    .pitch-code::before {
-      content: '💬'; position: absolute; top: -15px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--bronze-warm);
-      color: #1a0f0a;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-    .pitch-code:hover { 
-      transform: scale(1.02) translateY(-5px); 
-      box-shadow: 0 30px 80px rgba(212,165,116,0.25); 
-      border-color: var(--bronze-warm);
-    }
-    
-    .cta-stack {
-      display: flex; flex-wrap: wrap; gap: 35px; justify-content: center; margin: 100px 0;
-    }
-    .cta-secondary {
-      padding: 26px 60px;
-      background: rgba(212,165,116,0.18);
-      color: #f8f8ff;
-      border: 2px solid var(--bronze-warm);
-      border-radius: 60px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-      font-size: 1.08rem;
-      letter-spacing: 0.4px;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-secondary::after {
-      content: ''; position: absolute; top: 50%; left: 50%;
-      width: 0; height: 0; background: rgba(255,255,255,0.2);
-      border-radius: 50%; transform: translate(-50%,-50%);
-      transition: all 0.5s;
-    }
-    .cta-secondary:hover::after { width: 400px; height: 400px; }
-    .cta-secondary:hover { 
-      background: var(--bronze-warm); 
-      transform: translateY(-8px) scale(1.05); 
-      box-shadow: 0 40px 100px var(--glow-warm); 
-    }
-    
-    footer { 
-      text-align: center; 
-      padding: 140px 24px 80px; 
-      color: rgba(248,248,255,0.85); 
-      border-top: 1px solid var(--border-warm); 
-      font-size: 1.05rem;
-    }
-    
-    @media (max-width: 768px) {
-      .brand-container { grid-template-columns: 1fr; gap: 60px; }
-      .header-container { padding: 0 20px; }
-      .brand-intro { padding: 240px 20px 120px; }
-      .section { padding: 110px 20px; }
-      .cta-stack { flex-direction: column; align-items: center; gap: 25px; }
-      .system-launch { padding: 70px 35px; margin: 120px 20px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Inn University - ReinNSolutions Custom Pitch</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .slide {
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            page-break-after: always;
+        }
+        .slide h1 { 
+            font-size: 52px;
+            font-weight: 900;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .slide h2 {
+            font-size: 40px;
+            color: #2a5298;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        .slide h3 {
+            font-size: 28px;
+            color: #1e3c72;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .slide p, .slide li {
+            font-size: 20px;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background: #fef08a;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 24px 48px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+            display: inline-block;
+            margin: 40px 0;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 5px solid #2a5298;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            color: #2a5298;
+            margin: 15px 0;
+        }
+        .stat-label {
+            font-size: 18px;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .comparison-box {
+            padding: 30px;
+            border-radius: 16px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .before {
+            background: #fee2e2;
+            border-left: 5px solid #dc2626;
+        }
+        .after {
+            background: #dcfce7;
+            border-left: 5px solid #16a34a;
+        }
+        .feature-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        .feature-list li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            font-size: 20px;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 900;
+            font-size: 24px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .price-box {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 3px solid #2a5298;
+        }
+        .price {
+            font-size: 64px;
+            font-weight: 900;
+            color: #10b981;
+            margin: 20px 0;
+        }
+        .guarantee-box {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0;
+        }
+        .guarantee-box span {
+            display: block;
+            font-size: 48px;
+            margin: 20px 0;
+            font-weight: 900;
+        }
+        .footer-text {
+            text-align: center;
+            color: #6b7280;
+            font-size: 16px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+    </style>
 </head>
 <body>
-  <div class="particles" id="particles"></div>
-  
-  <header class="header">
-    <div class="header-container">
-      <a href="#" class="logo">ReinN <span class="logo-accent">Solutions</span></a>
-      <a href="#partnership" class="header-cta">Enter Network</a>
-    </div>
-  </header>
+    <div class="container">
 
-  <!-- BRAND PRESENTATION -->
-  <section class="brand-intro">
-    <div class="brand-container">
-      <div class="brand-sigil">
-        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/878e31fb-a546-49ae-98be-02b9968dba05" alt="ReinN Solutions Sigil" />
-      </div>
-      <div class="brand-statement">
-        <h2>What ReinN Solutions Represents</h2>
-        <div class="brand-values">
-          <div class="value-item">
-            <span><strong>Automate</strong> — Your volume through intelligent buyer acquisition systems</span>
-          </div>
-          <div class="value-item">
-            <span><strong>Elevate</strong> — Your wholesaler into premium DC network positioning</span>
-          </div>
-          <div class="value-item">
-            <span><strong>Dominate</strong> — Your market through I71-compliant automation edge</span>
-          </div>
+        <!-- SLIDE 1: TITLE SLIDE -->
+        <div class="slide">
+            <div style="text-align: center;">
+                <h1>🏨 Quality Inn University</h1>
+                <h2 style="font-size: 36px; margin: 20px 0;">Your Custom Automation Plan</h2>
+                <p style="font-size: 24px; color: #6b7280; margin: 30px 0;">
+                    How to capture 20-30% more bookings + crush your no-show problem
+                </p>
+                <div style="margin-top: 60px; font-size: 18px; color: #6b7280;">
+                    <p>💼 Presented to: Dhmad</p>
+                    <p>📍 Quality Inn University Parkway, Winston-Salem, NC</p>
+                    <p>🔧 By: Gabriel | ReinNSolutions</p>
+                </div>
+            </div>
         </div>
-        <p style="font-size: 1.15rem; opacity: 0.9; margin: 50px 0;">
-          We're building the future of DC cannabis wholesaling. Professional execution. Proven partnerships. Network advantage.
-        </p>
-        <a href="#partnership" class="cta-primary">Join Development</a>
-      </div>
+
+        <!-- SLIDE 2: THE PROBLEM (HIS SPECIFIC PAIN) -->
+        <div class="slide">
+            <h2>📊 Quality Inn University: The Reality Right Now</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-label">No-Show Rate</div>
+                    <div class="stat-number">3-5%</div>
+                    <p style="font-size: 16px;">Industry avg = $450-$750/month lost per hotel</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">OTA Commission Loss</div>
+                    <div class="stat-number">12-15%</div>
+                    <p style="font-size: 16px;">Booking.com, Expedia eat into margins</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Potential Revenue</div>
+                    <div class="stat-number">$2K+/month</div>
+                    <p style="font-size: 16px;">From direct bookings if optimized</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 50px;">What This Means for You</h3>
+            <ul class="feature-list">
+                <li><span class="highlight">$500-$750/month</span> lost to guests who book but never show</li>
+                <li><span class="highlight">$1.2K-$1.5K/month</span> going to Booking.com/Expedia instead of your pocket</li>
+                <li><span class="highlight">Wake Forest students</span> searching "hotel near Wake Forest" can't find you easily</li>
+                <li><span class="highlight">No reminder system</span> = last-minute cancellations and no-shows</li>
+            </ul>
+
+            <p style="margin-top: 40px; font-size: 22px; font-weight: 700; color: #dc2626;">
+                💡 Fix: Google optimization + automated reminders = $2K+/month recovered
+            </p>
+        </div>
+
+        <!-- SLIDE 3: HOW GOOGLE OPTIMIZATION WORKS -->
+        <div class="slide">
+            <h2>🔍 Google Optimization = More Direct Bookings</h2>
+            
+            <h3>Here's What Happens</h3>
+            <p>When someone searches <span class="highlight">"hotel near Wake Forest"</span> or <span class="highlight">"budget hotel Winston-Salem University area"</span></p>
+            
+            <div style="margin: 40px 0; font-size: 22px; text-align: center; color: #2a5298; font-weight: 700;">
+                ↓<br>
+                Your Google Business Profile appears at the TOP<br>
+                ↓<br>
+                They see photos, reviews, hours, DIRECT BOOKING BUTTON<br>
+                ↓<br>
+                They book directly (0% commission)<br>
+                ↓<br>
+                You keep 100% of revenue
+            </div>
+
+            <h3>The Numbers</h3>
+            <p><span class="highlight">20-30% of your bookings can be direct</span> instead of through OTAs if your Google profile is optimized.</p>
+            <p style="font-size: 18px; color: #6b7280; margin-top: 20px;">
+                💰 <strong>Example:</strong> 50 bookings/month × 25% direct × $120 avg rate = <strong>$1,500/month kept instead of paid to Booking.com</strong>
+            </p>
+
+            <h3 style="margin-top: 40px;">We Handle</h3>
+            <ul class="feature-list">
+                <li>Optimize your Google Business Profile for bookings</li>
+                <li>Set up "Book Now" button so guests book directly from Google</li>
+                <li>Ensure best photos/reviews show first</li>
+                <li>Auto-respond to reviews (builds trust + SEO)</li>
+            </ul>
+
+            <p style="margin-top: 30px; font-size: 18px; color: #059669; font-weight: 700;">
+                ✅ Result: 20-30% of future bookings bypass OTA fees
+            </p>
+        </div>
+
+        <!-- SLIDE 4: THE NO-SHOW KILLER -->
+        <div class="slide">
+            <h2>🚨 The No-Show Problem (And How We Solve It)</h2>
+
+            <h3>What's Happening Now</h3>
+            <p>Guest books on Booking.com. Books 3 hotels at once. Last-minute chooses another one. <span class="highlight">Never cancels with you.</span> Room goes empty. You lose $120-$200.</p>
+
+            <p style="margin-top: 30px; font-size: 18px; color: #6b7280;">
+                🔴 This happens 3-5 times per month at Quality Inn = $360-$1,000 lost
+            </p>
+
+            <h3 style="margin-top: 50px;">The Fix: Automated Reminders</h3>
+            
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 30px; border-radius: 16px; margin: 30px 0; border-left: 5px solid #10b981;">
+                <p style="font-size: 20px; font-weight: 700; margin-bottom: 20px;">🤖 Here's the automation we set up:</p>
+                <ol style="margin-left: 20px; font-size: 18px; line-height: 2;">
+                    <li><strong>Guest books</strong> → we capture their phone/email</li>
+                    <li><strong>48 hours before arrival</strong> → they get text/email: "Confirming your stay at Quality Inn! Reply YES to confirm"</li>
+                    <li><strong>If no reply</strong> → we send a follow-up 24 hours before</li>
+                    <li><strong>Result</strong> → 65%+ of "soft cancellations" are caught in time</li>
+                </ol>
+            </div>
+
+            <h3>The Impact</h3>
+            <div class="comparison">
+                <div class="comparison-box before">
+                    <strong style="font-size: 20px;">❌ Without Reminders</strong>
+                    <p style="margin-top: 20px;">
+                        • 3-5 no-shows/month<br>
+                        • $360-$1K lost/month<br>
+                        • Staff guessing if guest is coming<br>
+                        • Lost revenue = lost profit
+                    </p>
+                </div>
+                <div class="comparison-box after">
+                    <strong style="font-size: 20px;">✅ With Automation</strong>
+                    <p style="margin-top: 20px;">
+                        • 0-1 no-shows/month<br>
+                        • $240-$950 recovered/month<br>
+                        • Clear picture of who's coming<br>
+                        • Better housekeeping planning
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 40px; font-size: 20px; font-weight: 700; color: #10b981;">
+                💰 Recovery = <span class="highlight">$240-$950/month</span> from reminders alone
+            </p>
+        </div>
+
+        <!-- SLIDE 5: WHAT WE'RE OFFERING -->
+        <div class="slide">
+            <h2>✅ The ReinNSolutions Package for Quality Inn</h2>
+
+            <h3>1 Automation + Google Optimization</h3>
+            <p style="font-size: 22px; margin-top: 30px;">
+                We set up an <span class="highlight">automated reservation reminder system</span> that:
+            </p>
+
+            <ul class="feature-list">
+                <li>Captures guest contact info from bookings automatically</li>
+                <li>Sends text/email reminders 48hrs before arrival</li>
+                <li>Catches soft cancellations before rooms go empty</li>
+                <li>Reduces no-shows by 60-65%</li>
+                <li>All linked to your Google Business profile for direct bookings</li>
+            </ul>
+
+            <h3 style="margin-top: 50px;">What You Get</h3>
+            <div class="feature-list" style="margin: 0;">
+                <li style="padding: 20px 0; border-bottom: 1px solid #e5e7eb;">
+                    <strong>✓ Automated reminder system</strong> (built in 48 hours)
+                </li>
+                <li style="padding: 20px 0; border-bottom: 1px solid #e5e7eb;">
+                    <strong>✓ Google Business profile optimization</strong>
+                </li>
+                <li style="padding: 20px 0; border-bottom: 1px solid #e5e7eb;">
+                    <strong>✓ "Book Now" button setup</strong> on your Google profile
+                </li>
+                <li style="padding: 20px 0; border-bottom: 1px solid #e5e7eb;">
+                    <strong>✓ Dashboard to track bookings & reminders</strong>
+                </li>
+                <li style="padding: 20px 0;">
+                    <strong>✓ 30 days of support</strong> (we're there if you need us)
+                </li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 6: ROI GUARANTEE -->
+        <div class="slide">
+            <h2 style="text-align: center;">💰 Your Guaranteed ROI</h2>
+
+            <h3 style="text-align: center; margin-top: 40px;">Conservative Estimate</h3>
+
+            <div class="stats-grid">
+                <div class="stat-box" style="background: #fef3c7; border-left: 5px solid #d97706;">
+                    <div class="stat-label">From Reminders</div>
+                    <div class="stat-number">$250</div>
+                    <p style="font-size: 16px;">Reducing 2-3 no-shows × $120/room</p>
+                </div>
+                <div class="stat-box" style="background: #dbeafe; border-left: 5px solid #3b82f6;">
+                    <div class="stat-label">From Direct Bookings</div>
+                    <div class="stat-number">$500</div>
+                    <p style="font-size: 16px;">Saving 4-5 bookings from OTA fees</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 50px 0; font-size: 28px; font-weight: 900; color: #10b981;">
+                = <span class="highlight">$750/month minimum recovery</span>
+            </div>
+
+            <p style="text-align: center; font-size: 20px; color: #6b7280; margin: 30px 0;">
+                First month, you've made back your investment 7-8x over.
+            </p>
+
+            <h3 style="text-align: center; margin-top: 50px;">Real Talk</h3>
+            <p style="text-align: center; font-size: 22px;">
+                If we don't recover <span class="highlight">at least $250/month</span> in no-show prevention + direct bookings,<br>
+                <strong>we refund you 100% within 30 days.</strong><br>
+                Zero questions. Zero fine print.
+            </p>
+        </div>
+
+        <!-- SLIDE 7: PRICING & GUARANTEE -->
+        <div class="slide">
+            <h2 style="text-align: center;">💸 The Investment</h2>
+
+            <div style="text-align: center; margin: 60px 0;">
+                <div style="font-size: 20px; color: #6b7280; margin-bottom: 20px;">ONE-TIME INVESTMENT</div>
+                <div style="font-size: 72px; font-weight: 900; color: #10b981; margin: 20px 0;">$99</div>
+                <p style="font-size: 20px; color: #6b7280;">
+                    (No monthly fees. No surprises. You own it forever.)
+                </p>
+            </div>
+
+            <div class="guarantee-box">
+                <span>30-DAY MONEY-BACK GUARANTEE</span>
+                <p style="font-size: 20px;">
+                    Not seeing results? We refund every penny. Simple.
+                </p>
+            </div>
+
+            <h3 style="text-align: center; margin-top: 50px;">Why This Works</h3>
+            <p style="text-align: center; font-size: 20px; margin: 20px 0;">
+                $99 is a no-brainer bet. You'll make it back in the first week.
+            </p>
+
+            <div style="background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); padding: 40px; border-radius: 16px; text-align: center; margin: 40px 0;">
+                <p style="font-size: 20px; font-weight: 700; color: #1e3c72;">
+                    📊 Expected Timeline
+                </p>
+                <p style="margin-top: 20px; font-size: 18px;">
+                    Week 1: System built & live<br>
+                    Week 2-3: First reminders sent, first direct bookings<br>
+                    Week 4: You're seeing $200-$500 recovery minimum
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: COMPETITIVE ANALYSIS -->
+        <div class="slide">
+            <h2>🎯 Why Quality Inn University Needs This NOW</h2>
+
+            <h3>Your Competition</h3>
+            <p style="margin-top: 20px;">
+                There are <span class="highlight">40+ hotels in Winston-Salem.</span> 
+                The ones that win are the ones guests find first on Google AND who keep their bookings.
+            </p>
+
+            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 30px; border-radius: 16px; margin: 30px 0; border-left: 5px solid #d97706;">
+                <p style="font-size: 18px; font-weight: 700; margin-bottom: 15px;">
+                    📍 Your Advantage: Location Near Wake Forest
+                </p>
+                <p>
+                    Students and families searching for "hotel near Wake Forest" see you IF your Google profile is optimized. 
+                    Right now, they're probably seeing Holiday Inn Express or Hilton instead.
+                </p>
+            </div>
+
+            <h3 style="margin-top: 50px;">What Optimized Hotels Do</h3>
+            <ul class="feature-list">
+                <li>Show up first when guests search your area</li>
+                <li>Make it easy to book directly (no OTA middleman)</li>
+                <li>Remind guests before arrival (reduce no-shows)</li>
+                <li>Keep 100% of the revenue</li>
+            </ul>
+
+            <p style="margin-top: 40px; font-size: 20px; font-weight: 700; color: #059669;">
+                You can be one of those hotels. Or you can keep losing $1.5K+/month to the ones who are.
+            </p>
+        </div>
+
+        <!-- SLIDE 9: SIMPLE NEXT STEPS -->
+        <div class="slide">
+            <h2 style="text-align: center;">🚀 Let's Go</h2>
+
+            <h3 style="text-align: center; margin-top: 50px;">How This Works</h3>
+
+            <div style="margin: 50px 0;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+                    
+                    <div style="background: #f3f4f6; padding: 30px; border-radius: 16px; border-left: 5px solid #2a5298;">
+                        <div style="font-size: 28px; font-weight: 900; color: #2a5298; margin-bottom: 10px;">Step 1: Start</div>
+                        <p style="font-size: 18px;">Reply to this email or call me. We confirm your hotel info + booking system.</p>
+                    </div>
+
+                    <div style="background: #f3f4f6; padding: 30px; border-radius: 16px; border-left: 5px solid #2a5298;">
+                        <div style="font-size: 28px; font-weight: 900; color: #2a5298; margin-bottom: 10px;">Step 2: Build (48 Hours)</div>
+                        <p style="font-size: 18px;">We set up your reminder system + Google optimization. You get a dashboard to track everything.</p>
+                    </div>
+
+                    <div style="background: #f3f4f6; padding: 30px; border-radius: 16px; border-left: 5px solid #2a5298;">
+                        <div style="font-size: 28px; font-weight: 900; color: #2a5298; margin-bottom: 10px;">Step 3: Live + Support (30 Days)</div>
+                        <p style="font-size: 18px;">System runs automatically. We're here if you need anything. You watch the money come in.</p>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 30px; border-radius: 16px;">
+                        <div style="font-size: 28px; font-weight: 900; margin-bottom: 10px;">Step 4: Results</div>
+                        <p style="font-size: 18px;">Day 1-7: System live, reminders going out</p>
+                        <p style="font-size: 18px;">Week 2-3: No-shows drop, direct bookings increase</p>
+                        <p style="font-size: 18px;">Week 4: You're making $250-$500+ extra per month</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: CTA FINAL SLIDE -->
+        <div class="slide">
+            <div style="text-align: center;">
+                <h1 style="font-size: 56px;">Ready?</h1>
+                
+                <p style="font-size: 24px; color: #6b7280; margin: 40px 0;">
+                    $99. 48 hours to live. 30-day guarantee.<br>
+                    Make it back by week 1.
+                </p>
+
+                <a href="https://buy.stripe.com/8x2cN5cvD1kqfLbc1718c01" class="cta-button">
+                    Start Here: $99 Investment →
+                </a>
+
+                <p style="font-size: 20px; color: #6b7280; margin: 40px 0;">
+                    Or reply to this email and let's talk.<br>
+                    I'll walk you through the exact setup.
+                </p>
+
+                <div style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #e5e7eb;">
+                    <p style="font-size: 18px; color: #6b7280;">
+                        <strong>Gabriel</strong><br>
+                        ReinNSolutions<br>
+                        "Automation That Actually Works"<br>
+                        <br>
+                        📧 qualityinnuniversitypkwy@gmail.com (reply here)<br>
+                        🌐 https://reinnsolutions.xyz
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="section">
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon">🔗</div>
-        <h3 class="feature-h3">Wholesaler Sync</h3>
-        <p>Gifted Curators live integration. Seamless consignment flow. Professional DC execution</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">👥</div>
-        <h3 class="feature-h3">Buyer Network</h3>
-        <p>High-value DC acquisition. Peace In The Air partnerships. Targeted system delivery</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">⚙️</div>
-        <h3 class="feature-h3">Development Core</h3>
-        <p>Next-generation automation. I71 foundation. Scale-ready architecture</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACTIVATION -->
-  <section class="system-launch" id="partnership">
-    <h2 class="launch-title">Network Activation</h2>
-    <p style="font-size: 1.3rem; opacity: 0.95; margin-bottom: 55px; max-width: 750px; margin-left: auto; margin-right: auto;">
-      Partnership message for DC wholesalers ready to scale
-    </p>
-    <div class="pitch-code" onclick="navigator.clipboard.writeText(this.textContent); event.target.style.transform='scale(1.02)'; setTimeout(()=>event.target.style.transform='scale(1)', 300); alert('✅ Activation message copied!')">
-ReinN Solutions | DC Cart Network Launch
-
-Professional system for DC wholesalers:
-
-• Gifted Curators acquisition live
-• Peace In The Air I71 execution  
-• Cutting-edge automation layer
-• Wholesaler growth partnership
-
-Network activation?
-    </div>
-    <div class="cta-stack">
-      <a href="sms:6192928451?body=ReinN..." class="cta-primary">Activate Network</a>
-      <a href="tel:2028609137" class="cta-secondary">Gifted Curators</a>
-      <a href="https://peaceintheair.com" class="cta-secondary" target="_blank">Peace In The Air</a>
-    </div>
-  </section>
-
-  <footer>
-    <p><strong>ReinN Solutions</strong> | DC Cannabis Network Development</p>
-    <p style="margin-top: 15px;"><a href="https://reinnsolutions.xyz" style="color: var(--bronze-warm);">reinnsolutions.xyz</a></p>
-  </footer>
-
-  <script>
-    function createParticle() {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
-      particle.style.animationDelay = Math.random() * 2 + 's';
-      particle.style.width = particle.style.height = (Math.random() * 8 + 2) + 'px';
-      document.getElementById('particles').appendChild(particle);
-      setTimeout(() => particle.remove(), 7000);
-    }
-    setInterval(createParticle, 300);
-    for(let i = 0; i < 5; i++) createParticle();
-  </script>
 </body>
 </html>
